@@ -3,16 +3,18 @@
 .navbar {
     box-sizing: border-box;
     // background: linear-gradient(to right, rgb(126, 126, 126), rgb(211, 211, 211));
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(14, 14, 14);
     color: rgb(255, 255, 255);
-    font-weight: 400;
-    font-size: 1.2rem;
+    font-family: 'Share Tech Mono', monospace;
+
+    // font-weight: 400;
+    font-size: 1.6rem;
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
 
     @include responsiveMin1800 {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
         font-weight: 400;
     }
 }
@@ -23,7 +25,7 @@
     align-items: stretch;
     justify-content: space-around;
     flex-grow: 1;
-    height: 3rem;
+    // height: 3rem;
 
     & > * {
         text-align: center;
@@ -40,8 +42,8 @@
             height: 100%;
             width: 100%;
             z-index: 1;
-            background: rgb(198, 63, 216);
-            mask-image: url('../images/splatter-crop.png');
+            background: rgb(30, 149, 192);
+            // mask-image: url('../images/3dblue.jpg');
             mask-size: 120%;
             mask-position: center;
             transform: scale(0);
@@ -52,8 +54,11 @@
     }
     & > *:hover {
         cursor: pointer;
+        // @include pulsateTextAnimation(2s);
+        text-shadow: 0px 0px 0.7rem rgb(0, 255, 0);
+        color: rgb(17, 255, 0);
         &::before {
-            transform: scale(1);
+            // transform: scale(1);
         }
     }
 }

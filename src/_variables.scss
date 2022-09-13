@@ -1,0 +1,120 @@
+$gray1: rgb(42, 42, 42);
+$gray-light: rgb(239, 239, 239);
+$gray-light2: rgb(210, 210, 210);
+$gray-search: rgb(93, 93, 93);
+
+$blue-bright: rgb(137, 210, 255);
+$blue-bright2: rgb(118, 183, 223);
+$blue-bright3: rgb(95, 148, 181);
+
+$purple: rgb(160, 38, 216);
+
+$gray-dark: rgb(60, 60, 60);
+$gray-dark5: darken($gray-dark, 5%);
+$gray-dark10: darken($gray-dark, 13%);
+
+$gray-light5: lighten($gray-dark, 5%);
+$gray-light10: lighten($gray-dark, 10%);
+
+$blue-dark: rgb(53, 53, 53);
+
+$blue: rgb(121, 79, 79);
+$blue2: rgb(107, 107, 107);
+
+$primaryBtn: $gray-dark;
+$secondaryBtn: $gray-light10;
+$tertiaryBtn: rgb(137, 210, 255);
+
+$sidebarColor: $gray-dark;
+$navbarColor: darken($gray-dark10, 5%);
+
+@mixin glossyHover($color) {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, $color, transparent);
+        transition: 0.4s;
+    }
+    &:hover::before {
+        left: 100%;
+        opacity: 0%;
+    }
+}
+
+@mixin pulsateAnimation($time) {
+    animation: pulsate $time infinite;
+    @keyframes pulsate {
+        0% {
+            box-shadow: 0 2px 20px 15px $blue;
+        }
+        33% {
+            box-shadow: 0 2px 20px 10px $blue-bright;
+            box-shadow: 0 2px 20px 10px rgb(182, 101, 182);
+        }
+        66% {
+            box-shadow: 0 2px 20px 10px $blue-bright;
+            box-shadow: 0 2px 20px 10px rgb(179, 31, 56);
+        }
+        100% {
+            box-shadow: 0 2px 20px 15px $blue;
+        }
+    }
+}
+
+@mixin heading($size) {
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    font-size: $size;
+    font-weight: 100;
+    padding-bottom: 0.5rem;
+
+    @include responsiveMin1800 {
+        font-size: 150%;
+    }
+}
+
+//////////////// MEDIA QUERIES ///////////////////
+/* 
+0-400 smallphone
+400-600px -> largerphone
+600-900 -> tablet portrait
+900-1200 tablet landscape
+1200-1800 normal 
+1800+ big desktop
+*/
+@mixin responsiveMax400 {
+    @media (max-width: 25em) {
+        @content;
+    }
+}
+@mixin responsiveMax600 {
+    @media (max-width: 37.5em) {
+        @content;
+    }
+}
+@mixin responsiveMax900 {
+    @media (max-width: 56.25em) {
+        @content;
+    }
+}
+@mixin responsiveMax1200 {
+    @media (max-width: 75em) {
+        @content;
+    }
+}
+@mixin responsiveMin1800 {
+    @media (min-width: 112.5em) {
+        @content;
+    }
+}
+@mixin responsiveMinCustom($screenSize) {
+    @media (min-width: $screenSize) {
+        @content;
+    }
+}

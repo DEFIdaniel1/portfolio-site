@@ -1,0 +1,168 @@
+@import '../variables';
+
+.navbar {
+    box-sizing: border-box;
+    // background: linear-gradient(to right, rgb(126, 126, 126), rgb(211, 211, 211));
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    @include responsiveMin1800 {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+}
+
+////////////////////////// LARGE DISPLAY NAV ///////////////////////////
+.nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-grow: 1;
+    height: 3rem;
+
+    & > * {
+        text-align: center;
+        min-width: 15%;
+        padding-top: 1rem;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            background: rgb(198, 63, 216);
+            mask-image: url('../images/splatter-crop.png');
+            mask-size: 120%;
+            mask-position: center;
+            transform: scale(0);
+            transform-origin: center;
+            transition: cubic-bezier(1, 0, 0, 1) 0.2s;
+            z-index: -1;
+        }
+    }
+    & > *:hover {
+        cursor: pointer;
+        &::before {
+            transform: scale(1);
+        }
+    }
+}
+////////////////////////// BURGER ///////////////////////////
+
+////////////// BURGER NAV VIEW ///////////////////
+@include responsiveMax900 {
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: all 1s;
+
+        &__open {
+            position: fixed;
+            top: 0;
+            height: 80vh;
+            width: 100%;
+            z-index: 100;
+        }
+        &__closed {
+            height: 3rem;
+        }
+    }
+    .nav {
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 6rem;
+        transform: all 1s;
+
+        & > * {
+            ::before {
+                bottom: -4px;
+                left: 35%;
+                width: 30%;
+            }
+        }
+    }
+    .nav__open {
+        width: 6rem;
+        padding-top: 30%;
+        padding-left: 15%;
+    }
+    .nav__item {
+        width: 5rem;
+    }
+    .nav__closed {
+        visibility: collapse;
+    }
+}
+@include responsiveMax400 {
+    .nav {
+        & > * {
+            ::before {
+                bottom: -4px;
+                left: 20%;
+                width: 60%;
+            }
+        }
+    }
+}
+
+.navBurger {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: space-between;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    & > * {
+        height: 0.15rem;
+        width: 2.5rem;
+        transition: all 0.4s;
+        display: inline-block;
+        background-color: white;
+    }
+
+    &__closed {
+        &:hover {
+            padding: 0.5rem 0;
+        }
+    }
+    &__open {
+        position: fixed;
+
+        > * {
+            &:nth-child(1) {
+                transform: rotate(135deg);
+                position: fixed;
+                top: 1.6rem;
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                transform: rotate(-135deg);
+                position: fixed;
+                top: 1.6rem;
+            }
+        }
+    }
+}
+//hide burger menu when >900px
+@include responsiveMinCustom(900px) {
+    .navBurger {
+        & > * {
+            height: 0;
+            width: 0;
+        }
+    }
+}

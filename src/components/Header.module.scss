@@ -30,6 +30,7 @@
         width: 100%;
         object-fit: cover;
         z-index: 0;
+        filter: blur(1px);
 
         @include responsiveMax900 {
             left: 0%;
@@ -44,5 +45,15 @@
         width: 100%;
         object-fit: cover;
         mix-blend-mode: screen;
+        z-index: 0;
+        filter: opacity(90%);
+    }
+
+    .background {
+        background-color: rgb(0, 0, 0);
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        mix-blend-mode: luminosity;
     }
 }

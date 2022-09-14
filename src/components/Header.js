@@ -20,7 +20,8 @@ const Header = () => {
                 <h2>And UI Obsessed...</h2>
             </div>
             <img src={neonBuilding} alt="" />
-            <video src={headerVid} type="video/mp4" autoPlay muted loop></video>
+            <video src={headerVid3} type="video/mp4" autoPlay muted loop></video>
+            {/* <div className={classes.background}>hello</div> */}
         </div>
     )
 }

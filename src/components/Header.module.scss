@@ -14,10 +14,9 @@
         left: 7%;
 
         h1 {
-            color: rgb(57, 57, 57);
-            // @include pulsateTextAnimation(2s);
             font-size: 3rem;
             text-align: left;
+            text-shadow: 0 0 10px white;
         }
     }
 

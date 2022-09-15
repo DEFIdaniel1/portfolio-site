@@ -1,0 +1,22 @@
+@import '../variables';
+.skills {
+    padding: 4% 7% 0;
+}
+
+.webApps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // padding: 0 7%;
+    padding-bottom: 4rem;
+
+    & > * {
+        padding: 1.5rem 4rem;
+        transition: transform 0.4s cubic-bezier(0.01, 2.03, 0.45, 0.7);
+
+        &:hover {
+            transform: scale(1.2);
+            text-shadow: 1px 1px 3px rgb(127, 127, 127);
+        }
+    }
+}

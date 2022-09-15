@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <div className={classes.container}>
             <div className={classes.textbox}>
-                <h1>I'm Daniel.</h1>
+                <h1>Daniel Pisterzi.</h1>
                 <h2>Web Developer.</h2>
                 <h2>Blockhain Developer.</h2>
             </div>

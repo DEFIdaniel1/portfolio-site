@@ -40,26 +40,55 @@ $navbarColor: darken($gray-dark10, 5%);
     }
 }
 
-//////////////////////////// ANIMATIONS ///////////////////
-@mixin glossyHover($color) {
-    position: relative;
-    overflow: hidden;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, $color, transparent);
-        transition: 0.4s;
+//////////////////////////// ANIMATIONS ////////////////////////////////////////////////////////////////////////////
+// TEXT ANIMATIONS
+@mixin pulsateTextAnimation($time) {
+    animation: pulsate $time infinite;
+    @keyframes pulsate {
+        0% {
+            text-shadow: 0px 0px 0.7rem rgb(0, 255, 0);
+        }
+        33% {
+            text-shadow: 0px 0px 0.7rem rgb(234, 255, 0);
+        }
+        66% {
+            text-shadow: 0px 0px 0.7rem rgb(0, 183, 255);
+        }
+        100% {
+            text-shadow: 0px 0px 0.7rem rgb(0, 255, 0);
+        }
     }
-    &:hover::before {
-        left: 100%;
-        opacity: 0%;
+}
+@mixin textGradientAnimation($time) {
+    background: linear-gradient(to right, rgb(0, 221, 255), rgb(62, 254, 23));
+    background-clip: text;
+    color: transparent;
+    animation: txtGradientAnimation $time infinite linear;
+    @keyframes txtGradientAnimation {
+        0% {
+            background: linear-gradient(to right, rgb(0, 221, 255), rgb(62, 254, 23));
+            background-clip: text;
+            color: transparent;
+        }
+        33% {
+            background: linear-gradient(to right, rgb(255, 0, 4), rgb(0, 221, 255));
+            background-clip: text;
+            color: transparent;
+        }
+        66% {
+            background: linear-gradient(to right, rgb(255, 0, 247), rgb(255, 0, 4));
+            background-clip: text;
+            color: transparent;
+        }
+        100% {
+            background: linear-gradient(to right, rgb(62, 254, 23), rgb(255, 0, 247));
+            background-clip: text;
+            color: transparent;
+        }
     }
 }
 
+// OBJECT ANIMATIONS
 @mixin pulsateAnimation($time) {
     animation: pulsate $time infinite;
     @keyframes pulsate {
@@ -79,65 +108,73 @@ $navbarColor: darken($gray-dark10, 5%);
         }
     }
 }
-@mixin pulsateTextAnimation($time) {
-    animation: pulsate $time infinite;
-    @keyframes pulsate {
-        0% {
-            text-shadow: 0px 0px 0.7rem rgb(0, 255, 0);
-        }
-        33% {
-            text-shadow: 0px 0px 0.7rem rgb(234, 255, 0);
-        }
-        66% {
-            text-shadow: 0px 0px 0.7rem rgb(0, 183, 255);
-        }
-        100% {
-            text-shadow: 0px 0px 0.7rem rgb(0, 255, 0);
-        }
+@mixin glossyHover($color) {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, $color, transparent);
+        transition: 0.4s;
+    }
+    &:hover::before {
+        left: 100%;
+        opacity: 0%;
     }
 }
 
 @mixin floatAnimation($name, $from, $to) {
-    animation: #{$name} 4s ease-in-out infinite;
+    animation: #{$name} 5s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
     @keyframes #{$name} {
         0% {
             transform: translate3d($from, 0px, 0px) rotate(3deg);
+            filter: invert(50%);
         }
         50% {
             transform: translate3d($to, 0px, 0px) rotate(3deg);
+            filter: invert(100%);
         }
         100% {
             transform: translate3d($from, 0px, 0px) rotate(3deg);
+            filter: invert(50%);
         }
     }
 }
 @mixin floatAnimationReflection($name, $from, $to) {
-    animation: #{$name} 4s ease-in-out infinite;
-    filter: opacity(30%);
+    animation: #{$name} 5s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
+    filter: opacity(20%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1));
     @keyframes #{$name} {
         0% {
+            filter: invert(50%);
             transform: translate3d($from - 2%, 3px, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
         }
         50% {
+            filter: invert(100%);
             transform: translate3d($to - 2%, 3px, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
         }
         100% {
+            filter: invert(50%);
             transform: translate3d($from - 2%, 3px, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
         }
     }
 }
 @mixin floatAnimationVertical($name, $from, $to) {
-    animation: #{$name} 4s ease-in-out infinite;
+    animation: #{$name} 5s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
     @keyframes #{$name} {
         0% {
             transform: translate3d(0%, $from, 0px) rotate(3deg);
         }
         50% {
             transform: translate3d(0%, -$to, 0px) rotate(3deg);
+            filter: invert(50%);
         }
         100% {
             transform: translate3d(0%, $from, 0px) rotate(3deg);
@@ -145,25 +182,29 @@ $navbarColor: darken($gray-dark10, 5%);
     }
 }
 @mixin floatAnimationVerticalReflection($name, $from, $to) {
-    animation: #{$name} 4s ease-in-out infinite;
-    filter: opacity(30%);
+    animation: #{$name} 5s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
+    filter: opacity(20%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1));
     @keyframes #{$name} {
         0% {
             transform: translate3d(-2%, $from + 1, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
+            filter: invert(0);
         }
         50% {
             transform: translate3d(-2%, $to + 1, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
+            filter: invert(50%);
         }
         100% {
             transform: translate3d(-2%, $from + 1, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
+            filter: invert(0);
         }
     }
 }
-//////////////// MEDIA QUERIES ///////////////////
+
+//////////////// MEDIA QUERIES ///////////////////////////////////////////////////////////////////////////////////////////////
 /* 
 0-400 smallphone
 400-600px -> largerphone

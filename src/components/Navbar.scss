@@ -5,13 +5,15 @@
     // background: linear-gradient(to right, rgb(126, 126, 126), rgb(211, 211, 211));
     background-color: rgb(14, 14, 14);
     color: rgb(255, 255, 255);
-    font-family: 'Share Tech Mono', monospace;
+    font-family: neon, monospace;
+    text-transform: uppercase;
+    height: 100%;
 
     // font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
 
     @include responsiveMin1800 {
         font-size: 1.8rem;
@@ -25,7 +27,6 @@
     align-items: stretch;
     justify-content: space-around;
     flex-grow: 1;
-    // height: 3rem;
 
     & > * {
         text-align: center;
@@ -55,8 +56,8 @@
     & > *:hover {
         cursor: pointer;
         // @include pulsateTextAnimation(2s);
-        text-shadow: 0px 0px 0.7rem rgb(0, 255, 0);
-        color: rgb(17, 255, 0);
+        text-shadow: 0px 0px 0.7rem rgb(0, 225, 255);
+        @include textGradientAnimation(2s);
         &::before {
             // transform: scale(1);
         }
@@ -85,7 +86,6 @@
         flex-direction: column;
         align-content: center;
         justify-content: center;
-        width: 6rem;
         transform: all 1s;
 
         & > * {
@@ -97,12 +97,11 @@
         }
     }
     .nav__open {
-        width: 6rem;
-        padding-top: 30%;
-        padding-left: 15%;
+        padding-bottom: 20%;
     }
     .nav__item {
-        width: 5rem;
+        font-size: 2.5rem;
+        height: 3.5rem;
     }
     .nav__closed {
         visibility: collapse;
@@ -125,7 +124,7 @@
     flex-flow: column nowrap;
     align-items: space-between;
     justify-content: space-between;
-    padding: 0.7rem 0;
+    padding: 0.25rem 0;
     cursor: pointer;
     transition: all 0.2s;
 
@@ -139,11 +138,13 @@
 
     &__closed {
         &:hover {
-            padding: 0.5rem 0;
+            padding: 0.15rem 0;
         }
     }
     &__open {
         position: fixed;
+        height: 3rem;
+        width: 3rem;
 
         > * {
             &:nth-child(1) {
@@ -166,8 +167,8 @@
 @include responsiveMinCustom(900px) {
     .navBurger {
         & > * {
-            height: 0;
-            width: 0;
+            height: 0rem;
+            width: 0rem;
         }
     }
 }

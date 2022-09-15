@@ -15,12 +15,11 @@ const Header = () => {
         <div className={classes.container}>
             <div className={classes.textbox}>
                 <h1>I'm Daniel.</h1>
-                <h2>A Web Developer.</h2>
-                <h2>A Blockhain Developer.</h2>
-                <h2>And UI Obsessed...</h2>
+                <h2>Web Developer.</h2>
+                <h2>Blockhain Developer.</h2>
             </div>
             <img src={neonBuilding} alt="" />
-            <video src={headerVid3} type="video/mp4" autoPlay muted loop></video>
+            <video src={headerVid3} type="video/mp4" autoPlay muted></video>
             {/* <div className={classes.background}>hello</div> */}
         </div>
     )

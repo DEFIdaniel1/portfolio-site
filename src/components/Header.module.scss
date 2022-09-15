@@ -6,14 +6,12 @@
     background-color: rgb(0, 168, 180);
     overflow: hidden;
     display: flex;
-    // align-items: center;
 
     .textbox {
-        // color: white;
         z-index: 1;
         position: absolute;
-        top: 40%;
-        left: 10%;
+        bottom: 5%;
+        left: 7%;
 
         h1 {
             color: rgb(57, 57, 57);

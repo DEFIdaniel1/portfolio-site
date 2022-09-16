@@ -26,8 +26,8 @@ font-family: 'Share Tech Mono', monospace;
 h1,
 h2,
 h3 {
-    // font-family: 'Roboto', monospace;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Roboto', monospace;
+    // font-family: 'Exo 2', sans-serif;
     font-weight: 300;
 }
 // h1 {
@@ -37,12 +37,12 @@ h3 {
 h1 {
     font-size: 3.5rem;
     text-align: left;
-    text-shadow: 0 0 10px white;
-    font-family: neon;
-    text-transform: uppercase;
+    text-shadow: 0 0 2px white;
+    font-family: monospace;
+    // text-transform: uppercase;
 
     &:hover {
-        text-shadow: 0px 0px 0.7rem rgb(232, 232, 232);
+        text-shadow: 0px 0px 0.7rem;
         @include textGradientAnimation(3s);
         cursor: default;
     }

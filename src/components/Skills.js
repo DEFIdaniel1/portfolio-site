@@ -45,6 +45,7 @@ const Skills = () => {
             <div className={classes.skills}>
                 <video src={inkswipe3s} type="video/mp4" autoPlay muted />
                 <h1>Tech Skills</h1>
+                <h2>Languages & Frameworks</h2>
                 <div className={classes.webApps}>
                     <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />
                     <Icon name={javaScriptItem.name} image={javaScriptItem.img} />
@@ -57,7 +58,7 @@ const Skills = () => {
                     <Icon name={bootstrapItem.name} image={bootstrapItem.img} />
                     <Icon name={tailwindItem.name} image={tailwindItem.img} />
                 </div>
-                <h1>Applications</h1>
+                <h2>Applications</h2>
                 <div className={classes.webApps}>
                     <Icon name={gitHub.name} image={gitHub.img} />
                     <Icon name={visualStudio.name} image={visualStudio.img} />

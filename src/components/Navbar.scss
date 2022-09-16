@@ -5,11 +5,10 @@
     // background: linear-gradient(to right, rgb(126, 126, 126), rgb(211, 211, 211));
     background-color: rgb(14, 14, 14);
     color: rgb(255, 255, 255);
-    font-family: neon, monospace;
-    text-transform: uppercase;
+    font-family: 'Exo 2', sans-serif;
+    // text-transform: uppercase;
     height: 100%;
 
-    // font-weight: 400;
     font-size: 1.8rem;
     display: flex;
     justify-content: space-between;
@@ -55,7 +54,7 @@
     }
     & > *:hover {
         cursor: pointer;
-        text-shadow: 0px 0px 0.7rem rgb(232, 232, 232);
+        text-shadow: 0px 0px 0.7rem;
         @include textGradientAnimation(1.4s);
     }
 }

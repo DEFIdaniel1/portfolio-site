@@ -1,4 +1,4 @@
-import classes from './Containers.module.scss'
+import classes from './SectionImg.module.scss'
 
 const SectionImg = ({ type, image, title, text, alt }) => {
     return (
@@ -11,13 +11,17 @@ const SectionImg = ({ type, image, title, text, alt }) => {
                     </div>
                     <div className={classes.imgDiv}>
                         <img src={image} alt={alt} />
+                        <img src={image} alt={`${alt} reflection`} />
                     </div>
                 </div>
             )}
             {type === 'bitcoin' && (
                 <div className={classes.section}>
                     <div className={classes.bitcoinDiv}>
-                        <img src={image} alt={alt} />
+                        {/* <img src={image} alt={alt} /> */}
+                        <div></div>
+                        <div></div>
+                        {/* <img src={image} alt={`${alt} reflection`} /> */}
                     </div>
                     <div className={classes.textR}>
                         <h2>{title}</h2>

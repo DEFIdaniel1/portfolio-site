@@ -4,7 +4,7 @@ import classes from './About.module.scss'
 import SectionImg from './UI/SectionImg'
 import spaceSuit from '../images/spaceSuit.png'
 import phones from '../images/phones.png'
-import daniel from '../images/daniel.png'
+import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import swipeVideo from '../video/inkswipe.mp4'
 
@@ -35,10 +35,10 @@ const About = () => {
                         Next step? After building out websites, I was hooked. I dove deep into CSS,
                         Javascript, React, and Solidity rabbit holes.
                     </p>
-                    <p>Enjoy your stay - and don't hesitate to reach out!</p>
+                    <p>I'm looking to work with companies building the future...</p>
                 </div>
                 <div className={classes.rightCol}>
-                    <img src={daniel} alt="" />
+                    <img src={daniel} alt="daniel pisterzi" />
                 </div>
             </div>
 

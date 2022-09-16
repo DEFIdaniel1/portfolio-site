@@ -60,6 +60,10 @@
     align-items: center;
     position: relative;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     img {
         position: absolute;
         margin-bottom: 3rem;
@@ -76,10 +80,10 @@
                 width: 6rem;
             }
 
-            @include floatAnimation(left, -30%, -50%);
+            @include floatAnimation(left, -20%, -50%);
         }
         &:nth-child(4) {
-            @include floatAnimationReflection(reflectLeft, -30%, -50%);
+            @include floatAnimationReflection(reflectLeft, -20%, -50%);
         }
 
         //CENTER PHONE
@@ -120,12 +124,6 @@
         }
         &:nth-child(6) {
             @include floatAnimationReflection(reflectRight, 80%, 100%);
-        }
-
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(6) {
-            transform: scale(1, -1) translateY(-100%) translateX(-20%) rotate(-5deg);
         }
     }
 }

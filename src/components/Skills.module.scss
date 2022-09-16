@@ -1,14 +1,32 @@
 @import '../variables';
 .skills {
     padding: 4% 7% 0;
+    position: relative;
+
+    h1 {
+        text-align: center;
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        mix-blend-mode: none;
+        z-index: -10;
+    }
 }
 
 .webApps {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
-    // padding: 0 7%;
+    padding: 0 7%;
     padding-bottom: 4rem;
+    z-index: 1;
+    color: rgb(33, 33, 33);
 
     & > * {
         padding: 1.5rem 4rem;
@@ -16,7 +34,8 @@
 
         &:hover {
             transform: scale(1.2);
-            text-shadow: 1px 1px 3px rgb(127, 127, 127);
+            color: rgb(34, 34, 34);
+            font-weight: 400;
         }
     }
 }

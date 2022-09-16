@@ -9,6 +9,7 @@ import neonBuilding from '../images/neonBuilding.jpg'
 import headerVid from '../video/inkdrops.mp4'
 import headerVid2 from '../video/inkswipe.mp4'
 import headerVid3 from '../video/inkdrops2.mp4'
+import inkswipe3s from '../video/inkswipe3s.mp4'
 
 const Header = () => {
     return (

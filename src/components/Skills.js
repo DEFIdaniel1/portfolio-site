@@ -1,6 +1,8 @@
 import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
 
+import inkswipe3s from '../video/inkWhite2.mp4'
+
 //IMAGES
 import cssHtmlImg from '../images/icons/cssHtml.png'
 import reactImg from '../images/icons/react.png'
@@ -17,6 +19,7 @@ import wooCommerceImg from '../images/icons/wooCommerce.png'
 import adobeCCImg from '../images/icons/adobeCC.png'
 import finalCutImg from '../images/icons/fcpLogo.png'
 import ethersImg from '../images/icons/etherslogo.png'
+import typescriptImg from '../images/icons/typescript.png'
 
 const javaScriptItem = { name: 'JavaScript', img: javscriptImg }
 const cssHtmlItem = { name: 'HTML & CSS', img: cssHtmlImg }
@@ -27,6 +30,7 @@ const nodeItem = { name: 'NodeJS', img: nodeImg }
 const ethersItem = { name: 'ethers.js', img: ethersImg }
 const tailwindItem = { name: 'Tailwind', img: tailwindImg }
 const solidityItem = { name: 'Solidity', img: solidityImg }
+const typescriptItem = { name: 'Typescript', img: typescriptImg }
 
 const gitHub = { name: 'GitHub', img: gitImg }
 const visualStudio = { name: 'VS Code', img: visualStudioImg }
@@ -37,27 +41,31 @@ const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 
 const Skills = () => {
     return (
-        <div className={classes.skills}>
-            <h1>Tech Skills</h1>
-            <div className={classes.webApps}>
-                <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />
-                <Icon name={javaScriptItem.name} image={javaScriptItem.img} />
-                <Icon name={reactItem.name} image={reactItem.img} />
-                <Icon name={reduxItem.name} image={reduxItem.img} />
-                <Icon name={nodeItem.name} image={nodeItem.img} />
-                <Icon name={solidityItem.name} image={solidityItem.img} />
-                <Icon name={ethersItem.name} image={ethersItem.img} />
-                <Icon name={bootstrapItem.name} image={bootstrapItem.img} />
-                <Icon name={tailwindItem.name} image={tailwindItem.img} />
-            </div>
-            <h1>Applications</h1>
-            <div className={classes.webApps}>
-                <Icon name={gitHub.name} image={gitHub.img} />
-                <Icon name={visualStudio.name} image={visualStudio.img} />
-                <Icon name={firebase.name} image={firebase.img} />
-                <Icon name={wooCommerce.name} image={wooCommerce.img} />
-                <Icon name={adobeCC.name} image={adobeCC.img} />
-                <Icon name={finalCut.name} image={finalCut.img} />
+        <div>
+            <div className={classes.skills}>
+                <video src={inkswipe3s} type="video/mp4" autoPlay muted />
+                <h1>Tech Skills</h1>
+                <div className={classes.webApps}>
+                    <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />
+                    <Icon name={javaScriptItem.name} image={javaScriptItem.img} />
+                    <Icon name={typescriptItem.name} image={typescriptItem.img} />
+                    <Icon name={reactItem.name} image={reactItem.img} />
+                    <Icon name={reduxItem.name} image={reduxItem.img} />
+                    <Icon name={nodeItem.name} image={nodeItem.img} />
+                    <Icon name={solidityItem.name} image={solidityItem.img} />
+                    <Icon name={ethersItem.name} image={ethersItem.img} />
+                    <Icon name={bootstrapItem.name} image={bootstrapItem.img} />
+                    <Icon name={tailwindItem.name} image={tailwindItem.img} />
+                </div>
+                <h1>Applications</h1>
+                <div className={classes.webApps}>
+                    <Icon name={gitHub.name} image={gitHub.img} />
+                    <Icon name={visualStudio.name} image={visualStudio.img} />
+                    <Icon name={firebase.name} image={firebase.img} />
+                    <Icon name={wooCommerce.name} image={wooCommerce.img} />
+                    <Icon name={adobeCC.name} image={adobeCC.img} />
+                    <Icon name={finalCut.name} image={finalCut.img} />
+                </div>
             </div>
         </div>
     )

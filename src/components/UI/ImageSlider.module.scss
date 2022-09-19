@@ -1,0 +1,92 @@
+@import '../../variables';
+
+.slider {
+    position: relative;
+    margin: 0 3%;
+    padding: 1rem 11%;
+    background-color: gray;
+    border-radius: 20px;
+    height: 70vh;
+    align-items: center;
+    transition: all 0.2s;
+
+    .slideCount {
+        position: absolute;
+        bottom: 5%;
+        right: 1.5rem;
+        font-size: 1rem;
+        color: white;
+        z-index: 1;
+    }
+    .dotsContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-end;
+
+        & > * {
+            margin: 1rem 0.5rem 0.5rem;
+            font-size: 80%;
+            cursor: pointer;
+        }
+    }
+
+    .rightArrow {
+        position: absolute;
+        top: 40%;
+        right: 1.5rem;
+        font-size: 6rem;
+        color: white;
+        z-index: 1;
+        cursor: pointer;
+    }
+    .leftArrow {
+        position: absolute;
+        top: 40%;
+        left: 1.5rem;
+        font-size: 6rem;
+        color: white;
+        z-index: 1;
+        cursor: pointer;
+    }
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+
+    .text {
+        width: 100%;
+        padding: 0 3rem 0 0;
+        flex-grow: 1;
+
+        .links {
+            display: flex;
+            justify-content: space-around;
+
+            :nth-child(1) {
+                padding-right: 2rem;
+            }
+        }
+    }
+    .gif {
+        flex-grow: 1;
+        position: relative;
+        height: 22rem;
+        width: 100%;
+        // background-image: url('https://media.giphy.com/media/LkxiDPFHOpfQrDi2xH/giphy.gif');
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .gifText {
+            z-index: 1;
+        }
+    }
+}

@@ -3,9 +3,12 @@ import classes from './About.module.scss'
 
 import SectionImg from './UI/SectionImg'
 import spaceSuit from '../images/spaceSuit.png'
+import silver from '../images/silver.png'
+
 import phones from '../images/phones.png'
 import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
+import robot from '../images/robot.png'
 import swipeVideo from '../video/inkswipe.mp4'
 
 const About = () => {
@@ -80,7 +83,7 @@ const About = () => {
                         generation of blockchain dApps.
                     </div>
                 }
-                image={spaceSuit}
+                image={robot}
                 alt={'space suit'}
             />
         </div>

@@ -1,0 +1,32 @@
+@import '../variables';
+
+.experience {
+    padding: 4% 7%;
+    color: white;
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        margin: 0 0 0.4rem 0;
+        text-align: center;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .section {
+        width: 45%;
+        padding: 4% 3% 0 0;
+    }
+}
+.frontEnd {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: gray;
+    z-index: 0;
+}

@@ -4,7 +4,7 @@
     position: relative;
     margin: 0 3%;
     padding: 1rem 11%;
-    background-color: gray;
+    background-color: rgb(35, 35, 35);
     border-radius: 20px;
     min-height: 70vh;
     display: flex;
@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: space-around;
     transition: all 0.2s;
+    overflow: hidden;
 
     .slideCount {
         position: absolute;

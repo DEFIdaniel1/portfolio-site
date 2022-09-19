@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 const ImageSlider = ({ slides }) => {
     const [slideIndex, setSlideIndex] = useState(0)
     const { title, subtitle, description, features, github, link, gif } = slides[slideIndex]
+    const [slideRight, setSlideRight] = useState(null)
 
     //Optional for object array loop
     let featureList = []
@@ -21,16 +22,17 @@ const ImageSlider = ({ slides }) => {
         const isFirstSlide = slideIndex === 0
         const newIndex = isFirstSlide ? slides.length - 1 : slideIndex - 1
         setSlideIndex(newIndex)
+        setSlideRight(false)
     }
     const goToNext = () => {
         const isLastSlide = slideIndex === slides.length - 1
         const newIndex = isLastSlide ? 0 : slideIndex + 1
         setSlideIndex(newIndex)
+        setSlideRight(true)
     }
     const goToSlide = (idx) => {
         setSlideIndex(idx)
     }
-
     return (
         <div className={classes.slider}>
             <div className={classes.leftArrow} onClick={goToPrevious}>
@@ -42,11 +44,11 @@ const ImageSlider = ({ slides }) => {
             <motion.div
                 key={slideIndex}
                 className={classes.slide}
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                initial={{ x: slideRight ? 200 : -200, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
                 transition={{
-                    duration: 1,
-                    ease: [0, 0.71, 0.2, 1.01],
+                    duration: 0.6,
+                    ease: [0, 0.71, 0.8, 1.01],
                 }}
             >
                 <div className={classes.text}>

@@ -1,7 +1,7 @@
 import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
-
-import inkswipe3s from '../video/inkWhite2.mp4'
+import inkWhite2 from '../video/inkWhite2.mp4'
+import inkswipe3s from '../video/inkswipe3s.mp4'
 
 //IMAGES
 import cssHtmlImg from '../images/icons/cssHtml.png'
@@ -43,7 +43,7 @@ const Skills = () => {
     return (
         <div>
             <div className={classes.skills}>
-                <video src={inkswipe3s} type="video/mp4" autoPlay muted />
+                <video src={inkWhite2} type="video/mp4" autoPlay muted />
                 <h1>Tech Skills</h1>
                 <h2>Languages & Frameworks</h2>
                 <div className={classes.webApps}>

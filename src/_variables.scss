@@ -87,6 +87,30 @@ $navbarColor: darken($gray-dark10, 5%);
         }
     }
 }
+@mixin glossyText($color) {
+    background: linear-gradient(to bottom right, white, $color, white);
+    background-repeat: no-repeat;
+    background-clip: text;
+    background-size: 80%;
+    color: white;
+    // transition: all 0.21s linear infinite;
+    overflow: hidden;
+    // position: relative;
+    &:hover {
+        animation: 0.4s backgroundColorShift ease-in;
+    }
+    @keyframes backgroundColorShift {
+        0% {
+            background-position: 00%;
+            // color: rgba(255, 255, 255, 0.4);
+            color: transparent;
+        }
+        100% {
+            background-position: 500%;
+            color: white;
+        }
+    }
+}
 
 // OBJECT ANIMATIONS
 @mixin pulsateAnimation($time) {

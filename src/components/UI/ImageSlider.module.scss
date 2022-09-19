@@ -6,6 +6,7 @@
     padding: 1rem 11%;
     background-color: rgb(35, 35, 35);
     border-radius: 20px;
+    // width: 100%;
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -23,7 +24,10 @@
         z-index: 1;
     }
     .dotsContainer {
-        justify-self: flex-end;
+        position: absolute;
+        // justify-self: flex-end;
+        bottom: 2%;
+        right: 45%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,6 +36,10 @@
             margin: 1rem 0.5rem 0.5rem;
             font-size: 80%;
             cursor: pointer;
+            transition: all 0.2s;
+            &:hover {
+                color: rgb(180, 180, 180);
+            }
         }
     }
 
@@ -43,6 +51,10 @@
         color: white;
         z-index: 1;
         cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+            color: rgb(180, 180, 180);
+        }
     }
     .leftArrow {
         position: absolute;
@@ -52,6 +64,10 @@
         color: white;
         z-index: 1;
         cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+            color: rgb(180, 180, 180);
+        }
     }
 }
 
@@ -59,6 +75,7 @@
     display: flex;
     align-items: center;
     padding: 2rem 0;
+    width: 100%;
 
     .text {
         width: 100%;

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import classes from './ImageSlider.module.scss'
+import { motion } from 'framer-motion'
 
 const ImageSlider = ({ slides }) => {
     const [slideIndex, setSlideIndex] = useState(0)
@@ -32,16 +33,22 @@ const ImageSlider = ({ slides }) => {
 
     return (
         <div className={classes.slider}>
-            {/* <div className={classes.slideCount}>
-                {slideIndex + 1}/{slides.length}
-            </div> */}
             <div className={classes.leftArrow} onClick={goToPrevious}>
                 &lsaquo;
             </div>
             <div className={classes.rightArrow} onClick={goToNext}>
                 &rsaquo;
             </div>
-            <div className={classes.slide}>
+            <motion.div
+                key={slideIndex}
+                className={classes.slide}
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                    duration: 1,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+            >
                 <div className={classes.text}>
                     <h2>{title}</h2>
                     <h3>{subtitle}</h3>
@@ -57,7 +64,7 @@ const ImageSlider = ({ slides }) => {
                     <img src="https://media.giphy.com/media/LkxiDPFHOpfQrDi2xH/giphy.gif" alt="" />
                     <div className={classes.gifText}>Hover for preview (HAND)</div>
                 </div>
-            </div>
+            </motion.div>
             <div className={classes.dotsContainer}>
                 {slides.map((slide, idx) =>
                     idx === slideIndex ? (

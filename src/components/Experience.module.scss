@@ -12,6 +12,10 @@
         margin: 0 0 0.4rem 0;
         text-align: center;
     }
+
+    li {
+        padding: 0.4rem 1rem;
+    }
 }
 
 .container {
@@ -24,9 +28,5 @@
     }
 }
 .frontEnd {
-    position: relative;
-    width: 100%;
-    height: 3px;
-    background-color: gray;
-    z-index: 0;
+    @include sliderBar(rgb(111, 230, 239), 100%);
 }

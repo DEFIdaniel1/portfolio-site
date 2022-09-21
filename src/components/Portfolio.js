@@ -2,66 +2,81 @@ import React from 'react'
 import classes from './Portfolio.module.scss'
 import ImageSlider from './UI/ImageSlider'
 
+import fractionalPropertiesVideo from '../video/websites/fractionalProperties.mp4'
+import fractionalPropertiesImg from '../video/websites/fractionalProperties.png'
+import noBankVideo from '../video/websites/noBank.mp4'
+import noBankImg from '../video/websites/noBank.png'
+import galXyVideo from '../video/websites/galXy.mp4'
+import galXyImg from '../video/websites/galXy.png'
+import octagoImg from '../video/websites/myOctago.png'
+
 const Portfolio = () => {
     const slides = [
         {
             title: 'GAL-XY',
             subtitle: 'NFT Marketplace',
             description:
-                'A website built from the ground-up. Custom solidity smart contracts for minting and listing NFTs on the platform. A random NFT mint feature that incorporates user inputs.',
+                'A full-stack website built from the ground-up. A random NFT mint feature that incorporates user inputs for dynamic ouput.',
             features: [
-                'Solidity smart contracts for NFT minting and NFT marketplace',
-                'Fully customized UI using Javascript and CSS',
-                'Project is live on Goerli testnet',
-                'React project with ethers.js blockchain connections',
+                'Custom Solidity smart contracts',
+                'Random NFT minting, listing, and selling',
+                'Fully customized UI',
+                'Live on Ethereum testnet',
+                'Extensive unit testing',
+                'React | ethers.js | Hardhat | nodeJS',
             ],
-            github: 'www',
-            link: 'www',
-            gif: 'something',
+            github: 'https://github.com/DEFIdaniel1/nftMarketplace-v2',
+            link: 'https://gal-xy.web.app/',
+            video: galXyVideo,
+            image: galXyImg,
+        },
+        {
+            title: 'NoBank',
+            subtitle: 'Decentralized Finance dApp',
+            description:
+                'Custom ground-up build. Take your crypto holdings to a decentralized staking solution - all on-chain.',
+            features: [
+                'Typescript project',
+                'APIs fetch real-time crypto price feeds',
+                'Dynamic rates built-in for instant feedback',
+                'Typescript | React | JavaScript | CSS',
+            ],
+            github: 'https://github.com/DEFIdaniel1/noBank',
+            link: 'https://yield-calc.firebaseapp.com/',
+            video: noBankVideo,
+            image: noBankImg,
         },
         {
             title: 'Fractional Properties',
             subtitle: 'Real Estate as NFTs',
-            description: 'Front-end build-out for a conceptual project.',
-            features: [
-                'Solidity smart contracts for NFT minting and NFT marketplace',
-                'Fully customized UI using Javascript and CSS',
-                'Project is live on Goerli testnet',
-                'React project with ethers.js blockchain connections',
-            ],
-            github: 'www',
-            link: 'www',
-            gif: 'something',
-        },
-        {
-            title: 'NoBank',
-            subtitle: 'NFT Marketplace',
             description:
-                'A website built from the ground-up. Custom solidity smart contracts for minting and listing NFTs on the platform. A random NFT mint feature that incorporates user inputs.',
+                'Front-end build-out for a conceptual project. Designed to be the airbnb for real estate - own, rent, and travel.',
             features: [
-                'Solidity smart contracts for NFT minting and NFT marketplace',
-                'Fully customized UI using Javascript and CSS',
-                'Project is live on Goerli testnet',
-                'React project with ethers.js blockchain connections',
+                'Fully customized design and UI build',
+                'Custom menu animations',
+                'Responsive design',
+                'React | JavaScript | CSS',
             ],
-            github: 'www',
-            link: 'www',
-            gif: 'something',
+            github: 'https://github.com/DEFIdaniel1/Fractional-Real-Estate',
+            link: 'https://fractional-properties.web.app/',
+            video: fractionalPropertiesVideo,
+            image: fractionalPropertiesImg,
         },
+
         {
             title: 'Octago Products',
             subtitle: 'eCommerce Store',
             description:
-                'A website built from the ground-up. Custom solidity smart contracts for minting and listing NFTs on the platform. A random NFT mint feature that incorporates user inputs.',
+                'Custom-built wooCommerce site for eCommerce brand. Hosts product range and branded content.',
             features: [
-                'Solidity smart contracts for NFT minting and NFT marketplace',
-                'Fully customized UI using Javascript and CSS',
-                'Project is live on Goerli testnet',
-                'React project with ethers.js blockchain connections',
+                'WooCommerce site with large product line',
+                'Third party payments connected via Stripe',
+                'API integrations with 3PL delivery partners',
+                'Live and maintained for 2 years',
+                'WooCommerce | Wordpress | CSS',
             ],
-            github: 'www',
-            link: 'www',
-            gif: 'something',
+            link: 'http://myoctago.com',
+            image: octagoImg,
         },
     ]
 

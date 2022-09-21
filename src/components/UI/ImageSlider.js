@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 
 const ImageSlider = ({ slides }) => {
     const [slideIndex, setSlideIndex] = useState(0)
-    const { title, subtitle, description, features, github, link, gif } = slides[slideIndex]
+    const { title, subtitle, description, features, github, link, video, image } =
+        slides[slideIndex]
     const [slideRight, setSlideRight] = useState(null)
 
     //Optional for object array loop
@@ -54,17 +55,32 @@ const ImageSlider = ({ slides }) => {
                 <div className={classes.text}>
                     <h2>{title}</h2>
                     <h3>{subtitle}</h3>
-                    <p>{description}</p>
-                    <p>Features:</p>
+                    <hr />
+                    <p className={classes.description}>{description}</p>
+                    {/* <hr /> */}
+                    {/* <p>
+                        <strong>Features:</strong>
+                    </p> */}
                     <ul>{featureList}</ul>
                     <div className={classes.links}>
-                        <div>GitHub Link</div>
-                        <div>Live Site Link</div>
+                        {github && <a href={github}>{/* <span>GitHub</span> */}Github</a>}
+                        {link && <a href={link}>View Site</a>}
                     </div>
                 </div>
                 <div className={classes.gif}>
-                    <img src="https://media.giphy.com/media/LkxiDPFHOpfQrDi2xH/giphy.gif" alt="" />
-                    <div className={classes.gifText}>Hover for preview (HAND)</div>
+                    {video ? (
+                        <video
+                            src={video}
+                            alt={`${title} website preview`}
+                            typeof="video/mp4"
+                            muted
+                            autoPlay
+                        />
+                    ) : (
+                        <img src={image} alt={`${title} website preview`} />
+                    )}
+
+                    {/* <div className={classes.gifText}></div> */}
                 </div>
             </motion.div>
             <div className={classes.dotsContainer}>

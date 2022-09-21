@@ -3,20 +3,19 @@
 .slider {
     position: relative;
     margin: 0 3%;
-    padding: 1rem 11%;
+    padding: 0 11% 3rem;
     background-color: rgb(35, 35, 35);
     border-radius: 20px;
-    // width: 100%;
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     transition: all 0.2s;
     overflow: hidden;
 
     .slideCount {
-        position: absolute;
+        position: a bsolute;
         bottom: 5%;
         right: 1.5rem;
         font-size: 1rem;
@@ -74,7 +73,7 @@
 .slide {
     display: flex;
     align-items: center;
-    padding: 2rem 0;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
     width: 100%;
 
     .text {
@@ -86,8 +85,22 @@
             display: flex;
             justify-content: space-around;
 
-            :nth-child(1) {
-                padding-right: 2rem;
+            a {
+                display: block;
+                padding: 0.5rem 2rem;
+                border-radius: 10px;
+                margin: 1rem;
+                text-decoration: none;
+                color: white;
+                text-align: center;
+                background-color: rgb(12, 89, 112);
+                transition: all 0.2s;
+                @include glossyHover(white);
+
+                &:hover {
+                    background-color: rgb(123, 187, 208);
+                    color: black;
+                }
             }
         }
     }
@@ -97,17 +110,33 @@
         height: 22rem;
         width: 100%;
         // background-image: url('https://media.giphy.com/media/LkxiDPFHOpfQrDi2xH/giphy.gif');
+        video {
+            position: absolute;
+            top: 10%;
+            left: 2%;
+            width: 100%;
+            object-fit: cover;
+            object-position: left;
+            padding: 2%;
+            z-index: 0;
+        }
         img {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 10%;
+            left: 2%;
             height: 100%;
             width: 100%;
             object-fit: cover;
-            z-index: 0;
+            object-position: top;
         }
+
         .gifText {
             z-index: 1;
         }
     }
+}
+.description {
+    // font-size: 90%;
+    font-weight: 200;
+    // padding-bottom: 1rem;
 }

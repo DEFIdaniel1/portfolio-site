@@ -36,7 +36,7 @@ const Experience = () => {
             </div>
             <div className={classes.container}>
                 <div className={classes.section}>
-                    <h2>Blockchain (1 Yr)</h2>
+                    <h2>Blockchain (6 mon)</h2>
                     <div className={classes.frontEnd}></div>
                     <ul>
                         <li>

@@ -26,8 +26,8 @@ const Header = () => {
                 <h2>Web Developer.</h2>
                 <h2>Blockhain Developer.</h2>
             </div>
-            <img src={colorSmoke} alt="" />
-            <video src={inkswipe3s} type="video/mp4" autoPlay muted></video>
+            {/* <img src={colorSmoke} alt="" /> */}
+            <video src={headerVid} type="video/mp4" autoPlay muted></video>
 
             {/* BCK CLR + Particles */}
             {/* <video src={whiteParticles} type="video/mp4" autoPlay muted loop></video> */}

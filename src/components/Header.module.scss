@@ -18,7 +18,8 @@
             opacity: 1;
             background-size: 130%;
             background-position-y: -20%;
-            background-position-x: 50px;
+            // background-position-x: 50px;
+            // transform: rotate(30deg);
         }
         30% {
             // opacity: 0.5;
@@ -28,7 +29,7 @@
             opacity: 1;
             background-size: 100%;
             background-position-y: -10%;
-            background-position-x: 100px;
+            // background-position-x: 100px;
         }
     }
 

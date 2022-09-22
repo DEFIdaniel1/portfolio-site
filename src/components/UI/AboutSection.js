@@ -1,6 +1,6 @@
-import classes from './SectionImg.module.scss'
+import classes from './AboutSection.module.scss'
 
-const SectionImg = ({ type, image, title, text, alt }) => {
+const AboutSection = ({ type, image, title, text, alt }) => {
     return (
         <div>
             {type === 'future' && (
@@ -56,4 +56,4 @@ const SectionImg = ({ type, image, title, text, alt }) => {
     )
 }
 
-export default SectionImg
+export default AboutSection

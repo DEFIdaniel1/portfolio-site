@@ -1,27 +1,50 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import classes from './About.module.scss'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
-import SectionImg from './UI/SectionImg'
+import AboutSection from './UI/AboutSection'
 import spaceSuit from '../images/spaceSuit.png'
 import silver from '../images/silver.png'
 import phones from '../images/phones.png'
 import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
-import swipeVideo from '../video/inkswipe.mp4'
 
 const About = () => {
+    // const [visible, setVisible] = useState(false)
+    const [danielRef, danielInView] = useInView({ threshold: 0.05 })
+    const [uiRef, uiInView] = useInView({ threshold: 1 })
+
+    const rightAnimate = {
+        offScreen: { x: 500, opacity: 0, transition: { duration: 0.9 } },
+        onScreen: { x: 0, opacity: 1, transition: { duration: 0.9 } },
+    }
+    const leftAnimate = {
+        offScreen: { x: -500, opacity: 0, transition: { duration: 2 } },
+        onScreen: { x: 0, opacity: 1, transition: { duration: 2 } },
+    }
+    const bottomAnimate = {
+        offScreen: { y: 300, opacity: 0 },
+        onScreen: { y: 0, opacity: 1, transition: { duration: 1 } },
+    }
+    const topAnimate = {
+        offScreen: { y: -500, opacity: 0 },
+        onScreen: { y: 0, opacity: 1, transition: { duration: 1, type: 'spring', bounce: 0.2 } },
+    }
+
     return (
-        <motion.div
-            initial={{ x: 500, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 500, opacity: 0 }}
-            transition={{ duration: 1, type: 'spring', bounce: 0.2 }}
-            className={classes.about}
-        >
-            <div className={classes.container}>
-                <div className={classes.leftCol}>
+        <motion.div className={classes.about}>
+            {/* SECTION 1 - DANIEL */}
+            <motion.div
+                className={classes.container}
+                initial={'offScreen'}
+                whileInView={'onScreen'}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ staggerChildren: 0.2 }}
+            >
+                {/* LEFT SIDE */}
+                <motion.div key="aboutLeft" className={classes.leftCol} variants={leftAnimate}>
                     <h1>About me</h1>
                     <div className="line" />
                     <p>I love building intuitive, beautiful applications.</p>
@@ -46,13 +69,23 @@ const About = () => {
                         Javascript, React, and Solidity rabbit holes.
                     </p>
                     <p>I'm looking to work with companies building the future...</p>
-                </div>
-                <div className={classes.rightCol}>
-                    <img src={daniel} alt="daniel pisterzi" />
-                </div>
-            </div>
-            <div>
-                <SectionImg
+                </motion.div>
+                {/* RIGHT SIDE */}
+                {
+                    <motion.div className={classes.rightCol} variants={rightAnimate}>
+                        <img src={daniel} alt="daniel pisterzi" />
+                    </motion.div>
+                }
+            </motion.div>
+
+            <motion.div
+                className={classes.container}
+                initial={'offScreen'}
+                whileInView={'onScreen'}
+                viewport={{ once: true, amount: 0.01 }}
+                variants={bottomAnimate}
+            >
+                <AboutSection
                     type="phone"
                     title="A Little UX/UI Obsessed"
                     text={
@@ -66,9 +99,15 @@ const About = () => {
                     image={phones}
                     alt={'phone'}
                 />
-            </div>
-            <div>
-                <SectionImg
+            </motion.div>
+
+            <motion.div
+                initial={'offScreen'}
+                whileInView={'onScreen'}
+                viewport={{ once: true, amount: 0.01 }}
+                variants={bottomAnimate}
+            >
+                <AboutSection
                     type="bitcoin"
                     title="Immersed in Blockchain"
                     text={
@@ -82,9 +121,15 @@ const About = () => {
                     image={binaryBitcoin}
                     alt={'bitcoin from ones and zeroes'}
                 />
-            </div>
-            <div>
-                <SectionImg
+            </motion.div>
+
+            <motion.div
+                initial={'offScreen'}
+                whileInView={'onScreen'}
+                viewport={{ once: true, amount: 0.01 }}
+                variants={bottomAnimate}
+            >
+                <AboutSection
                     type="future"
                     title="Building the Future"
                     text={
@@ -97,7 +142,7 @@ const About = () => {
                     image={robot}
                     alt={'space suit'}
                 />
-            </div>
+            </motion.div>
         </motion.div>
     )
 }

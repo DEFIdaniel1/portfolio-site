@@ -55,7 +55,7 @@ const ImageSlider = ({ slides }) => {
                 <div className={classes.text}>
                     <h2>{title}</h2>
                     <h3>{subtitle}</h3>
-                    <hr />
+                    <div className="line" />
                     <p className={classes.description}>{description}</p>
                     {/* <hr /> */}
                     {/* <p>

@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from './About.module.scss'
+import { motion } from 'framer-motion'
 
 import SectionImg from './UI/SectionImg'
 import spaceSuit from '../images/spaceSuit.png'
 import silver from '../images/silver.png'
-
 import phones from '../images/phones.png'
 import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
@@ -13,10 +13,17 @@ import swipeVideo from '../video/inkswipe.mp4'
 
 const About = () => {
     return (
-        <div className={classes.about}>
+        <motion.div
+            initial={{ x: 500, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 500, opacity: 0 }}
+            transition={{ duration: 1, type: 'spring', bounce: 0.2 }}
+            className={classes.about}
+        >
             <div className={classes.container}>
                 <div className={classes.leftCol}>
                     <h1>About me</h1>
+                    <div className="line" />
                     <p>I love building intuitive, beautiful applications.</p>
                     <p>
                         My background isn't your typical developer path. And I think that's a
@@ -44,49 +51,54 @@ const About = () => {
                     <img src={daniel} alt="daniel pisterzi" />
                 </div>
             </div>
-
-            <SectionImg
-                type="phone"
-                title="A Little UX/UI Obsessed"
-                text={
-                    <div>
-                        I believe in crafting a user experience that's easy for everyone. Design is
-                        my passion - crafting dynamic, beautiful applications. <br />
-                        <br />
-                        <div>The mission is the balance between.</div>
-                    </div>
-                }
-                image={phones}
-                alt={'phone'}
-            />
-            <SectionImg
-                type="bitcoin"
-                title="Immersed in Blockchain"
-                text={
-                    <div>
-                        I believe in crafting a user experience that's easy for everyone. Design is
-                        my passion - crafting dynamic, beautiful applications. <br />
-                        <br />
-                        <div>The mission is the balance between.</div>
-                    </div>
-                }
-                image={binaryBitcoin}
-                alt={'bitcoin from ones and zeroes'}
-            />
-            <SectionImg
-                type="future"
-                title="Building the Future"
-                text={
-                    <div>
-                        Blockchain tech with a great UX is still a distant dream. I'm excited to be
-                        working on that future - building out a great UX/UI experience for the next
-                        generation of blockchain dApps.
-                    </div>
-                }
-                image={robot}
-                alt={'space suit'}
-            />
-        </div>
+            <div>
+                <SectionImg
+                    type="phone"
+                    title="A Little UX/UI Obsessed"
+                    text={
+                        <div>
+                            I believe in crafting a user experience that's easy for everyone. Design
+                            is my passion - crafting dynamic, beautiful applications. <br />
+                            <br />
+                            <div>The mission is the balance between.</div>
+                        </div>
+                    }
+                    image={phones}
+                    alt={'phone'}
+                />
+            </div>
+            <div>
+                <SectionImg
+                    type="bitcoin"
+                    title="Immersed in Blockchain"
+                    text={
+                        <div>
+                            I believe in crafting a user experience that's easy for everyone. Design
+                            is my passion - crafting dynamic, beautiful applications. <br />
+                            <br />
+                            <div>The mission is the balance between.</div>
+                        </div>
+                    }
+                    image={binaryBitcoin}
+                    alt={'bitcoin from ones and zeroes'}
+                />
+            </div>
+            <div>
+                <SectionImg
+                    type="future"
+                    title="Building the Future"
+                    text={
+                        <div>
+                            Blockchain tech with a great UX is still a distant dream. I'm excited to
+                            be working on that future - building out a great UX/UI experience for
+                            the next generation of blockchain dApps.
+                        </div>
+                    }
+                    image={robot}
+                    alt={'space suit'}
+                />
+            </div>
+        </motion.div>
     )
 }
 

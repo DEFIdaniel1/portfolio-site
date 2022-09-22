@@ -45,6 +45,7 @@ const Skills = () => {
             <div className={classes.skills}>
                 <video src={inkWhite2} type="video/mp4" autoPlay muted />
                 <h1>Tech Skills</h1>
+                <div className="line"></div>
                 <h2>Languages & Frameworks</h2>
                 <div className={classes.webApps}>
                     <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />

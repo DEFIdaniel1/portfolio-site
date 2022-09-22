@@ -82,7 +82,10 @@ const Portfolio = () => {
 
     return (
         <div className={classes.portfolio}>
-            <h1>Portfolio</h1>
+            <div className={classes.title}>
+                <h1>Portfolio</h1>
+                <div className="line" />
+            </div>
             <div>
                 <ImageSlider slides={slides} />
             </div>

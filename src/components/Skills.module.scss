@@ -2,8 +2,8 @@
 .skills {
     padding: 4% 7% 0;
     position: relative;
+    color: white;
 
-    h1,
     h2 {
         text-align: center;
     }
@@ -27,7 +27,6 @@
     padding: 0 7%;
     padding-bottom: 4rem;
     z-index: 1;
-    color: rgb(33, 33, 33);
 
     & > * {
         padding: 1.5rem 4rem;
@@ -35,7 +34,6 @@
 
         &:hover {
             transform: scale(1.2);
-            color: rgb(34, 34, 34);
             font-weight: 400;
         }
     }

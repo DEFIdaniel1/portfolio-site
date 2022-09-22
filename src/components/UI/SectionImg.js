@@ -7,6 +7,7 @@ const SectionImg = ({ type, image, title, text, alt }) => {
                 <div className={classes.section}>
                     <div className={classes.textL}>
                         <h2>{title}</h2>
+                        <div className="line" />
                         <p>{text}</p>
                     </div>
                     <div className={classes.imgDiv}>
@@ -25,6 +26,8 @@ const SectionImg = ({ type, image, title, text, alt }) => {
                     </div>
                     <div className={classes.textR}>
                         <h2>{title}</h2>
+                        <div className="line" />
+
                         <p>{text}</p>
                     </div>
                 </div>
@@ -34,6 +37,8 @@ const SectionImg = ({ type, image, title, text, alt }) => {
                     <div className={classes.section}>
                         <div className={classes.textR}>
                             <h2>{title}</h2>
+                            <div className="line" />
+
                             <p>{text}</p>
                         </div>
                         <div className={classes.phoneImgDiv}>

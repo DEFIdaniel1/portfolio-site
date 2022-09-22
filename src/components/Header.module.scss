@@ -1,71 +1,82 @@
 @import '../variables';
 
 .container {
-    height: 90vh;
+    height: 100vh;
     position: relative;
-    background-color: rgb(0, 168, 180);
+    background: url('../images/earthLightsGlobe.jpg');
+    background-position: center;
+    background-size: cover;
     overflow: hidden;
     display: flex;
+    animation: fade-in ease-out 2s;
+    opacity: 1;
+    background-position-y: -10%;
+    background-position-x: 100px;
+
+    @keyframes fade-in {
+        0% {
+            opacity: 1;
+            background-size: 130%;
+            background-position-y: -20%;
+            background-position-x: 50px;
+        }
+        30% {
+            // opacity: 0.5;
+            // background-size: 120%;
+        }
+        100% {
+            opacity: 1;
+            background-size: 100%;
+            background-position-y: -10%;
+            background-position-x: 100px;
+        }
+    }
 
     .textbox {
         z-index: 1;
         position: absolute;
-        bottom: 10%;
+        top: 5%;
         left: 7%;
-
-        // h1 {
-        //     font-size: 3rem;
-        //     text-align: left;
-        //     text-shadow: 0 0 10px white;
-        //     font-family: neon;
-        //     text-transform: uppercase;
-
-        //     &:hover {
-        //         text-shadow: 0px 0px 0.7rem rgb(232, 232, 232);
-        //         @include textGradientAnimation(3s);
-        //         cursor: default;
-        //     }
-        // }
+        color: rgb(255, 255, 255);
+        h1 {
+            margin-bottom: 0;
+        }
         h2 {
             font-family: 'Exo 2', sans-serif;
             font-weight: 400;
             padding: 0;
             margin: 0;
         }
-    }
 
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        z-index: 0;
-        filter: blur(1px);
-
-        @include responsiveMax900 {
-            left: 0%;
+        &__inner {
+            margin-top: 2rem;
         }
     }
 
-    video {
-        position: absolute;
-        top: 0;
-        left: 0%;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        mix-blend-mode: screen;
-        z-index: 0;
-        filter: opacity(100%);
-    }
+    // img {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     height: 100%;
+    //     width: 100%;
+    //     object-fit: cover;
+    //     z-index: 0;
+    //     filter: blur(1px);
 
-    .background {
-        background-color: rgb(0, 0, 0);
-        height: 100%;
-        width: 100%;
-        z-index: 0;
-        mix-blend-mode: luminosity;
-    }
+    //     @include responsiveMax900 {
+    //         left: 0%;
+    //     }
+    // }
+
+    // video {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0%;
+    //     height: 100%;
+    //     width: 100%;
+    //     object-fit: cover;
+    //     mix-blend-mode: screen;
+    //     z-index: 0;
+    //     filter: opacity(100%);
+    // }
 }

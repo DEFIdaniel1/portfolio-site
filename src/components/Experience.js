@@ -1,15 +1,15 @@
-import React from 'react'
 import classes from './Experience.module.scss'
 
 const Experience = () => {
     return (
         <div className={classes.experience}>
             <h1>Experience</h1>
+            <div className="line" />
 
             <div className={classes.container}>
                 <div className={classes.section}>
                     <h2>Web Design (5 Yrs)</h2>
-                    <div className={classes.frontEnd}></div>
+                    <div className="line"></div>
                     <ul>
                         <li>Designed, built, and managed eCommerce websites</li>
                         <li>Utilized Shopify, WooCommerce with third-party integrations</li>
@@ -18,7 +18,7 @@ const Experience = () => {
                 </div>
                 <div className={classes.section}>
                     <h2>Web Development (1 Yr)</h2>
-                    <div className={classes.frontEnd}></div>{' '}
+                    <div className="line"></div>
                     <ul>
                         <li>
                             Built, deployed, and debugged multiple websites using React, JQuery,
@@ -37,7 +37,7 @@ const Experience = () => {
             <div className={classes.container}>
                 <div className={classes.section}>
                     <h2>Blockchain (6 mon)</h2>
-                    <div className={classes.frontEnd}></div>
+                    <div className="line"></div>
                     <ul>
                         <li>
                             Built and deployed smart contracts, ERC-20s (Tokens), ERC-721s (NFTs)
@@ -64,7 +64,7 @@ const Experience = () => {
                 </div>
                 <div className={classes.section}>
                     <h2>Project Mgmt (10 Yrs)</h2>
-                    <div className={classes.frontEnd}></div>{' '}
+                    <div className="line"></div>
                     <ul>
                         <li>Leading teams up to 11 people to ensure successful projects</li>
                         <li>Managing multi-million-dollar programs to exceed deliverables </li>

@@ -1,9 +1,9 @@
 import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
-import inkWhite2 from '../video/inkWhite2.mp4'
-import inkswipe3s from '../video/inkswipe3s.mp4'
+import { useEffect } from 'react'
 
 //IMAGES
+import typescriptImg from '../images/icons/typescript.png'
 import cssHtmlImg from '../images/icons/cssHtml.png'
 import reactImg from '../images/icons/react.png'
 import solidityImg from '../images/icons/solidity.png'
@@ -19,7 +19,6 @@ import wooCommerceImg from '../images/icons/wooCommerce.png'
 import adobeCCImg from '../images/icons/adobeCC.png'
 import finalCutImg from '../images/icons/fcpLogo.png'
 import ethersImg from '../images/icons/etherslogo.png'
-import typescriptImg from '../images/icons/typescript.png'
 
 const javaScriptItem = { name: 'JavaScript', img: javscriptImg }
 const cssHtmlItem = { name: 'HTML & CSS', img: cssHtmlImg }
@@ -43,7 +42,7 @@ const Skills = () => {
     return (
         <div>
             <div className={classes.skills}>
-                <video src={inkWhite2} type="video/mp4" autoPlay muted />
+                {/* <video src={inkWhite2} type="video/mp4" autoPlay muted /> */}
                 <h1>Tech Skills</h1>
                 <div className="line"></div>
                 <h2>Languages & Frameworks</h2>

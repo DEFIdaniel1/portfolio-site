@@ -37,7 +37,7 @@
             cursor: pointer;
             transition: all 0.2s;
             &:hover {
-                color: rgb(180, 180, 180);
+                color: lighten($green-primary, 20%);
             }
         }
     }
@@ -50,9 +50,9 @@
         color: white;
         z-index: 1;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.3s;
         &:hover {
-            color: rgb(180, 180, 180);
+            transform: scale(1.06);
         }
     }
     .leftArrow {
@@ -63,9 +63,9 @@
         color: white;
         z-index: 1;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.3s;
         &:hover {
-            color: rgb(180, 180, 180);
+            transform: scale(1.06);
         }
     }
 }
@@ -87,23 +87,22 @@
 
         .links {
             display: flex;
-            justify-content: space-around;
 
             a {
                 display: block;
                 padding: 0.5rem 2rem;
                 border-radius: 10px;
-                margin: 1rem;
+                margin: 1.5rem;
                 text-decoration: none;
                 color: white;
                 text-align: center;
-                background-color: rgb(12, 89, 112);
+                background-color: darken($green-primary, 15%);
                 transition: all 0.2s;
                 @include glossyHover(white);
 
                 &:hover {
-                    background-color: rgb(123, 187, 208);
-                    color: black;
+                    background-color: $green-primary;
+                    transform: translateY(-2px);
                 }
             }
         }

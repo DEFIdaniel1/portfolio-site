@@ -49,3 +49,22 @@ p {
 .line {
     @include leftLineIn;
 }
+
+.fadeOut {
+    @include fadeOut(1s);
+}
+.fadeIn {
+    @include fadeIn(1s);
+}
+.fadeOutUp {
+    @include fadeOutUp(1s);
+}
+.fadeOutDown {
+    @include fadeOutDown(1s);
+}
+.fadeInUp {
+    @include fadeInUp(1s);
+}
+.fadeInLeft {
+    @include fadeInLeft(1s);
+}

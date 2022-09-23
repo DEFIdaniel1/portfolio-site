@@ -3,9 +3,7 @@ $gray-light: rgb(239, 239, 239);
 $gray-light2: rgb(210, 210, 210);
 $gray-search: rgb(93, 93, 93);
 
-$blue-bright: rgb(137, 210, 255);
-$blue-bright2: rgb(118, 183, 223);
-$blue-bright3: rgb(95, 148, 181);
+$green-primary: #62af36;
 
 $purple: rgb(160, 38, 216);
 
@@ -41,6 +39,102 @@ $navbarColor: darken($gray-dark10, 5%);
 }
 
 //////////////////////////// ANIMATIONS ////////////////////////////////////////////////////////////////////////////
+// TRANSITIONS
+@mixin fadeIn($time) {
+    animation: fadeIn $time;
+    opacity: 1;
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+@mixin fadeOut($time) {
+    animation: fadeOut $time;
+    opacity: 0;
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+}
+@mixin fadeOutUp($time) {
+    animation: fadeOutUp $time;
+    opacity: 0;
+    @keyframes fadeOutUp {
+        0% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0px);
+        }
+        100% {
+            opacity: 0;
+            transform: translate3d(0, -100px, 0px);
+        }
+    }
+}
+@mixin fadeInUp($time) {
+    animation: fadeInUp $time;
+    opacity: 1;
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 100px, 0px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0px, 0px);
+        }
+    }
+}
+@mixin fadeOutDown($time) {
+    animation: fadeOutDown $time;
+    opacity: 0;
+    @keyframes fadeOutDown {
+        0% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0px);
+        }
+        100% {
+            opacity: 0;
+            transform: translate3d(0, 100px, 0px);
+        }
+    }
+}
+@mixin fadeInDown($time) {
+    animation: fadeInDown $time;
+    opacity: 0;
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, -100px, 0px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0px, 0px);
+        }
+    }
+}
+@mixin fadeInLeft($time) {
+    animation: fadeInLeft $time;
+    opacity: 1;
+    @keyframes fadeInLeft {
+        0% {
+            opacity: 0;
+            transform: translate3d(-100px, 0px, 0px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px);
+        }
+    }
+}
+
 // TEXT ANIMATIONS
 @mixin pulsateTextAnimation($time) {
     animation: pulsate $time infinite;
@@ -287,7 +381,7 @@ $navbarColor: darken($gray-dark10, 5%);
 @mixin leftLineIn {
     height: 2px;
     width: 70%;
-    background-color: #5bd0d4;
+    background-color: $green-primary;
     animation: leftIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.11);
     @keyframes leftIn {
         0% {

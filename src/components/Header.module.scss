@@ -3,7 +3,7 @@
 .container {
     height: 100vh;
     position: relative;
-    background: url('../images/earthLightsGlobe.jpg');
+    // background: url('../images/earthLightsGlobe.jpg');
     background-position: center;
     background-size: cover;
     overflow: hidden;
@@ -36,7 +36,7 @@
     .textbox {
         z-index: 1;
         position: absolute;
-        top: 5%;
+        bottom: 10%;
         left: 7%;
         color: rgb(255, 255, 255);
         h1 {
@@ -54,30 +54,46 @@
         }
     }
 
-    // img {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     height: 100%;
-    //     width: 100%;
-    //     object-fit: cover;
-    //     z-index: 0;
-    //     filter: blur(1px);
+    img {
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        height: 100%;
+        // width: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: blur(1px);
 
-    //     @include responsiveMax900 {
-    //         left: 0%;
-    //     }
-    // }
+        @include responsiveMax900 {
+            left: 0%;
+        }
+    }
+    .box {
+        position: absolute;
+        top: 0;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(4, 44, 50);
+        object-fit: cover;
+        // mix-blend-mode: screen;
+        z-index: 1;
+    }
 
-    // video {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0%;
-    //     height: 100%;
-    //     width: 100%;
-    //     object-fit: cover;
-    //     mix-blend-mode: screen;
-    //     z-index: 0;
-    //     filter: opacity(100%);
-    // }
+    video {
+        position: fixed;
+        top: 0;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 0;
+        // filter: opacity(100%);
+    }
+}
+.headerFadeOut {
+    @include fadeOut(1s);
+}
+.headerFadeIn {
+    @include fadeIn(2s);
 }

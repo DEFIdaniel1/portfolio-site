@@ -50,9 +50,9 @@ function App() {
     }
     const checkSkillsClasses = () => {
         if (aboutInView) {
-            return setSkillsClass('fadeOutDown')
+            return setSkillsClass('fadeOut')
         } else if (portfolioInView) {
-            return setSkillsClass('fadeOutUp')
+            return setSkillsClass('fadeOut')
         }
         return setSkillsClass('fadeIn')
     }
@@ -82,32 +82,26 @@ function App() {
 
     return (
         <motion.div className="app" animate={animation}>
-            {/* <Navbar /> */}
-            {!headerInView && (
-                <div className={classes.backgroundImg}>
-                    <img src={treeline} alt=""></img>
-                </div>
-            )}
-            {skillsInView && (
-                <div className={classes.backgroundImg}>
-                    <video src={blurTrees} type="video/mp4" autoPlay muted loop />
-                </div>
-            )}
+            {/* <Navbar /> */}(
+            <div className={classes.backgroundImg}>
+                {!headerInView && !skillsInView ? <img src={treeline} alt="treeline"></img> : ''}
+                {experienceInView && <img src={leafBackground2} alt="treeline"></img>}
+            </div>
+            )
             <div className={headerClass} ref={headerRef}>
                 <Header fadeIn={headerInView} />
             </div>
             <div className={aboutClass} ref={aboutRef}>
-                <About fadeIn={aboutInView} fadeUp={skillsInView} fadeDown={headerInView} />
+                <About />
             </div>
-
             <div className={skillsClass} ref={skillsRef}>
-                <Skills />
+                <Skills fadeIn={skillsInView} />
             </div>
             <div className={portfolioClass} ref={portfolioRef}>
-                <Portfolio fadeIn={portfolioInView} fadeOut={experienceInView} />
+                <Portfolio />
             </div>
             <div className={experienceClass} ref={experienceRef}>
-                <Experience fadeIn={experienceInView} />
+                <Experience />
             </div>
         </motion.div>
     )

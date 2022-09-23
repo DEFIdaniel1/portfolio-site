@@ -76,7 +76,6 @@
         width: 100%;
         background-color: rgb(4, 44, 50);
         object-fit: cover;
-        // mix-blend-mode: screen;
         z-index: 1;
     }
 
@@ -88,7 +87,7 @@
         width: 100%;
         object-fit: cover;
         z-index: 0;
-        // filter: opacity(100%);
+        filter: opacity(90%);
     }
 }
 .headerFadeOut {

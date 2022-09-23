@@ -19,6 +19,8 @@ import wcLeavesLeft from '../images/wcLeavesLeft.png'
 // import inkswipe3s from '../video/inkswipe3s.mp4'
 // import lightbulb from '../video/lightbulb.mp4'
 import treeBackground from '../video/treeBackground.mp4'
+import treesPath from '../video/treesPath.mp4'
+import blurTrees from '../video/blurTrees.mp4'
 
 const Header = ({ fadeIn }) => {
     useEffect(() => {

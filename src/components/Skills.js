@@ -2,6 +2,9 @@ import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
 import { useEffect } from 'react'
 
+import blurTrees from '../video/blurTrees.mp4'
+import treesPath from '../video/treesPath.mp4'
+
 //IMAGES
 import typescriptImg from '../images/icons/typescript.png'
 import cssHtmlImg from '../images/icons/cssHtml.png'
@@ -38,35 +41,35 @@ const wooCommerce = { name: 'wooCommerce', img: wooCommerceImg }
 const adobeCC = { name: 'Adobe CC', img: adobeCCImg }
 const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 
-const Skills = () => {
+const Skills = ({ fadeIn }) => {
     return (
-        <div>
-            <div className={classes.skills}>
-                {/* <video src={inkWhite2} type="video/mp4" autoPlay muted /> */}
-                <h1>Tech Skills</h1>
-                <div className="line"></div>
-                <h2>Languages & Frameworks</h2>
-                <div className={classes.webApps}>
-                    <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />
-                    <Icon name={javaScriptItem.name} image={javaScriptItem.img} />
-                    <Icon name={typescriptItem.name} image={typescriptItem.img} />
-                    <Icon name={reactItem.name} image={reactItem.img} />
-                    <Icon name={reduxItem.name} image={reduxItem.img} />
-                    <Icon name={nodeItem.name} image={nodeItem.img} />
-                    <Icon name={solidityItem.name} image={solidityItem.img} />
-                    <Icon name={ethersItem.name} image={ethersItem.img} />
-                    <Icon name={bootstrapItem.name} image={bootstrapItem.img} />
-                    <Icon name={tailwindItem.name} image={tailwindItem.img} />
-                </div>
-                <h2>Applications</h2>
-                <div className={classes.webApps}>
-                    <Icon name={gitHub.name} image={gitHub.img} />
-                    <Icon name={visualStudio.name} image={visualStudio.img} />
-                    <Icon name={firebase.name} image={firebase.img} />
-                    <Icon name={wooCommerce.name} image={wooCommerce.img} />
-                    <Icon name={adobeCC.name} image={adobeCC.img} />
-                    <Icon name={finalCut.name} image={finalCut.img} />
-                </div>
+        <div className={classes.skills}>
+            <div className={fadeIn ? 'fadeIn' : 'fadeOut'}>
+                <video src={blurTrees} type="video/mp4" autoPlay muted loop />
+            </div>
+            <h1>Tech Skills</h1>
+            <div className="line"></div>
+            <h2>Languages & Frameworks</h2>
+            <div className={classes.webApps}>
+                <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />
+                <Icon name={javaScriptItem.name} image={javaScriptItem.img} />
+                <Icon name={typescriptItem.name} image={typescriptItem.img} />
+                <Icon name={reactItem.name} image={reactItem.img} />
+                <Icon name={reduxItem.name} image={reduxItem.img} />
+                <Icon name={nodeItem.name} image={nodeItem.img} />
+                <Icon name={solidityItem.name} image={solidityItem.img} />
+                <Icon name={ethersItem.name} image={ethersItem.img} />
+                <Icon name={bootstrapItem.name} image={bootstrapItem.img} />
+                <Icon name={tailwindItem.name} image={tailwindItem.img} />
+            </div>
+            <h2>Applications</h2>
+            <div className={classes.webApps}>
+                <Icon name={gitHub.name} image={gitHub.img} />
+                <Icon name={visualStudio.name} image={visualStudio.img} />
+                <Icon name={firebase.name} image={firebase.img} />
+                <Icon name={wooCommerce.name} image={wooCommerce.img} />
+                <Icon name={adobeCC.name} image={adobeCC.img} />
+                <Icon name={finalCut.name} image={finalCut.img} />
             </div>
         </div>
     )

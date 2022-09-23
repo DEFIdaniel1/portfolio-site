@@ -1,7 +1,7 @@
 @import './variables';
 
 body {
-    background-color: rgb(10, 19, 12);
+    background-color: rgb(14, 31, 18);
 }
 .backgroundImg {
     position: relative;
@@ -12,9 +12,8 @@ body {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        // z-index: -1;
-        opacity: 0.1;
-        // mix-blend-mode: screen;
+        // @include fadeIn(2s);
+        opacity: 0.2;
         transform: scale(1.2);
     }
     video {
@@ -26,12 +25,10 @@ body {
         object-fit: cover;
         z-index: 0;
         filter: opacity(30%);
+        @include fadeIn(2s);
     }
 }
 
-.fadeUp {
-    @include fadeOut(1s);
-}
-.fadeDown {
-    @include fadeOut(1s);
-}
+// .fadeOut {
+//     @include fadeOut(2s);
+// }

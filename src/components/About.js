@@ -8,6 +8,10 @@ import phones from '../images/phones.png'
 import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
+import ghost from '../images/ghost.png'
+import ghibli from '../images/ghibli.png'
+import totoro from '../images/totoro.png'
+import floatingIsle from '../images/floatingIsle.png'
 
 const About = ({ fadeIn, fadeDown, fadeUp }) => {
     // const [visible, setVisible] = useState(false)
@@ -47,7 +51,7 @@ const About = ({ fadeIn, fadeDown, fadeUp }) => {
                 {/* LEFT SIDE */}
                 <motion.div className={classes.leftCol} variants={fadeAnimate}>
                     <div className={classes.danielTitle}>
-                        "I love building intuitive, beautiful applications."
+                        I love building intuitive, beautiful applications.
                     </div>
                     <div className="line" />
                 </motion.div>

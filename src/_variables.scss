@@ -256,7 +256,7 @@ $navbarColor: darken($gray-dark10, 5%);
         }
         30% {
             transform: translate3d($to, 0px, 0px) rotate(3deg);
-            filter: invert(100%);
+            filter: invert(0%);
         }
         100% {
             transform: translate3d($from, 0px, 0px) rotate(3deg);
@@ -279,7 +279,7 @@ $navbarColor: darken($gray-dark10, 5%);
                 translateX(-20%) rotate(-5deg);
         }
         30% {
-            filter: invert(100%);
+            filter: invert(0%);
             transform: translate3d($to - 2%, 3px, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
         }

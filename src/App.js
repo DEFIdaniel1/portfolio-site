@@ -15,6 +15,8 @@ import leafBackgroundWhite from './images/backgrounds/leafBackgroundWhite.png'
 import leafBackground from './images/backgrounds/leafBackground.png'
 import leafBackground2 from './images/backgrounds/leafBackground2.png'
 import treeline from './images/backgrounds/treeline.png'
+import ghibliTree1 from './images/ghibliTree1.jpeg'
+
 import treelineDark from './images/backgrounds/treelineDark.png'
 import blurTrees from './video/blurTrees.mp4'
 
@@ -84,8 +86,13 @@ function App() {
         <motion.div className="app" animate={animation}>
             {/* <Navbar /> */}(
             <div className={classes.backgroundImg}>
-                {!headerInView && !skillsInView ? <img src={treeline} alt="treeline"></img> : ''}
-                {experienceInView && <img src={leafBackground2} alt="treeline"></img>}
+                {!headerInView && !experienceInView && !skillsInView ? (
+                    <img src={treeline} alt="treeline"></img>
+                ) : (
+                    ''
+                )}
+                {experienceInView && <img src={ghibliTree1} alt="treeline"></img>}
+                {/* {experienceInView && <img src={leafBackground2} alt="treeline"></img>} */}
             </div>
             )
             <div className={headerClass} ref={headerRef}>

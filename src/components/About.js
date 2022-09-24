@@ -1,42 +1,41 @@
-// import { useEffect, useState } from 'react'
 import classes from './About.module.scss'
-import { motion, AnimatePresence } from 'framer-motion'
-// import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
 
 import AboutSection from './UI/AboutSection'
 import phones from '../images/phones.png'
 import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
-import ghost from '../images/ghost.png'
-import ghibli from '../images/ghibli.png'
-import totoro from '../images/totoro.png'
-import floatingIsle from '../images/floatingIsle.png'
 
-const About = ({ fadeIn, fadeDown, fadeUp }) => {
-    // const [visible, setVisible] = useState(false)
-    // const [danielRef, danielInView] = useInView({ threshold: 0.05 })
-    // const [uiRef, uiInView] = useInView({ threshold: 1 })
-    const fadeAnimate = {
-        offScreen: { y: 100, opacity: 0, transition: { duration: 1 } },
-        onScreen: { y: 0, opacity: 1, transition: { duration: 1.5 } },
-    }
+const About = ({ fadeUp }) => {
+    // const fadeAnimate = {
+    //     offScreen: { y: 100, opacity: 0, transition: { duration: 1 } },
+    //     onScreen: { y: 0, opacity: 1, transition: { duration: 1.5 } },
+    // }
     const rightAnimate = {
-        offScreen: { x: 500, opacity: 0, transition: { duration: 0.9 } },
-        onScreen: { x: 0, opacity: 1, transition: { duration: 0.9 } },
+        offScreen: {
+            x: 500,
+            opacity: 0,
+            transition: { duration: 0.9, type: 'spring', bounce: 0.2 },
+        },
+        onScreen: { x: 0, opacity: 1, transition: { duration: 1.2, type: 'spring', bounce: 0.2 } },
     }
     const leftAnimate = {
-        offScreen: { x: -500, opacity: 0, transition: { duration: 1 } },
-        onScreen: { x: 0, opacity: 1, transition: { duration: 1 } },
+        offScreen: {
+            x: -500,
+            opacity: 0,
+            transition: { duration: 1.2, type: 'spring', bounce: 0.2 },
+        },
+        onScreen: { x: 0, opacity: 1, transition: { duration: 1.2, type: 'spring', bounce: 0.2 } },
     }
-    const bottomAnimate = {
-        offScreen: { y: 300, opacity: 0 },
-        onScreen: { y: 0, opacity: 1, transition: { duration: 2, type: 'spring', bounce: 0.2 } },
-    }
-    const topAnimate = {
-        offScreen: { y: -500, opacity: 0 },
-        onScreen: { y: 0, opacity: 1, transition: { duration: 2, type: 'spring', bounce: 0.2 } },
-    }
+    // const bottomAnimate = {
+    //     offScreen: { y: 300, opacity: 0 },
+    //     onScreen: { y: 0, opacity: 1, transition: { duration: 2, type: 'spring', bounce: 0.2 } },
+    // }
+    // const topAnimate = {
+    //     offScreen: { y: -500, opacity: 0 },
+    //     onScreen: { y: 0, opacity: 1, transition: { duration: 2, type: 'spring', bounce: 0.2 } },
+    // }
 
     return (
         <motion.div className={classes.about}>
@@ -49,7 +48,7 @@ const About = ({ fadeIn, fadeDown, fadeUp }) => {
                 transition={{ staggerChildren: 0.2 }}
             >
                 {/* LEFT SIDE */}
-                <motion.div className={classes.leftCol} variants={fadeAnimate}>
+                <motion.div className={classes.leftCol} variants={leftAnimate}>
                     <div className={classes.danielTitle}>
                         I love building intuitive, beautiful applications.
                     </div>
@@ -57,7 +56,7 @@ const About = ({ fadeIn, fadeDown, fadeUp }) => {
                 </motion.div>
                 {/* RIGHT SIDE */}
                 {
-                    <motion.div className={classes.rightCol} variants={fadeAnimate}>
+                    <motion.div className={classes.rightCol} variants={rightAnimate}>
                         <img src={daniel} alt="daniel pisterzi" />
                     </motion.div>
                 }
@@ -66,8 +65,8 @@ const About = ({ fadeIn, fadeDown, fadeUp }) => {
             <motion.div
                 initial={'offScreen'}
                 whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.01 }}
-                variants={bottomAnimate}
+                viewport={{ once: true, amount: 0.2 }}
+                variants={rightAnimate}
             >
                 <AboutSection
                     type="phone"
@@ -88,8 +87,8 @@ const About = ({ fadeIn, fadeDown, fadeUp }) => {
             <motion.div
                 initial={'offScreen'}
                 whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.01 }}
-                variants={bottomAnimate}
+                viewport={{ once: true, amount: 0.5 }}
+                variants={leftAnimate}
             >
                 <AboutSection
                     type="bitcoin"
@@ -110,8 +109,8 @@ const About = ({ fadeIn, fadeDown, fadeUp }) => {
             <motion.div
                 initial={'offScreen'}
                 whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.01 }}
-                variants={bottomAnimate}
+                viewport={{ once: true, amount: 0.2 }}
+                variants={rightAnimate}
                 className={fadeUp && classes.aboutOut}
             >
                 <AboutSection

@@ -1,9 +1,8 @@
 import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
-import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 import blurTrees from '../video/blurTrees.mp4'
-import treesPath from '../video/treesPath.mp4'
 
 //IMAGES
 import typescriptImg from '../images/icons/typescript.png'
@@ -22,6 +21,8 @@ import wooCommerceImg from '../images/icons/wooCommerce.png'
 import adobeCCImg from '../images/icons/adobeCC.png'
 import finalCutImg from '../images/icons/fcpLogo.png'
 import ethersImg from '../images/icons/etherslogo.png'
+import { useInView } from 'react-intersection-observer'
+import { useEffect } from 'react'
 
 const javaScriptItem = { name: 'JavaScript', img: javscriptImg }
 const cssHtmlItem = { name: 'HTML & CSS', img: cssHtmlImg }
@@ -42,6 +43,23 @@ const adobeCC = { name: 'Adobe CC', img: adobeCCImg }
 const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 
 const Skills = ({ fadeIn }) => {
+    const [frameworkRef, frameworkInView] = useInView({ threashold: 1 })
+
+    // useEffect(() => {}, [frameworkInView])
+
+    const popIn = {
+        offScreen: {
+            scale: 0,
+            opacity: 0,
+            transition: { duration: 1.2, type: 'spring', bounce: 0.2 },
+        },
+        onScreen: {
+            scale: 1,
+            opacity: 1,
+            transition: { duration: 1.2, type: 'spring', bounce: 0.5 },
+        },
+    }
+
     return (
         <div className={classes.skills}>
             <div className={fadeIn ? 'fadeIn' : 'fadeOut'}>
@@ -52,8 +70,8 @@ const Skills = ({ fadeIn }) => {
             <h2>Languages & Frameworks</h2>
             <div className={classes.webApps}>
                 <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />
-                <Icon name={javaScriptItem.name} image={javaScriptItem.img} />
                 <Icon name={typescriptItem.name} image={typescriptItem.img} />
+                <Icon name={javaScriptItem.name} image={javaScriptItem.img} />
                 <Icon name={reactItem.name} image={reactItem.img} />
                 <Icon name={reduxItem.name} image={reduxItem.img} />
                 <Icon name={nodeItem.name} image={nodeItem.img} />
@@ -63,7 +81,13 @@ const Skills = ({ fadeIn }) => {
                 <Icon name={tailwindItem.name} image={tailwindItem.img} />
             </div>
             <h2>Applications</h2>
-            <div className={classes.webApps}>
+            <div
+                className={classes.webApps}
+                initial={'offScreen'}
+                whileInView={'onScreen'}
+                viewport={{ once: true, amount: 0.6 }}
+                transition={{ staggerChildren: 0.2 }}
+            >
                 <Icon name={gitHub.name} image={gitHub.img} />
                 <Icon name={visualStudio.name} image={visualStudio.img} />
                 <Icon name={firebase.name} image={firebase.img} />

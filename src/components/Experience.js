@@ -8,7 +8,8 @@ const Experience = () => {
 
             <div className={classes.container}>
                 <div className={classes.section}>
-                    <h2>Web Design (5 Yrs)</h2>
+                    <h2>Web Design</h2>
+                    <h3>5 Yrs</h3>
                     <div className="line"></div>
                     <ul>
                         <li>Designed, built, and managed eCommerce websites</li>
@@ -17,7 +18,8 @@ const Experience = () => {
                     </ul>
                 </div>
                 <div className={classes.section}>
-                    <h2>Web Development (1 Yr)</h2>
+                    <h2>Web Development</h2>
+                    <h3>1 Year</h3>
                     <div className="line"></div>
                     <ul>
                         <li>
@@ -36,7 +38,8 @@ const Experience = () => {
             </div>
             <div className={classes.container}>
                 <div className={classes.section}>
-                    <h2>Blockchain (6 mon)</h2>
+                    <h2>Blockchain</h2>
+                    <h3>6 Mon</h3>
                     <div className="line"></div>
                     <ul>
                         <li>
@@ -63,7 +66,8 @@ const Experience = () => {
                     </ul>
                 </div>
                 <div className={classes.section}>
-                    <h2>Project Mgmt (10 Yrs)</h2>
+                    <h2>Project Management</h2>
+                    <h3>10 Years</h3>
                     <div className="line"></div>
                     <ul>
                         <li>Leading teams up to 11 people to ensure successful projects</li>

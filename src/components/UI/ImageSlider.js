@@ -57,10 +57,6 @@ const ImageSlider = ({ slides }) => {
                     <h3>{subtitle}</h3>
                     <div className="line" />
                     <p className={classes.description}>{description}</p>
-                    {/* <hr /> */}
-                    {/* <p>
-                        <strong>Features:</strong>
-                    </p> */}
                     <ul>{featureList}</ul>
                     <div className={classes.links}>
                         {github && <a href={github}>{/* <span>GitHub</span> */}Github</a>}

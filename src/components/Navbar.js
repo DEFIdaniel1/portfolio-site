@@ -1,8 +1,7 @@
 import { useState } from 'react'
-// import { NavLink } from 'react-router-dom'
 import './Navbar.scss'
 
-function Navbar({ account, connectWallet, disconnectWallet }) {
+function Navbar() {
     const [openNav, setOpenNav] = useState(false)
     const openNavHandler = () => {
         setOpenNav(!openNav)

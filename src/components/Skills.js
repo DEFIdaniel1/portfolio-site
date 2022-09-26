@@ -1,7 +1,5 @@
 import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
-import { motion } from 'framer-motion'
-
 import blurTrees from '../video/blurTrees.mp4'
 
 //IMAGES
@@ -21,8 +19,6 @@ import wooCommerceImg from '../images/icons/wooCommerce.png'
 import adobeCCImg from '../images/icons/adobeCC.png'
 import finalCutImg from '../images/icons/fcpLogo.png'
 import ethersImg from '../images/icons/etherslogo.png'
-import { useInView } from 'react-intersection-observer'
-import { useEffect } from 'react'
 
 const javaScriptItem = { name: 'JavaScript', img: javscriptImg }
 const cssHtmlItem = { name: 'HTML & CSS', img: cssHtmlImg }
@@ -43,23 +39,6 @@ const adobeCC = { name: 'Adobe CC', img: adobeCCImg }
 const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 
 const Skills = ({ fadeIn }) => {
-    const [frameworkRef, frameworkInView] = useInView({ threashold: 1 })
-
-    // useEffect(() => {}, [frameworkInView])
-
-    const popIn = {
-        offScreen: {
-            scale: 0,
-            opacity: 0,
-            transition: { duration: 1.2, type: 'spring', bounce: 0.2 },
-        },
-        onScreen: {
-            scale: 1,
-            opacity: 1,
-            transition: { duration: 1.2, type: 'spring', bounce: 0.5 },
-        },
-    }
-
     return (
         <div className={classes.skills}>
             <div className={fadeIn ? 'fadeIn' : 'fadeOut'}>

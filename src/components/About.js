@@ -8,17 +8,13 @@ import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
 
 const About = ({ fadeUp }) => {
-    // const fadeAnimate = {
-    //     offScreen: { y: 100, opacity: 0, transition: { duration: 1 } },
-    //     onScreen: { y: 0, opacity: 1, transition: { duration: 1.5 } },
-    // }
     const rightAnimate = {
         offScreen: {
             x: 500,
             opacity: 0,
             transition: { duration: 0.9, type: 'spring', bounce: 0.2 },
         },
-        onScreen: { x: 0, opacity: 1, transition: { duration: 1.2, type: 'spring', bounce: 0.2 } },
+        onScreen: { x: 0, opacity: 1, transition: { duration: 1.6, type: 'spring', bounce: 0.2 } },
     }
     const leftAnimate = {
         offScreen: {
@@ -26,16 +22,8 @@ const About = ({ fadeUp }) => {
             opacity: 0,
             transition: { duration: 1.2, type: 'spring', bounce: 0.2 },
         },
-        onScreen: { x: 0, opacity: 1, transition: { duration: 1.2, type: 'spring', bounce: 0.2 } },
+        onScreen: { x: 0, opacity: 1, transition: { duration: 1.6, type: 'spring', bounce: 0.2 } },
     }
-    // const bottomAnimate = {
-    //     offScreen: { y: 300, opacity: 0 },
-    //     onScreen: { y: 0, opacity: 1, transition: { duration: 2, type: 'spring', bounce: 0.2 } },
-    // }
-    // const topAnimate = {
-    //     offScreen: { y: -500, opacity: 0 },
-    //     onScreen: { y: 0, opacity: 1, transition: { duration: 2, type: 'spring', bounce: 0.2 } },
-    // }
 
     return (
         <motion.div className={classes.about}>
@@ -65,7 +53,7 @@ const About = ({ fadeUp }) => {
             <motion.div
                 initial={'offScreen'}
                 whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.4 }}
                 variants={rightAnimate}
             >
                 <AboutSection

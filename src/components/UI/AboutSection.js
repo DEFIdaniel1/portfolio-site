@@ -10,7 +10,7 @@ const AboutSection = ({ type, image, title, text, alt }) => {
                         <div className="line" />
                         <p>{text}</p>
                     </div>
-                    <div className={classes.imgDiv}>
+                    <div className={classes.futureDiv}>
                         <img src={image} alt={alt} />
                         <img src={image} alt={`${alt} reflection`} />
                     </div>

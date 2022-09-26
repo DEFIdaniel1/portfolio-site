@@ -3,7 +3,6 @@
 .container {
     height: 100vh;
     position: relative;
-    // background: url('../images/earthLightsGlobe.jpg');
     background-position: center;
     background-size: cover;
     overflow: hidden;
@@ -18,18 +17,13 @@
             opacity: 1;
             background-size: 130%;
             background-position-y: -20%;
-            // background-position-x: 50px;
-            // transform: rotate(30deg);
         }
         30% {
-            // opacity: 0.5;
-            // background-size: 120%;
         }
         100% {
             opacity: 1;
             background-size: 100%;
             background-position-y: -10%;
-            // background-position-x: 100px;
         }
     }
 
@@ -43,8 +37,6 @@
             margin-bottom: 0;
         }
         h2 {
-            font-family: 'Exo 2', sans-serif;
-            font-weight: 400;
             padding: 0;
             margin: 0;
         }

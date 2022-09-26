@@ -17,17 +17,17 @@ function Navbar() {
                 <div></div>
                 <div></div>
             </div>
-            <nav className={!openNav ? 'nav nav__closed' : 'nav nav__open'}>
-                <div className="nav__item" onClick={openNavHandler}>
+            <nav className={!openNav ? 'navItems navItems__closed' : 'navItems navItems__open'}>
+                <div className="navItems__item" onClick={openNavHandler}>
                     About Me
                 </div>
-                <div className="nav__item" onClick={openNavHandler}>
+                <div className="navItems__item" onClick={openNavHandler}>
                     Skills
                 </div>
-                <div className="nav__item" onClick={openNavHandler}>
+                <div className="navItems__item" onClick={openNavHandler}>
                     Portfolio
                 </div>
-                <div className="nav__item" onClick={openNavHandler}>
+                <div className="navItems__item" onClick={openNavHandler}>
                     Experience
                 </div>
             </nav>

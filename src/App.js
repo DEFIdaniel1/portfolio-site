@@ -85,7 +85,6 @@ function App() {
                     ''
                 )}
                 {experienceInView && <img src={ghibliTree1} alt="treeline"></img>}
-                {/* {experienceInView && <img src={leafBackground2} alt="treeline"></img>} */}
             </div>
             )
             <div className={headerClass} ref={headerRef}>

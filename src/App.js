@@ -18,7 +18,7 @@ function App() {
     const [headerRef, headerInView] = useInView({ threshold: 0.4 })
     const [headerClass, setHeaderClass] = useState('fadeIn')
 
-    const [aboutRef, aboutInView] = useInView({ threshold: 0.1 })
+    const [aboutRef, aboutInView] = useInView({ threshold: 0.2 })
     const [aboutClass, setAboutClass] = useState('fadeIn')
 
     const [skillsRef, skillsInView] = useInView({ threshold: 0.24 })

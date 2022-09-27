@@ -1,10 +1,11 @@
 @import './variables';
 
 body {
-    background-color: rgb(14, 31, 18);
+    background-color: rgb(30, 66, 38);
 }
 .backgroundImg {
     position: relative;
+    background: none;
     img {
         position: fixed;
         top: 0;
@@ -12,8 +13,6 @@ body {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        // @include fadeIn(2s);
-        opacity: 0.2;
         z-index: -1;
         transform: scale(1.2);
         filter: opacity(30%);
@@ -21,13 +20,14 @@ body {
     }
     video {
         position: fixed;
+        display: inline-block;
         top: 0;
         left: 0%;
         height: 100%;
         width: 100%;
         object-fit: cover;
-        z-index: -1;
-        filter: opacity(30%);
+        z-index: -10;
+        filter: opacity(40%);
         @include fadeIn(1s);
     }
 }

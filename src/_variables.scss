@@ -76,15 +76,20 @@ $navbarColor: darken($gray-dark10, 5%);
 @mixin fadeOut($time) {
     animation: fadeOut $time;
     opacity: 0;
-    visibility: collapse;
-
+    z-index: -100;
+    visibility: hidden;
     @keyframes fadeOut {
         0% {
             opacity: 1;
+            visibility: visible;
+        }
+        99% {
+            opacity: 0;
+            visibility: visible;
         }
         100% {
             opacity: 0;
-            visibility: collapse;
+            visibility: hidden;
         }
     }
 }

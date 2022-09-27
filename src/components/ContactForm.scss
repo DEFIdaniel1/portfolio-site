@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     color: white;
+    z-index: 10;
     h2 {
         font-size: 1.5rem;
         font-weight: 100;
@@ -26,6 +27,9 @@
 
     input,
     textarea {
+        display: inline-block;
+
+        z-index: 10;
         border-radius: 20px;
         padding: 1rem;
         outline: none;

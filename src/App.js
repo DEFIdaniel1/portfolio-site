@@ -21,7 +21,7 @@ function App() {
     const [aboutRef, aboutInView] = useInView({ threshold: 0.2 })
     const [aboutClass, setAboutClass] = useState('fadeIn')
 
-    const [skillsRef, skillsInView] = useInView({ threshold: 0.24 })
+    const [skillsRef, skillsInView] = useInView({ threshold: 0.4 })
     const [skillsClass, setSkillsClass] = useState('fadeIn')
 
     const [portfolioRef, portfolioInView] = useInView({ threshold: 0.4 })
@@ -49,9 +49,9 @@ function App() {
     }
     const checkSkillsClasses = () => {
         if (aboutInView) {
-            return setSkillsClass('fadeOutDown')
+            return setSkillsClass('fadeOut')
         } else if (portfolioInView) {
-            return setSkillsClass('fadeOutUp')
+            return setSkillsClass('fadeOut')
         }
         return setSkillsClass('fadeIn')
     }

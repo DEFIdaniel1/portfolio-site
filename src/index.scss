@@ -1,6 +1,11 @@
 @import './variables';
 html {
     scroll-behavior: smooth;
+
+    @include responsiveMin1800 {
+        padding: 0 5%;
+        font-size: 110%;
+    }
 }
 
 body {
@@ -44,7 +49,8 @@ h2 {
     font-size: 2.5rem;
 }
 p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 200;
 }
 .line {
     @include leftLineIn;

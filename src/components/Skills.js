@@ -41,7 +41,7 @@ const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 const Skills = ({ fadeIn }) => {
     return (
         <div className={classes.skills}>
-            <div className={fadeIn ? 'fadeIn' : 'fadeOut'}>
+            <div className={fadeIn ? ` fadeIn` : `fadeOut`}>
                 <video src={blurTrees} type="video/mp4" autoPlay muted loop />
             </div>
             <h1>Skills</h1>

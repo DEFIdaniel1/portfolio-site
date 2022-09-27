@@ -16,6 +16,8 @@ body {
         opacity: 0.2;
         z-index: -1;
         transform: scale(1.2);
+        filter: opacity(30%);
+        @include fadeIn(1s);
     }
     video {
         position: fixed;
@@ -24,9 +26,9 @@ body {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        z-index: 0;
+        z-index: -1;
         filter: opacity(30%);
-        @include fadeIn(2s);
+        @include fadeIn(1s);
     }
 }
 

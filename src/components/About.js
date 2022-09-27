@@ -59,14 +59,7 @@ const About = ({ fadeUp }) => {
                 <AboutSection
                     type="phone"
                     title="A Little UX/UI Obsessed"
-                    text={
-                        <div>
-                            I believe in crafting a user experience that's easy for everyone. Design
-                            is my passion - crafting dynamic, beautiful applications. <br />
-                            <br />
-                            <div>The mission is the balance between.</div>
-                        </div>
-                    }
+                    text={'A pixel perfectionist. I love well-designed UIs that work.'}
                     image={phones}
                     alt={'phone'}
                 />
@@ -82,12 +75,7 @@ const About = ({ fadeUp }) => {
                     type="bitcoin"
                     title="Immersed in Blockchain"
                     text={
-                        <div>
-                            I believe in crafting a user experience that's easy for everyone. Design
-                            is my passion - crafting dynamic, beautiful applications. <br />
-                            <br />
-                            <div>The mission is the balance between.</div>
-                        </div>
+                        'From building smart contracts, to connecting front-ends. I love being at the frontier.'
                     }
                     image={binaryBitcoin}
                     alt={'bitcoin from ones and zeroes'}
@@ -103,13 +91,9 @@ const About = ({ fadeUp }) => {
             >
                 <AboutSection
                     type="future"
-                    title="Building the Future"
+                    title="Let's Build the Future"
                     text={
-                        <div>
-                            Blockchain tech with a great UX is still a distant dream. I'm excited to
-                            be working on that future - building out a great UX/UI experience for
-                            the next generation of blockchain dApps.
-                        </div>
+                        "Creating well-designed UIs for next generation apps. I'm excited for where web applications can go."
                     }
                     image={robot}
                     alt={'space suit'}

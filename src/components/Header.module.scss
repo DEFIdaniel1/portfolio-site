@@ -7,31 +7,28 @@
     background-size: cover;
     overflow: hidden;
     display: flex;
-    animation: fade-in ease-out 2s;
-    opacity: 1;
-    background-position-y: -10%;
-    background-position-x: 100px;
+    justify-content: center;
+    align-items: center;
 
-    @keyframes fade-in {
-        0% {
-            opacity: 1;
-            background-size: 130%;
-            background-position-y: -20%;
+    .btnDiv {
+        position: absolute;
+        left: 4%;
+        top: 2%;
+        display: flex;
+
+        //linkedIn button
+        :nth-child(1) {
+            @include glossyButton(#0073b193);
+            margin-right: 4rem;
         }
-        30% {
-        }
-        100% {
-            opacity: 1;
-            background-size: 100%;
-            background-position-y: -10%;
+        //github button
+        :nth-child(2) {
+            @include glossyButton(#171515a6);
         }
     }
 
     .textbox {
         z-index: 1;
-        position: absolute;
-        bottom: 15%;
-        left: 7%;
         color: rgb(255, 255, 255);
         h1 {
             margin-bottom: 0;
@@ -68,7 +65,7 @@
         width: 100%;
         background-color: rgb(4, 44, 50);
         object-fit: cover;
-        z-index: 1;
+        // z-index: 1;
     }
 
     video {
@@ -78,13 +75,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
-        z-index: 0;
+        z-index: -1;
         filter: opacity(90%);
     }
-}
-.headerFadeOut {
-    @include fadeOut(1s);
-}
-.headerFadeIn {
-    @include fadeIn(2s);
 }

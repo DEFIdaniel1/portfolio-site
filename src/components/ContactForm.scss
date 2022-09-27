@@ -1,0 +1,62 @@
+@import '../variables';
+
+.form-contact {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 4% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+
+    .titles {
+        padding: 3rem 0 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        & > * {
+            width: 90%;
+            margin-right: 4rem;
+        }
+    }
+
+    input,
+    textarea {
+        border-radius: 20px;
+        padding: 1rem;
+        outline: none;
+        width: 96%;
+        border: none;
+        background: transparent;
+        font-size: 0.9rem;
+        color: white;
+        background-color: rgba(234, 234, 234, 0.371);
+
+        &::placeholder {
+            color: rgb(197, 197, 197);
+            size: 0.9rem;
+        }
+    }
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    .contact-btn {
+        @include glossyButton($green-primary);
+    }
+}
+
+.form-contact-sent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    height: 100vh;
+    @include fadeIn(1s);
+}

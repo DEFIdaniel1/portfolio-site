@@ -70,12 +70,15 @@ const Experience = () => {
                     <h3>10 Years</h3>
                     <div className="line"></div>
                     <ul>
-                        <li>Leading teams up to 11 people to ensure successful projects</li>
-                        <li>Managing multi-million-dollar programs to exceed deliverables </li>
+                        <li>Managed projects for Fortune 500 companies </li>
                         <li>
-                            Coordinating, producing, and editing photos, videos, and content for
-                            websites
+                            Consulted executive & management teams to build corporate strategies
                         </li>
+                        <li>Led teams up to 11 people to meet project objectives </li>
+                        <li>Facilitated training for hundreds of clients and employees</li>
+                        <li>Managed multi-million-dollar programs to exceed deliverables </li>
+                        <li>Created and trained staff on new operating proceedures</li>
+                        {/* <li>Built and sold a successful eCommerce business</li> */}
                     </ul>
                 </div>
             </div>

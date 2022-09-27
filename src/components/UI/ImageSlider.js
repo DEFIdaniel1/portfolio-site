@@ -12,7 +12,7 @@ const ImageSlider = ({ slides }) => {
     let featureList = []
     const featureItems = () => {
         for (let i = 0; i < features.length; i++) {
-            featureList.push(<li>{features[i]}</li>)
+            featureList.push(<li key={i}>{features[i]}</li>)
         }
         return featureList
     }
@@ -59,13 +59,14 @@ const ImageSlider = ({ slides }) => {
                     <p className={classes.description}>{description}</p>
                     <ul>{featureList}</ul>
                     <div className={classes.links}>
-                        {github && <a href={github}>{/* <span>GitHub</span> */}Github</a>}
+                        {github && <a href={github}>Github</a>}
                         {link && <a href={link}>View Site</a>}
                     </div>
                 </div>
                 <div className={classes.gif}>
                     {video ? (
                         <video
+                            key={`${slideIndex}-video`}
                             src={video}
                             alt={`${title} website preview`}
                             typeof="video/mp4"
@@ -75,8 +76,6 @@ const ImageSlider = ({ slides }) => {
                     ) : (
                         <img src={image} alt={`${title} website preview`} />
                     )}
-
-                    {/* <div className={classes.gifText}></div> */}
                 </div>
             </motion.div>
             <div className={classes.dotsContainer}>

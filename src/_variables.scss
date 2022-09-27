@@ -39,6 +39,27 @@ $navbarColor: darken($gray-dark10, 5%);
 }
 
 //////////////////////////// ANIMATIONS ////////////////////////////////////////////////////////////////////////////
+/// ACCENTS
+@mixin lineTopLeftToBottomRight {
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: 0%;
+        left: -10%;
+        width: 2px;
+        height: 100%;
+        background-color: $green-primary;
+        transform: scale(0);
+        transform-origin: top;
+    }
+    &:hover {
+        .active::before,
+        &::after {
+            animation: animateLine 0.25s ease-in;
+            animation-fill-mode: forwards;
+        }
+    }
+}
 // TRANSITIONS
 @mixin fadeIn($time) {
     animation: fadeIn $time;
@@ -55,18 +76,22 @@ $navbarColor: darken($gray-dark10, 5%);
 @mixin fadeOut($time) {
     animation: fadeOut $time;
     opacity: 0;
+    visibility: collapse;
+
     @keyframes fadeOut {
         0% {
             opacity: 1;
         }
         100% {
             opacity: 0;
+            visibility: collapse;
         }
     }
 }
 @mixin fadeOutUp($time) {
     animation: fadeOutUp $time;
     opacity: 0;
+
     @keyframes fadeOutUp {
         0% {
             opacity: 1;
@@ -95,6 +120,7 @@ $navbarColor: darken($gray-dark10, 5%);
 @mixin fadeOutDown($time) {
     animation: fadeOutDown $time;
     opacity: 0;
+
     @keyframes fadeOutDown {
         0% {
             opacity: 1;
@@ -109,6 +135,7 @@ $navbarColor: darken($gray-dark10, 5%);
 @mixin fadeInDown($time) {
     animation: fadeInDown $time;
     opacity: 0;
+
     @keyframes fadeInDown {
         0% {
             opacity: 0;
@@ -246,7 +273,7 @@ $navbarColor: darken($gray-dark10, 5%);
 }
 
 @mixin floatAnimation($name, $from, $to) {
-    animation: #{$name} 3s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
+    animation: #{$name} 4s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
     transform: translate3d($from, 0px, 0px) rotate(3deg);
     filter: invert(50%);
     @keyframes #{$name} {
@@ -256,7 +283,7 @@ $navbarColor: darken($gray-dark10, 5%);
         }
         30% {
             transform: translate3d($to, 0px, 0px) rotate(3deg);
-            filter: invert(0%);
+            filter: invert(90%);
         }
         100% {
             transform: translate3d($from, 0px, 0px) rotate(3deg);
@@ -265,7 +292,7 @@ $navbarColor: darken($gray-dark10, 5%);
     }
 }
 @mixin floatAnimationReflection($name, $from, $to) {
-    animation: #{$name} 3s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
+    animation: #{$name} 4s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
     opacity: 0.4;
     filter: invert(50%);
     transform: translate3d($from - 2%, 3px, 0px) scale(1, -1) translateY(-100%) translateX(-20%)
@@ -279,7 +306,7 @@ $navbarColor: darken($gray-dark10, 5%);
                 translateX(-20%) rotate(-5deg);
         }
         30% {
-            filter: invert(0%);
+            filter: invert(90%);
             transform: translate3d($to - 2%, 3px, 0px) scale(1, -1) translateY(-100%)
                 translateX(-20%) rotate(-5deg);
         }
@@ -291,7 +318,7 @@ $navbarColor: darken($gray-dark10, 5%);
     }
 }
 @mixin floatAnimationVertical($name, $from, $to) {
-    animation: #{$name} 3s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
+    animation: #{$name} 4s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
     transform: translate3d(0%, $from, 0px) rotate(3deg);
     filter: invert(50%);
     @keyframes #{$name} {
@@ -310,7 +337,7 @@ $navbarColor: darken($gray-dark10, 5%);
     }
 }
 @mixin floatAnimationVerticalReflection($name, $from, $to) {
-    animation: #{$name} 3s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
+    animation: #{$name} 4s cubic-bezier(0.68, 0.03, 0.01, 1.02) infinite;
     transform: translate3d(-2%, $from + 1, 0px) scale(1, -1) translateY(-100%) translateX(-20%)
         rotate(-5deg);
     opacity: 0.4;
@@ -390,6 +417,25 @@ $navbarColor: darken($gray-dark10, 5%);
         100% {
             width: 70%;
         }
+    }
+}
+//////////////// COMPONENTS ///////////////////////////
+@mixin glossyButton($color) {
+    display: block;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    background-color: darken($color, 15%);
+    transition: all 0.2s;
+    @include glossyHover(white);
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color;
+        transform: translateY(-2px);
     }
 }
 

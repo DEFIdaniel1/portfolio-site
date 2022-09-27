@@ -4,6 +4,10 @@ import treeBackground from '../video/treeBackground.mp4'
 const Header = ({ fadeIn }) => {
     return (
         <div className={classes.container}>
+            <div className={classes.btnDiv}>
+                <a href="https://www.linkedin.com/in/danielpisterzi/">LinkedIn</a>
+                <a href="https://www.github.com/DEFIdaniel1/">GitHub</a>
+            </div>
             <div className={classes.textbox}>
                 <h1>Daniel Pisterzi.</h1>
                 <div className="line" />

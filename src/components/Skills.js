@@ -44,7 +44,7 @@ const Skills = ({ fadeIn }) => {
             <div className={fadeIn ? 'fadeIn' : 'fadeOut'}>
                 <video src={blurTrees} type="video/mp4" autoPlay muted loop />
             </div>
-            <h1>Tech Skills</h1>
+            <h1>Skills</h1>
             <div className="line"></div>
             <h2>Languages & Frameworks</h2>
             <div className={classes.webApps}>

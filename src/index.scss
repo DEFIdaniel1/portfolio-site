@@ -1,4 +1,8 @@
 @import './variables';
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Hind', Tahoma, sans-serif;
@@ -19,25 +23,28 @@ font-family: 'Noto Sans Display', sans-serif;
 font-family: 'Noto Serif JP', serif;
 font-family: 'Poiret One', cursive;
 font-family: 'Syne', sans-serif;
+
+navbar-noto sans
 */
 h1 {
     font-family: 'Noto Serif JP', serif;
-    font-weight: 100;
-    font-size: 3.5rem;
+    font-weight: 200;
+    font-size: 3rem;
     text-align: left;
+    margin-bottom: 0;
 }
 h2,
 h3 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 100;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-weight: 400;
     text-align: left;
     margin-bottom: 0.5rem;
 }
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
 }
 p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 .line {
     @include leftLineIn;

@@ -19,16 +19,19 @@ function Navbar() {
             </div>
             <nav className={!openNav ? 'navItems navItems__closed' : 'navItems navItems__open'}>
                 <div className="navItems__item" onClick={openNavHandler}>
-                    About Me
+                    <a href="#about">About Me</a>
                 </div>
                 <div className="navItems__item" onClick={openNavHandler}>
-                    Skills
+                    <a href="#skills">Skills</a>
                 </div>
                 <div className="navItems__item" onClick={openNavHandler}>
-                    Portfolio
+                    <a href="#portfolio">Portfolio</a>
                 </div>
                 <div className="navItems__item" onClick={openNavHandler}>
-                    Experience
+                    <a href="#experience">Experience</a>
+                </div>
+                <div className="navItems__item" onClick={openNavHandler}>
+                    <a href="#contact">Contact Me</a>
                 </div>
             </nav>
         </div>

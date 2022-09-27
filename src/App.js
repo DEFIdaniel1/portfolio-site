@@ -12,12 +12,13 @@ import { useEffect, useState } from 'react'
 
 import treeline from './images/backgrounds/treeline.png'
 import ghibliTree1 from './images/ghibliTree1.jpeg'
+import ContactForm from './components/ContactForm'
 
 function App() {
     const [headerRef, headerInView] = useInView({ threshold: 0.4 })
     const [headerClass, setHeaderClass] = useState('fadeIn')
 
-    const [aboutRef, aboutInView] = useInView({ threshold: 0.2 })
+    const [aboutRef, aboutInView] = useInView({ threshold: 0.1 })
     const [aboutClass, setAboutClass] = useState('fadeIn')
 
     const [skillsRef, skillsInView] = useInView({ threshold: 0.24 })
@@ -28,6 +29,9 @@ function App() {
 
     const [experienceRef, experienceInView] = useInView({ threshold: 0.3 })
     const [experienceClass, setExperienceClass] = useState('fadeIn')
+
+    const [contactRef, contactInView] = useInView({ threshold: 0.4 })
+    const [contactClass, setContactClass] = useState('fadeIn')
 
     const checkHeaderClasses = () => {
         if (!headerInView) {
@@ -45,9 +49,9 @@ function App() {
     }
     const checkSkillsClasses = () => {
         if (aboutInView) {
-            return setSkillsClass('fadeOut')
+            return setSkillsClass('fadeOutDown')
         } else if (portfolioInView) {
-            return setSkillsClass('fadeOut')
+            return setSkillsClass('fadeOutUp')
         }
         return setSkillsClass('fadeIn')
     }
@@ -62,8 +66,16 @@ function App() {
     const checkExperienceClass = () => {
         if (portfolioInView) {
             return setExperienceClass('fadeOutDown')
+        } else if (contactInView) {
+            return setExperienceClass('fadeOutUp')
         }
         return setExperienceClass('fadeIn')
+    }
+    const checkContactClass = () => {
+        if (experienceInView) {
+            return setContactClass('fadeOutDown')
+        }
+        return setContactClass('fadeIn')
     }
 
     const animation = useAnimation()
@@ -73,12 +85,13 @@ function App() {
         checkSkillsClasses()
         checkPortfolioClasses()
         checkExperienceClass()
-    }, [headerInView, aboutInView, portfolioInView, skillsInView, experienceInView])
+        checkContactClass()
+    }, [headerInView, aboutInView, portfolioInView, skillsInView, experienceInView, contactInView])
 
     return (
         <motion.div className="app" animate={animation}>
-            <Navbar />(
-            <div className={classes.backgroundImg}>
+            <Navbar />
+            <div id="header" className={classes.backgroundImg}>
                 {!headerInView && !experienceInView && !skillsInView ? (
                     <img src={treeline} alt="treeline"></img>
                 ) : (
@@ -86,21 +99,24 @@ function App() {
                 )}
                 {experienceInView && <img src={ghibliTree1} alt="treeline"></img>}
             </div>
-            )
-            <div className={headerClass} ref={headerRef}>
+
+            <div id="header" className={headerClass} ref={headerRef}>
                 <Header fadeIn={headerInView} />
             </div>
-            <div className={aboutClass} ref={aboutRef}>
+            <div id="about" className={aboutClass} ref={aboutRef}>
                 <About />
             </div>
-            <div className={skillsClass} ref={skillsRef}>
+            <div id="skills" className={skillsClass} ref={skillsRef}>
                 <Skills fadeIn={skillsInView} />
             </div>
-            <div className={portfolioClass} ref={portfolioRef}>
+            <div id="portfolio" className={portfolioClass} ref={portfolioRef}>
                 <Portfolio />
             </div>
-            <div className={experienceClass} ref={experienceRef}>
+            <div id="experience" className={experienceClass} ref={experienceRef}>
                 <Experience />
+            </div>
+            <div id="contact" className={contactClass} ref={contactRef}>
+                <ContactForm />
             </div>
         </motion.div>
     )

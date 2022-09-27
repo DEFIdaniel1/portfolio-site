@@ -6,6 +6,7 @@
 
     h2 {
         text-align: center;
+        margin: 3rem 0 5rem;
     }
 
     video {
@@ -15,9 +16,9 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
-        z-index: 0;
+        z-index: -1;
         filter: opacity(20%);
-        @include fadeIn(2s);
+        @include fadeIn(1s);
     }
 }
 

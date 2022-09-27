@@ -17,15 +17,27 @@
     margin: 5%;
     padding-bottom: 6%;
 
+    @include responsiveMax1000 {
+        padding-bottom: 12%;
+    }
+
     .leftCol {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         .danielTitle {
             font-size: 2.6rem;
             font-weight: 100;
             font-family: 'Noto Serif JP', serif;
+
+            @include responsiveMax700 {
+                font-size: 1.8rem;
+            }
+            @include responsiveMax500 {
+                font-size: 1.4rem;
+            }
         }
     }
     .rightCol {
@@ -43,6 +55,18 @@
             height: 100%;
             position: absolute;
             top: 0;
+            @include responsiveMax700 {
+                height: 80%;
+            }
+            @include responsiveMax500 {
+                height: 60%;
+                top: 15%;
+            }
+            @include responsiveMax400 {
+                height: 50%;
+                top: 20%;
+                right: -15%;
+            }
         }
     }
 }

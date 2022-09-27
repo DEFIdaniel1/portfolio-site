@@ -16,17 +16,27 @@
         left: 4%;
         top: 2%;
         display: flex;
-
-        font-size: 110%;
+        font-size: 120%;
 
         @include responsiveMin1800 {
             font-size: 130%;
+        }
+        @include responsiveMax700 {
+            font-size: 120%;
+            top: 3%;
+        }
+        @include responsiveMax500 {
+            flex-direction: column;
+            top: 5%;
         }
 
         //linkedIn button
         :nth-child(1) {
             @include glossyButton(#0073b193);
             margin-right: 4rem;
+            @include responsiveMax500 {
+                margin: 0;
+            }
         }
         //github button
         :nth-child(2) {
@@ -39,10 +49,17 @@
         color: rgb(255, 255, 255);
         h1 {
             margin-bottom: 0;
+            @include responsiveMax500 {
+                font-size: 250%;
+            }
         }
         h2 {
             padding: 0;
             margin: 0;
+
+            @include responsiveMax500 {
+                font-size: 150%;
+            }
         }
 
         &__inner {
@@ -55,14 +72,8 @@
         bottom: 20%;
         left: 0;
         height: 100%;
-        // width: 100%;
         object-fit: cover;
         z-index: -1;
-        // filter: blur(1px);
-
-        @include responsiveMax900 {
-            left: 0%;
-        }
     }
     .box {
         position: absolute;
@@ -72,7 +83,6 @@
         width: 100%;
         background-color: rgb(4, 44, 50);
         object-fit: cover;
-        // z-index: 1;
     }
 
     video {

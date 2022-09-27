@@ -34,6 +34,7 @@ const ImageSlider = ({ slides }) => {
     const goToSlide = (idx) => {
         setSlideIndex(idx)
     }
+
     return (
         <div className={classes.slider}>
             <div className={classes.leftArrow} onClick={goToPrevious}>
@@ -42,6 +43,7 @@ const ImageSlider = ({ slides }) => {
             <div className={classes.rightArrow} onClick={goToNext}>
                 &rsaquo;
             </div>
+            {/* video + text */}
             <motion.div
                 key={slideIndex}
                 className={classes.slide}

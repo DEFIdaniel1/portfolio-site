@@ -3,9 +3,25 @@
 .experience {
     padding: 4% 7%;
     color: white;
+
+    @include responsiveMax500 {
+        padding: 6% 0%;
+
+        h1 {
+            margin-left: 1rem;
+        }
+    }
+
     h2 {
         text-align: center;
         margin-top: 0;
+
+        @include responsiveMax700 {
+            font-size: 2rem;
+        }
+        @include responsiveMax500 {
+            font-size: 1.7rem;
+        }
     }
     h3 {
         margin: 1rem 0;
@@ -22,6 +38,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+
+    @include responsiveMax1000 {
+        flex-direction: column;
+    }
 
     .section {
         width: 35%;
@@ -30,13 +51,16 @@
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 20px;
 
+        @include responsiveMax1000 {
+            width: 80%;
+        }
+
         display: flex;
         align-items: center;
         flex-direction: column;
-        // transition: all 0.2s;
 
-        // &:hover {
-        //     transform: scale(1.05);
+        // @include responsiveMax1000 {
+        //     flex-direction: column;
         // }
     }
 }

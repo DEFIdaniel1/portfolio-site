@@ -14,6 +14,14 @@
     transition: all 0.2s;
     overflow: hidden;
 
+    @include responsiveMax1000 {
+        padding-bottom: 0;
+    }
+
+    @include responsiveMax500 {
+        padding: 0 20%;
+    }
+
     .slideCount {
         position: a bsolute;
         bottom: 5%;
@@ -24,7 +32,6 @@
     }
     .dotsContainer {
         position: absolute;
-        // justify-self: flex-end;
         bottom: 2%;
         right: 45%;
         display: flex;
@@ -55,6 +62,9 @@
             transform: scale(1.1);
             color: $green-primary;
         }
+        @include responsiveMax700 {
+            right: 0.5rem;
+        }
     }
     .leftArrow {
         position: absolute;
@@ -69,6 +79,10 @@
             transform: scale(1.1);
             color: $green-primary;
         }
+
+        @include responsiveMax700 {
+            left: 0.5rem;
+        }
     }
 }
 
@@ -78,33 +92,53 @@
     padding: 0.5rem 0.5rem 1rem 0.5rem;
     width: 100%;
 
+    @include responsiveMax1000 {
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+    // @include responsiveMax500 {
+    //     flex-direction: column-reverse;
+    // }
+
     .text {
         width: 100%;
         padding: 0 3rem 0 0;
         flex-grow: 1;
 
+        @include responsiveMax1000 {
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
         h3 {
             margin-bottom: 1rem;
         }
 
+        //BUTTONS
         .links {
             display: flex;
 
-            a {
-                display: block;
-                padding: 0.5rem 2rem;
-                border-radius: 10px;
-                margin: 1.5rem;
-                text-decoration: none;
-                color: white;
-                text-align: center;
-                background-color: darken($green-primary, 15%);
-                transition: all 0.2s;
-                @include glossyHover(white);
+            @include responsiveMax1000 {
+                justify-content: space-around;
+            }
+            @include responsiveMax400 {
+                flex-direction: column;
+                margin: 0;
+            }
 
-                &:hover {
-                    background-color: $green-primary;
-                    transform: translateY(-2px);
+            //Github Button
+            :nth-child(1) {
+                margin-right: 4rem;
+                @include responsiveMax1000 {
+                    margin-right: 0;
+                }
+            }
+            a {
+                @include glossyButton($green-primary);
+                @include responsiveMax400 {
+                    margin: 0.5rem 0 1rem;
                 }
             }
         }
@@ -114,25 +148,50 @@
         position: relative;
         height: 22rem;
         width: 100%;
-        // background-image: url('https://media.giphy.com/media/LkxiDPFHOpfQrDi2xH/giphy.gif');
+
+        @include responsiveMax1000 {
+            padding: 0 0%;
+            width: 128%;
+            height: 24rem;
+            padding-bottom: 0;
+        }
+        @include responsiveMax500 {
+            width: 170%;
+            height: 20rem;
+        }
+        @include responsiveMax500 {
+            height: 16rem;
+        }
+
         video {
             position: absolute;
             top: 10%;
             left: 2%;
             width: 100%;
-            object-fit: cover;
-            object-position: left;
+            object-fit: contain;
+            object-position: top;
             padding: 2%;
             z-index: 0;
+
+            @include responsiveMax1000 {
+                top: 0;
+                left: -2%;
+                height: 100%;
+                padding-bottom: 0;
+            }
         }
         img {
             position: absolute;
             top: 10%;
             left: 2%;
-            height: 100%;
+            height: 26rem;
             width: 100%;
             object-fit: cover;
             object-position: top;
+
+            @include responsiveMax1000 {
+                height: 20rem;
+            }
         }
 
         .gifText {

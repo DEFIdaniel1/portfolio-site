@@ -10,6 +10,12 @@ html {
             font-size: 110%;
         }
     }
+    @include responsiveMax700 {
+        font-size: 90%;
+    }
+    @include responsiveMax500 {
+        font-size: 80%;
+    }
 }
 
 body {

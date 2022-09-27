@@ -17,6 +17,12 @@
         top: 2%;
         display: flex;
 
+        font-size: 110%;
+
+        @include responsiveMin1800 {
+            font-size: 130%;
+        }
+
         //linkedIn button
         :nth-child(1) {
             @include glossyButton(#0073b193);

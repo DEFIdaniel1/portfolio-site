@@ -52,7 +52,7 @@ const ContactForm = () => {
                 <div className="form-contact text-center">
                     <form onSubmit={submitHandler} ref={formRef}>
                         <h1>Let's connect</h1>
-                        <h2>Questions? Looking for a resume?</h2>
+                        <h2>Questions? Want to work together?</h2>
                         <div className="line"></div>
                         <div className="titles">
                             <div>
@@ -81,7 +81,7 @@ const ContactForm = () => {
                                 name="message"
                                 cols="30"
                                 rows="5"
-                                placeholder="Your message that says something awesome!"
+                                placeholder="Your awesome message..."
                             ></textarea>
                         </div>
                         <div type="submit" className="contact-btn" onClick={submitHandler}>

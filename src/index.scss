@@ -5,6 +5,10 @@ html {
     @include responsiveMin1800 {
         padding: 0 5%;
         font-size: 110%;
+
+        li {
+            font-size: 110%;
+        }
     }
 }
 

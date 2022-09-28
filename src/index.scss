@@ -84,3 +84,9 @@ p {
 .fadeInLeft {
     @include fadeInLeft(1s);
 }
+
+.titleSection {
+    @include responsiveMax500 {
+        padding-left: 5%;
+    }
+}

@@ -3,8 +3,10 @@ import classes from './Experience.module.scss'
 const Experience = () => {
     return (
         <div className={classes.experience}>
-            <h1>Experience</h1>
-            <div className="line" />
+            <div className="titleSection">
+                <h1>Experience</h1>
+                <div className="line" />
+            </div>
 
             <div className={classes.container}>
                 <div className={classes.section}>

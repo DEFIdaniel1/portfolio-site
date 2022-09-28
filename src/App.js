@@ -3,11 +3,6 @@ import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 
-// import About from './components/About'
-// import Experience from './components/Experience'
-// import Portfolio from './components/Portfolio'
-// import Skills from './components/Skills'
-// import ContactForm from './components/ContactForm'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import treeBackgroundLOW from './video/treeBackgroundLOW.mp4'
@@ -19,7 +14,6 @@ const Skills = React.lazy(() => import('./components/Skills'))
 const Experience = React.lazy(() => import('./components/Experience'))
 const ContactForm = React.lazy(() => import('./components/ContactForm'))
 const Portfolio = React.lazy(() => import('./components/Portfolio'))
-const viewportHeight = window.innerHeight
 
 function App() {
     const [headerRef, headerInView] = useInView({ threshold: 0.4 })

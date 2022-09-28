@@ -50,8 +50,10 @@ const Skills = ({ fadeIn }) => {
                     loop
                 />
             )}
-            <h1>Skills</h1>
-            <div className="line"></div>
+            <div className="titleSection">
+                <h1>Skills</h1>
+                <div className="line"></div>
+            </div>
             <h2>Languages & Frameworks</h2>
             <div className={classes.webApps}>
                 <Icon name={cssHtmlItem.name} image={cssHtmlItem.img} />

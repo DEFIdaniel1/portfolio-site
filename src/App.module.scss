@@ -7,17 +7,15 @@ body {
 
 video {
     position: fixed;
-    top: 0;
-    left: 0%;
-    height: 120%;
+    top: 0.5px;
+    left: 0;
+    right: 0;
+    bottom: 0.5px;
+    height: 100vh;
     width: 100%;
     z-index: -100;
     filter: opacity(90%);
     @include fadeIn(1s);
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
     object-fit: cover;
 }
 .faded {
@@ -30,7 +28,7 @@ video {
         position: fixed;
         top: 0;
         left: 0%;
-        height: 120%;
+        height: 100vh;
         width: 100%;
         object-fit: cover;
         z-index: -1;

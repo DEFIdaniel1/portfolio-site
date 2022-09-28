@@ -27,24 +27,28 @@
     }
 }
 .navItems {
-    height: 100%;
+    height: 100vh;
     width: fit-content;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 20% 0 30%;
+    justify-content: center;
+    padding: 10% 0 5%;
     transition: all 0.2s;
     a {
         font-family: 'Noto Sans Display', sans-serif;
         font-weight: 100;
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         position: relative;
         text-decoration: none;
         color: white;
         transition: all 0.2s;
         @include lineTopLeftToBottomRight;
+
+        @include responsiveMax500 {
+            font-size: 2rem;
+        }
 
         @keyframes animateLine {
             0% {
@@ -91,14 +95,14 @@
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 15px;
-    height: 100%;
+    height: 100vh;
     padding: 0.6rem 0;
     transition: all 0.2s;
     position: fixed;
     width: 4rem;
     height: 3rem;
-    top: 4%;
-    right: 5%;
+    top: 4vh;
+    right: 5vw;
 
     display: flex;
     flex-flow: column;

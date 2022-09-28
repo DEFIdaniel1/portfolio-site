@@ -19,6 +19,7 @@ const Skills = React.lazy(() => import('./components/Skills'))
 const Experience = React.lazy(() => import('./components/Experience'))
 const ContactForm = React.lazy(() => import('./components/ContactForm'))
 const Portfolio = React.lazy(() => import('./components/Portfolio'))
+const viewportHeight = window.innerHeight
 
 function App() {
     const [headerRef, headerInView] = useInView({ threshold: 0.4 })

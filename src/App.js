@@ -1,18 +1,24 @@
-import About from './components/About'
-import Experience from './components/Experience'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import Portfolio from './components/Portfolio'
-import Skills from './components/Skills'
 import classes from './App.module.scss'
-
 import { useInView } from 'react-intersection-observer'
 import { motion, useAnimation } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
+// import About from './components/About'
+// import Experience from './components/Experience'
+// import Portfolio from './components/Portfolio'
+// import Skills from './components/Skills'
+// import ContactForm from './components/ContactForm'
+import Header from './components/Header'
+import Navbar from './components/Navbar'
+import treeBackgroundLOW from './video/treeBackgroundLOW.mp4'
 import treeline from './images/backgrounds/treeline.png'
 import ghibliTree1 from './images/ghibliTree1.jpeg'
-import ContactForm from './components/ContactForm'
+
+const About = React.lazy(() => import('./components/About'))
+const Skills = React.lazy(() => import('./components/Skills'))
+const Experience = React.lazy(() => import('./components/Experience'))
+const ContactForm = React.lazy(() => import('./components/ContactForm'))
+const Portfolio = React.lazy(() => import('./components/Portfolio'))
 
 function App() {
     const [headerRef, headerInView] = useInView({ threshold: 0.4 })
@@ -91,13 +97,19 @@ function App() {
     return (
         <motion.div className="app" animate={animation}>
             <Navbar />
+            <div className={headerInView ? 'headerVideo fadeIn' : 'headerVideo fadeOut'}>
+                <video src={treeBackgroundLOW} type="video/mp4" autoPlay muted loop />
+            </div>
             <div id="header" className={classes.backgroundImg}>
+                {headerInView && (
+                    <video src={treeBackgroundLOW} type="video/mp4" autoPlay muted loop />
+                )}
+                {experienceInView && <img src={ghibliTree1} alt="tree background"></img>}
                 {!headerInView && !experienceInView && !skillsInView ? (
                     <img src={treeline} alt="treeline"></img>
                 ) : (
                     ''
                 )}
-                {experienceInView && <img src={ghibliTree1} alt="treeline"></img>}
             </div>
 
             <div id="header" className={headerClass} ref={headerRef}>

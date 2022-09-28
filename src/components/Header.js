@@ -1,5 +1,5 @@
 import classes from './Header.module.scss'
-import treeBackground from '../video/treeBackground.mp4'
+// import treeBackgroundLOW from '../video/treeBackgroundLOW.mp4'
 
 const Header = ({ fadeIn }) => {
     return (
@@ -16,9 +16,9 @@ const Header = ({ fadeIn }) => {
                     <h2>Blockhain Developer.</h2>
                 </div>
             </div>
-            <div className={fadeIn ? classes.headerFadeIn : classes.headerFadeOut}>
-                <video src={treeBackground} type="video/mp4" autoPlay muted loop />
-            </div>
+            {/* <div className={fadeIn ? classes.headerFadeIn : classes.headerFadeOut}>
+                <video src={treeBackgroundLOW} type="video/mp4" autoPlay muted loop />
+            </div> */}
         </div>
     )
 }

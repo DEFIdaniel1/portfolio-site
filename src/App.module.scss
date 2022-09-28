@@ -2,6 +2,26 @@
 
 body {
     background-color: rgb(30, 66, 38);
+    @include fadeIn(0.5s);
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0%;
+    height: 120%;
+    width: 100%;
+    z-index: -100;
+    filter: opacity(90%);
+    @include fadeIn(1s);
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    object-fit: cover;
+}
+.faded {
+    filter: opacity(40%);
 }
 .backgroundImg {
     position: relative;
@@ -10,24 +30,12 @@ body {
         position: fixed;
         top: 0;
         left: 0%;
-        height: 100%;
+        height: 120%;
         width: 100%;
         object-fit: cover;
         z-index: -1;
         transform: scale(1.2);
         filter: opacity(30%);
-        @include fadeIn(1s);
-    }
-    video {
-        position: fixed;
-        display: inline-block;
-        top: 0;
-        left: 0%;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        z-index: -10;
-        filter: opacity(40%);
         @include fadeIn(1s);
     }
 }

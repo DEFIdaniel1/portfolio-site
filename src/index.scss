@@ -67,7 +67,7 @@ p {
 }
 
 .fadeOut {
-    @include fadeOut(1s);
+    @include fadeOut(3s);
 }
 .fadeIn {
     @include fadeIn(1s);

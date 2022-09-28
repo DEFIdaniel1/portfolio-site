@@ -1,7 +1,6 @@
 import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
-import blurTrees from '../video/blurTrees.mp4'
-
+import blurTreesLOW from '../video/blurTreesLOW.mp4'
 //IMAGES
 import typescriptImg from '../images/icons/typescript.png'
 import cssHtmlImg from '../images/icons/cssHtml.png'
@@ -41,9 +40,16 @@ const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 const Skills = ({ fadeIn }) => {
     return (
         <div className={classes.skills}>
-            <div className={fadeIn ? ` fadeIn` : `fadeOut`}>
-                <video src={blurTrees} type="video/mp4" autoPlay muted loop />
-            </div>
+            {fadeIn && (
+                <video
+                    className={classes.faded}
+                    src={blurTreesLOW}
+                    type="video/mp4"
+                    autoPlay
+                    muted
+                    loop
+                />
+            )}
             <h1>Skills</h1>
             <div className="line"></div>
             <h2>Languages & Frameworks</h2>

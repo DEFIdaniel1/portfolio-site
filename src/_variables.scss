@@ -516,7 +516,8 @@ $purple: rgb(160, 38, 216);
     }
 }
 @mixin responsiveMax1000 {
-    @media (max-width: 62.5em) {
+    //1024 for ipad pro portrait mode
+    @media (max-width: 64em) {
         @content;
     }
 }

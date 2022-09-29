@@ -87,7 +87,6 @@
     width: 100%;
 
     @include responsiveMax1000 {
-        flex-direction: column;
         padding-bottom: 3rem;
 
         .innerSlider {

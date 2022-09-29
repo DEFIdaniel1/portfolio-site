@@ -22,8 +22,8 @@ const ContactForm = React.lazy(() => import('./components/ContactForm'))
 const Portfolio = React.lazy(() => import('./components/Portfolio'))
 
 function App() {
-    const [headerRef, headerInView] = useInView({ threshold: 0.4 })
-    const [headerTopRef, headerTopInView] = useInView({ threshold: 0.4 })
+    const [headerRef, headerInView] = useInView({ threshold: 0.01 })
+    const [headerTopRef, headerTopInView] = useInView({ threshold: 0.7 })
     const [headerClass, setHeaderClass] = useState('fadeIn')
 
     const [aboutRef, aboutInView] = useInView({ threshold: 0.2 })
@@ -40,10 +40,10 @@ function App() {
     const [portfolioClass, setPortfolioClass] = useState('zero')
 
     const [experienceRef, experienceInView] = useInView({ threshold: 0.1 })
-    const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.8 })
+    const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.9 })
     const [experienceClass, setExperienceClass] = useState('zero')
 
-    const [contactRef, contactInView] = useInView({ threshold: 0.4 })
+    const [contactRef, contactInView] = useInView({ threshold: 0.3 })
     const [contactClass, setContactClass] = useState('zero')
 
     const checkHeaderClasses = () => {
@@ -55,7 +55,7 @@ function App() {
     const checkAboutClasses = () => {
         if (headerTopInView) {
             return setAboutClass('zero')
-        } else if (headerInView) {
+        } else if (headerInView && !aboutInView) {
             return setAboutClass('fadeOut')
         } else if (skillsInView) {
             return setAboutClass('fadeOut')
@@ -93,10 +93,10 @@ function App() {
         }
     }
     const checkContactClass = () => {
-        if (experienceBottomInView) {
-            return setContactClass('fadeOut')
-        } else if (contactInView) {
+        if (contactInView) {
             return setContactClass('fadeIn')
+        } else if (experienceBottomInView) {
+            return setContactClass('fadeOut')
         } else return
     }
 
@@ -107,6 +107,8 @@ function App() {
         checkPortfolioClasses()
         checkExperienceClass()
         checkContactClass()
+        console.log('\n' + headerTopInView)
+        console.log(headerInView + '\n')
     }, [headerInView, aboutInView, portfolioInView, skillsInView, experienceInView, contactInView])
 
     return (
@@ -125,7 +127,7 @@ function App() {
                 <Header fadeIn={headerInView} />
             </div>
             <div id="about" className={aboutClass} ref={aboutRef}>
-                <About fadeDown={headerInView} fadeUp={skillsInView} />
+                <About fadeDown={headerTopInView} fadeIn={!headerInView} fadeUp={skillsInView} />
             </div>
             <div className="bottomRef" ref={aboutBottomRef}></div>
             <div id="skills" className={skillsClass} ref={skillsRef}>

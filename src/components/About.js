@@ -10,8 +10,8 @@ import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
 
-const About = () => {
-    const [danielRef, danielInView] = useInView({ threshold: 0.01 })
+const About = ({ fadeDown, fadeIn }) => {
+    const [danielRef, danielInView] = useInView({ threshold: 0.1 })
     const [danielClass, setDanielClass] = useState('zero')
 
     const [uiRef, uiInView] = useInView({ threshold: 0.6 })
@@ -24,11 +24,13 @@ const About = () => {
     const [futureClass, setFutureClass] = useState('zero')
 
     const checkDanielClass = () => {
-        if (!danielRef) {
+        if (fadeDown) {
             return setDanielClass('fadeOutDown')
         }
-        if (danielRef) {
+        if (danielInView) {
             return setDanielClass('fadeInLeft')
+        } else if (bitcoinInView) {
+            return setDanielClass('fadeOutLeft')
         }
     }
     const checkUiClass = () => {
@@ -64,13 +66,11 @@ const About = () => {
         checkUiClass()
         checkBitcoinClass()
         checkFutureClass()
+        console.log(danielClass)
     }, [danielInView, uiInView, bitcoinInView, futureInView])
 
     return (
         <div className={classes.about}>
-            {/* <div className="backgroundImg">
-                <img src={backgroundImg} alt="tree background"></img>
-            </div> */}
             {/* SECTION 1 - DANIEL */}
             <div className={`${classes.container} ${danielClass}`} ref={danielRef}>
                 {/* LEFT SIDE */}

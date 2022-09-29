@@ -3,23 +3,27 @@
 .about {
     color: white;
     min-height: 100vh;
-    padding: 3% 12% 7%;
+    padding: 10% 12% 5%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
 
     p {
         padding: 0.3rem 0;
+    }
+
+    & > * {
+        margin-bottom: 20vh;
     }
 }
 .container {
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin: 5%;
-    padding-bottom: 6%;
-
-    @include responsiveMax1000 {
-        padding-bottom: 12%;
-    }
+    padding-bottom: 0;
+    // padding-bottom: 6%;
 
     .leftCol {
         width: 100%;
@@ -36,20 +40,24 @@
                 font-size: 1.8rem;
             }
             @include responsiveMax500 {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
         }
     }
     .rightCol {
         width: 100%;
-        height: 22rem;
-        padding-top: 4rem;
+        height: 20rem;
+        // padding-top: 4rem;
         align-self: center;
         position: relative;
 
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include responsiveMax500 {
+            height: 15rem;
+        }
 
         img {
             height: 100%;
@@ -59,13 +67,13 @@
                 height: 80%;
             }
             @include responsiveMax500 {
-                height: 60%;
+                // height: 60%;
                 top: 15%;
             }
             @include responsiveMax400 {
-                height: 50%;
-                top: 20%;
-                right: -15%;
+                height: 80%;
+                // top: 20%;
+                right: -5%;
             }
         }
     }

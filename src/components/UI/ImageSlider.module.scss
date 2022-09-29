@@ -182,12 +182,15 @@
         }
         img {
             position: absolute;
-            top: 10%;
-            left: 2%;
+            top: 20%;
+            left: 0%;
             height: 26rem;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: top;
+            z-index: 0;
+
+            filter: opacity(100%);
 
             @include responsiveMax1000 {
                 height: 20rem;

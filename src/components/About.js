@@ -2,7 +2,7 @@ import classes from './About.module.scss'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-import backgroundImg from '../images/backgrounds/treeline.png'
+// import backgroundImg from '../images/backgrounds/treeline.png'
 
 import AboutSection from './UI/AboutSection'
 import phones from '../images/phones.png'
@@ -68,9 +68,9 @@ const About = () => {
 
     return (
         <div className={classes.about}>
-            <div className="backgroundImg">
+            {/* <div className="backgroundImg">
                 <img src={backgroundImg} alt="tree background"></img>
-            </div>
+            </div> */}
             {/* SECTION 1 - DANIEL */}
             <div className={`${classes.container} ${danielClass}`} ref={danielRef}>
                 {/* LEFT SIDE */}

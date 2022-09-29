@@ -22,7 +22,6 @@
         width: 100%;
         z-index: -100;
         filter: opacity(40%);
-        // @include fadeIn(1s);
         overflow-x: hidden;
         overflow-y: auto;
         object-fit: cover;
@@ -37,7 +36,6 @@
     z-index: 1;
 
     & > * {
-        animation: popIn 0.5s;
         transition-timing-function: cubic-bezier(0.52, -0.45, 0.26, 1.1);
         transform: scale(1);
         padding: 1.5rem 4rem;
@@ -53,10 +51,4 @@
             font-weight: 400;
         }
     }
-}
-.skillsFadeOut {
-    @include fadeOut(1s);
-}
-.skillsFadeIn {
-    @include fadeIn(2s);
 }

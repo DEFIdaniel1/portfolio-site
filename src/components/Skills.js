@@ -40,14 +40,6 @@ const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 const Skills = () => {
     return (
         <div className={classes.skills}>
-            <video
-                className="backgroundVideo"
-                src={blurTreesLOW}
-                type="video/mp4"
-                autoPlay
-                muted
-                loop
-            />
             <div className="titleSection">
                 <h1>Skills</h1>
                 <div className="line"></div>

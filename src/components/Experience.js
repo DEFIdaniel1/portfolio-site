@@ -4,9 +4,9 @@ import backgroundImg from '../images/ghibliTree1.jpeg'
 const Experience = () => {
     return (
         <div className={classes.experience}>
-            <div className="backgroundImg">
+            {/* <div className="backgroundImg">
                 <img src={backgroundImg} alt="tree background"></img>
-            </div>
+            </div> */}
             <div className="titleSection">
                 <h1>Experience</h1>
                 <div className="line" />

@@ -4,6 +4,17 @@ import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 
+import tree from './images/tree.jpg'
+import tree2 from './images/tree2.jpg'
+import tree3 from './images/tree3.jpg'
+import tree5 from './images/tree5.jpg'
+import tree6 from './images/tree6.jpg'
+import tree7 from './images/tree7.jpg'
+import tree8 from './images/tree8.jpg'
+import tree9 from './images/tree9.jpg'
+import tree10 from './images/tree10.jpg'
+import tree11 from './images/tree11.jpg'
+
 const About = React.lazy(() => import('./components/About'))
 const Skills = React.lazy(() => import('./components/Skills'))
 const Experience = React.lazy(() => import('./components/Experience'))
@@ -20,19 +31,19 @@ function App() {
 
     const [aboutClass, setAboutClass] = useState('zero')
 
-    const [skillsRef, skillsInView] = useInView({ threshold: 0.2 })
-    const [skillsBottomRef, skillsBottomInView] = useInView({ threshold: 0.2 })
+    const [skillsRef, skillsInView] = useInView({ threshold: 0.1 })
+    const [skillsBottomRef, skillsBottomInView] = useInView({ threshold: 0.4 })
     const [skillsClass, setSkillsClass] = useState('zero')
 
-    const [portfolioRef, portfolioInView] = useInView({ threshold: 0.4 })
+    const [portfolioRef, portfolioInView] = useInView({ threshold: 0.3 })
     const [portfolioBottomRef, portfolioBottomInView] = useInView({ threshold: 0.2 })
     const [portfolioClass, setPortfolioClass] = useState('zero')
 
-    const [experienceRef, experienceInView] = useInView({ threshold: 0.3 })
-    const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.2 })
+    const [experienceRef, experienceInView] = useInView({ threshold: 0.1 })
+    const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.1 })
     const [experienceClass, setExperienceClass] = useState('zero')
 
-    const [contactRef, contactInView] = useInView({ threshold: 0.4 })
+    const [contactRef, contactInView] = useInView({ threshold: 0.2 })
     const [contactClass, setContactClass] = useState('zero')
 
     const checkHeaderClasses = () => {
@@ -50,6 +61,8 @@ function App() {
             return setAboutClass('fadeOut')
         } else if (aboutInView) {
             return setAboutClass('fadeIn')
+        } else {
+            setAboutClass('zero')
         }
     }
     const checkSkillsClasses = () => {
@@ -80,8 +93,8 @@ function App() {
         }
     }
     const checkContactClass = () => {
-        if (experienceInView) {
-            return setContactClass('fadeOutDown')
+        if (experienceBottomInView) {
+            return setContactClass('fadeOut')
         } else if (contactInView) {
             return setContactClass('fadeIn')
         } else return
@@ -98,6 +111,14 @@ function App() {
 
     return (
         <div className="app">
+            <div className="backgroundImg">
+                {<img className={headerClass} src={tree7} alt="" />}
+                {<img className={aboutClass} src={tree6} alt="" />}
+                {<img className={skillsClass} src={tree} alt="" />}
+                {<img className={portfolioClass} src={tree5} alt="" />}
+                {<img className={experienceClass} src={tree8} alt="" />}
+                {<img className={contactClass} src={tree10} alt="" />}
+            </div>
             <Navbar />
             <div ref={headerTopRef}></div>
             <div id="header" className={headerClass} ref={headerRef}>
@@ -106,19 +127,19 @@ function App() {
             <div id="about" className={aboutClass} ref={aboutRef}>
                 <About fadeDown={headerInView} fadeUp={skillsInView} />
             </div>
-            <div ref={aboutBottomRef}></div>
+            <div className="bottomRef" ref={aboutBottomRef}></div>
             <div id="skills" className={skillsClass} ref={skillsRef}>
                 <Skills fadeIn={skillsInView} />
             </div>
-            <div ref={skillsBottomRef}></div>
+            <div className="bottomRef" ref={skillsBottomRef}></div>
             <div id="portfolio" className={portfolioClass} ref={portfolioRef}>
                 <Portfolio />
             </div>
             <div ref={portfolioBottomRef}></div>
             <div id="experience" className={experienceClass} ref={experienceRef}>
                 <Experience />
+                <div className="bottomRef" ref={experienceBottomRef}></div>
             </div>
-            <div ref={experienceBottomRef}></div>
             <div id="contact" className={contactClass} ref={contactRef}>
                 <ContactForm />
             </div>

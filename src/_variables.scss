@@ -38,7 +38,8 @@ $purple: rgb(160, 38, 216);
 // TRANSITIONS
 @mixin fadeIn($time) {
     animation: fadeIn $time;
-    opacity: 1;
+    // opacity: 0;
+    // animation-fill-mode: forwards;
     @keyframes fadeIn {
         0% {
             opacity: 0;
@@ -72,6 +73,7 @@ $purple: rgb(160, 38, 216);
 @mixin fadeOutUp($time) {
     animation: fadeOutUp $time;
     opacity: 0;
+    animation-fill-mode: forwards;
 
     @keyframes fadeOutUp {
         0% {
@@ -87,6 +89,8 @@ $purple: rgb(160, 38, 216);
 @mixin fadeInUp($time) {
     animation: fadeInUp $time;
     opacity: 1;
+    animation-fill-mode: forwards;
+
     @keyframes fadeInUp {
         0% {
             opacity: 0;
@@ -101,6 +105,7 @@ $purple: rgb(160, 38, 216);
 @mixin fadeOutDown($time) {
     animation: fadeOutDown $time;
     opacity: 0;
+    animation-fill-mode: forwards;
 
     @keyframes fadeOutDown {
         0% {
@@ -116,6 +121,7 @@ $purple: rgb(160, 38, 216);
 @mixin fadeInDown($time) {
     animation: fadeInDown $time;
     opacity: 0;
+    animation-fill-mode: forwards;
 
     @keyframes fadeInDown {
         0% {
@@ -131,6 +137,8 @@ $purple: rgb(160, 38, 216);
 @mixin fadeInLeft($time) {
     animation: fadeInLeft $time;
     opacity: 1;
+    animation-fill-mode: forwards;
+
     @keyframes fadeInLeft {
         0% {
             opacity: 0;
@@ -169,6 +177,8 @@ $purple: rgb(160, 38, 216);
 @mixin fadeInRight($time) {
     animation: fadeInRight $time;
     opacity: 1;
+    animation-fill-mode: forwards;
+
     @keyframes fadeInRight {
         0% {
             opacity: 0;

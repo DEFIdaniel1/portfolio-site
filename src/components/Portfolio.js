@@ -84,9 +84,9 @@ const Portfolio = () => {
 
     return (
         <div className={classes.portfolio}>
-            <div className="backgroundImg">
+            {/* <div className="backgroundImg">
                 <img src={backgroundImg} alt="tree background"></img>
-            </div>
+            </div> */}
 
             <div className={classes.title}>
                 <h1>Portfolio</h1>

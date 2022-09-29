@@ -20,10 +20,11 @@ html {
 
 body {
     margin: 0;
+    background: linear-gradient(to top right, rgb(64, 91, 69), rgb(18, 36, 21));
+
     font-family: 'Hind', Tahoma, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(30, 66, 38);
 }
 
 code {
@@ -107,6 +108,11 @@ p {
     }
 }
 .backgroundImg {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    opacity: 0.3;
+    z-index: -99;
     img {
         position: fixed;
         top: 0;
@@ -116,7 +122,27 @@ p {
         object-fit: cover;
         z-index: -100;
         transform: scale(1.2);
-        filter: opacity(30%);
-        @include fadeIn(1s);
     }
 }
+.bottomRef {
+    height: 20rem;
+    position: absolute;
+    z-index: 5;
+    background-color: blue;
+    transform: translateY(-30rem);
+}
+// .backgroundVideo {
+//     video {
+//         opacity: 0.3;
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         height: 100%;
+//         width: 100%;
+//         z-index: -100;
+//         overflow-x: hidden;
+//         overflow-y: auto;
+//         object-fit: cover;
+//         transition: all 0.1s;
+//     }
+// }

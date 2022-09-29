@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './ContactForm.scss'
 import emailjs from 'emailjs-com'
-import backgroundImg from '../images/backgrounds/treeline.png'
 
 const ContactForm = () => {
     const emailKey = process.env.REACT_APP_EMAIL_KEY
@@ -51,9 +50,6 @@ const ContactForm = () => {
         <>
             {!msgSent && (
                 <div className="form-contact text-center">
-                    <div className="backgroundImg">
-                        <img src={backgroundImg} alt="tree background"></img>
-                    </div>
                     <form onSubmit={submitHandler} ref={formRef}>
                         <h1>Let's connect</h1>
                         <h2>Questions? Want to work together?</h2>

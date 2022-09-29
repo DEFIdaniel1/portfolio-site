@@ -1,6 +1,5 @@
 import Icon from './UI/Icon'
 import classes from './Skills.module.scss'
-import blurTreesLOW from '../video/blurTreesLOW.mp4'
 //IMAGES
 import typescriptImg from '../images/icons/typescript.png'
 import cssHtmlImg from '../images/icons/cssHtml.png'

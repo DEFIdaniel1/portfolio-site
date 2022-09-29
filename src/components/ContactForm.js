@@ -74,7 +74,7 @@ const ContactForm = () => {
                                 />
                             </div>
                         </div>
-                        <div>
+                        <div className="form-contact__message">
                             <label htmlFor="">Message</label>
                             <textarea
                                 onChange={msgInputHandler}

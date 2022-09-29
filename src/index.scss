@@ -23,6 +23,7 @@ body {
     font-family: 'Hind', Tahoma, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(30, 66, 38);
 }
 
 code {
@@ -38,9 +39,8 @@ font-family: 'Noto Sans Display', sans-serif;
 font-family: 'Noto Serif JP', serif;
 font-family: 'Poiret One', cursive;
 font-family: 'Syne', sans-serif;
-
-navbar-noto sans
 */
+
 h1 {
     font-family: 'Noto Serif JP', serif;
     font-weight: 200;
@@ -62,10 +62,11 @@ p {
     font-size: 1.3rem;
     font-weight: 200;
 }
+
+/////////////  APP-WIDE Classes   ////////////////////////////////////////////////////////////////////////////////////////
 .line {
     @include leftLineIn;
 }
-
 .fadeOut {
     @include fadeOut(1s);
 }
@@ -93,13 +94,29 @@ p {
 .fadeOutRight {
     @include fadeOutRight(1s);
 }
+
 .zero {
     opacity: 0;
     visibility: hidden;
 }
 
+// responsive title for small screens - shift slightly right
 .titleSection {
     @include responsiveMax500 {
         padding-left: 5%;
+    }
+}
+.backgroundImg {
+    img {
+        position: fixed;
+        top: 0;
+        left: 0%;
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        z-index: -100;
+        transform: scale(1.2);
+        filter: opacity(30%);
+        @include fadeIn(1s);
     }
 }

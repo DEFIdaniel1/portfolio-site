@@ -1,13 +1,8 @@
-import classes from './App.module.scss'
 import { useInView } from 'react-intersection-observer'
-import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 
 import Header from './components/Header'
 import Navbar from './components/Navbar'
-import treeBackgroundLOW from './video/treeBackgroundLOW.mp4'
-import treeline from './images/backgrounds/treeline.png'
-import ghibliTree1 from './images/ghibliTree1.jpeg'
 
 const About = React.lazy(() => import('./components/About'))
 const Skills = React.lazy(() => import('./components/Skills'))
@@ -17,22 +12,28 @@ const Portfolio = React.lazy(() => import('./components/Portfolio'))
 
 function App() {
     const [headerRef, headerInView] = useInView({ threshold: 0.4 })
+    const [headerTopRef, headerTopInView] = useInView({ threshold: 0.4 })
     const [headerClass, setHeaderClass] = useState('fadeIn')
 
     const [aboutRef, aboutInView] = useInView({ threshold: 0.2 })
-    const [aboutClass, setAboutClass] = useState('fadeIn')
+    const [aboutBottomRef, aboutBottomInView] = useInView({ threshold: 0.2 })
 
-    const [skillsRef, skillsInView] = useInView({ threshold: 0.3 })
-    const [skillsClass, setSkillsClass] = useState('fadeIn')
+    const [aboutClass, setAboutClass] = useState('zero')
+
+    const [skillsRef, skillsInView] = useInView({ threshold: 0.2 })
+    const [skillsBottomRef, skillsBottomInView] = useInView({ threshold: 0.2 })
+    const [skillsClass, setSkillsClass] = useState('zero')
 
     const [portfolioRef, portfolioInView] = useInView({ threshold: 0.4 })
-    const [portfolioClass, setPortfolioClass] = useState('fadeIn')
+    const [portfolioBottomRef, portfolioBottomInView] = useInView({ threshold: 0.2 })
+    const [portfolioClass, setPortfolioClass] = useState('zero')
 
     const [experienceRef, experienceInView] = useInView({ threshold: 0.3 })
-    const [experienceClass, setExperienceClass] = useState('fadeIn')
+    const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.2 })
+    const [experienceClass, setExperienceClass] = useState('zero')
 
     const [contactRef, contactInView] = useInView({ threshold: 0.4 })
-    const [contactClass, setContactClass] = useState('fadeIn')
+    const [contactClass, setContactClass] = useState('zero')
 
     const checkHeaderClasses = () => {
         if (!headerInView) {
@@ -41,45 +42,51 @@ function App() {
         return setHeaderClass('fadeIn')
     }
     const checkAboutClasses = () => {
-        if (headerInView) {
-            return setAboutClass('fadeOutDown')
+        if (headerTopInView) {
+            return setAboutClass('zero')
+        } else if (headerInView) {
+            return setAboutClass('fadeOut')
         } else if (skillsInView) {
-            return setAboutClass('fadeOutUp')
+            return setAboutClass('fadeOut')
+        } else if (aboutInView) {
+            return setAboutClass('fadeIn')
         }
-        return setAboutClass('fadeInLeft')
     }
     const checkSkillsClasses = () => {
-        if (aboutInView) {
-            return setSkillsClass('fadeOut')
-        } else if (portfolioInView) {
+        if (headerInView) {
+            return setSkillsClass('zero')
+        } else if (skillsInView) {
+            return setSkillsClass('fadeIn')
+        } else if (aboutBottomInView || portfolioInView) {
             return setSkillsClass('fadeOut')
         }
-        return setSkillsClass('fadeIn')
     }
     const checkPortfolioClasses = () => {
-        if (skillsInView) {
-            return setPortfolioClass('fadeOutDown')
-        } else if (experienceInView) {
-            return setPortfolioClass('fadeOutUp')
+        if (headerInView) {
+            return setPortfolioClass('zero')
+        } else if (portfolioInView) {
+            return setPortfolioClass('fadeIn')
+        } else if (skillsBottomInView || experienceInView) {
+            return setPortfolioClass('fadeOut')
         }
-        return setPortfolioClass('fadeIn')
     }
     const checkExperienceClass = () => {
-        if (portfolioInView) {
-            return setExperienceClass('fadeOutDown')
-        } else if (contactInView) {
-            return setExperienceClass('fadeOutUp')
+        if (headerInView) {
+            return setExperienceClass('zero')
+        } else if (experienceInView) {
+            return setExperienceClass('fadeIn')
+        } else if (portfolioBottomInView || contactInView) {
+            setExperienceClass('fadeOut')
         }
-        return setExperienceClass('fadeIn')
     }
     const checkContactClass = () => {
         if (experienceInView) {
             return setContactClass('fadeOutDown')
-        }
-        return setContactClass('fadeIn')
+        } else if (contactInView) {
+            return setContactClass('fadeIn')
+        } else return
     }
 
-    const animation = useAnimation()
     useEffect(() => {
         checkAboutClasses()
         checkHeaderClasses()
@@ -87,46 +94,35 @@ function App() {
         checkPortfolioClasses()
         checkExperienceClass()
         checkContactClass()
-        // console.log('about class ' + aboutClass)
     }, [headerInView, aboutInView, portfolioInView, skillsInView, experienceInView, contactInView])
 
     return (
-        <motion.div className="app">
+        <div className="app">
             <Navbar />
-            <div className={headerInView ? 'headerVideo fadeIn' : 'headerVideo fadeOut'}>
-                <video src={treeBackgroundLOW} type="video/mp4" autoPlay muted loop />
-            </div>
-            <div id="header" className={classes.backgroundImg}>
-                {headerInView && (
-                    <video src={treeBackgroundLOW} type="video/mp4" autoPlay muted loop />
-                )}
-                {experienceInView && <img src={ghibliTree1} alt="tree background"></img>}
-                {!headerInView && !experienceInView && !skillsInView ? (
-                    <img src={treeline} alt="treeline"></img>
-                ) : (
-                    ''
-                )}
-            </div>
-
+            <div ref={headerTopRef}></div>
             <div id="header" className={headerClass} ref={headerRef}>
                 <Header fadeIn={headerInView} />
             </div>
             <div id="about" className={aboutClass} ref={aboutRef}>
                 <About fadeDown={headerInView} fadeUp={skillsInView} />
             </div>
+            <div ref={aboutBottomRef}></div>
             <div id="skills" className={skillsClass} ref={skillsRef}>
                 <Skills fadeIn={skillsInView} />
             </div>
+            <div ref={skillsBottomRef}></div>
             <div id="portfolio" className={portfolioClass} ref={portfolioRef}>
                 <Portfolio />
             </div>
+            <div ref={portfolioBottomRef}></div>
             <div id="experience" className={experienceClass} ref={experienceRef}>
                 <Experience />
             </div>
+            <div ref={experienceBottomRef}></div>
             <div id="contact" className={contactClass} ref={contactRef}>
                 <ContactForm />
             </div>
-        </motion.div>
+        </div>
     )
 }
 

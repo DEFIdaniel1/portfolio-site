@@ -37,19 +37,17 @@ const wooCommerce = { name: 'wooCommerce', img: wooCommerceImg }
 const adobeCC = { name: 'Adobe CC', img: adobeCCImg }
 const finalCut = { name: 'Final Cut Pro', img: finalCutImg }
 
-const Skills = ({ fadeIn }) => {
+const Skills = () => {
     return (
         <div className={classes.skills}>
-            {fadeIn && (
-                <video
-                    className={classes.faded}
-                    src={blurTreesLOW}
-                    type="video/mp4"
-                    autoPlay
-                    muted
-                    loop
-                />
-            )}
+            <video
+                className="backgroundVideo"
+                src={blurTreesLOW}
+                type="video/mp4"
+                autoPlay
+                muted
+                loop
+            />
             <div className="titleSection">
                 <h1>Skills</h1>
                 <div className="line"></div>

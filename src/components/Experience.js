@@ -1,8 +1,12 @@
 import classes from './Experience.module.scss'
+import backgroundImg from '../images/ghibliTree1.jpeg'
 
 const Experience = () => {
     return (
         <div className={classes.experience}>
+            <div className="backgroundImg">
+                <img src={backgroundImg} alt="tree background"></img>
+            </div>
             <div className="titleSection">
                 <h1>Experience</h1>
                 <div className="line" />

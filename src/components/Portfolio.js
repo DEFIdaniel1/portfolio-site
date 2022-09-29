@@ -2,6 +2,8 @@ import React from 'react'
 import classes from './Portfolio.module.scss'
 import ImageSlider from './UI/ImageSlider'
 
+import backgroundImg from '../images/backgrounds/treeline.png'
+
 import fractionalPropertiesVideo from '../video/websites/fractionalProperties.mp4'
 import fractionalPropertiesImg from '../video/websites/fractionalProperties.png'
 import noBankVideo from '../video/websites/noBank.mp4'
@@ -82,6 +84,10 @@ const Portfolio = () => {
 
     return (
         <div className={classes.portfolio}>
+            <div className="backgroundImg">
+                <img src={backgroundImg} alt="tree background"></img>
+            </div>
+
             <div className={classes.title}>
                 <h1>Portfolio</h1>
                 <div className="line" />

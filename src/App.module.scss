@@ -1,43 +1,4 @@
 @import './variables';
 
 body {
-    background-color: rgb(30, 66, 38);
-    @include fadeIn(0.5s);
 }
-
-video {
-    position: fixed;
-    top: 0.5px;
-    left: 0;
-    right: 0;
-    bottom: 0.5px;
-    height: 100vh;
-    width: 100%;
-    z-index: -100;
-    filter: opacity(90%);
-    @include fadeIn(1s);
-    object-fit: cover;
-}
-.faded {
-    filter: opacity(40%);
-}
-.backgroundImg {
-    position: relative;
-    background: none;
-    img {
-        position: fixed;
-        top: 0;
-        left: 0%;
-        height: 100vh;
-        width: 100%;
-        object-fit: cover;
-        z-index: -1;
-        transform: scale(1.2);
-        filter: opacity(30%);
-        @include fadeIn(1s);
-    }
-}
-
-// .fadeOut {
-//     @include fadeOut(2s);
-// }

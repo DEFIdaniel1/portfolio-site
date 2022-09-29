@@ -19,10 +19,9 @@ const AboutSection = ({ type, image, title, text, alt }) => {
             {type === 'bitcoin' && (
                 <div className={classes.section}>
                     <div className={classes.bitcoinDiv}>
-                        {/* <img src={image} alt={alt} /> */}
+                        {/* bitcoin images use the 2 divs */}
                         <div></div>
                         <div></div>
-                        {/* <img src={image} alt={`${alt} reflection`} /> */}
                     </div>
                     <div className={classes.textR}>
                         <h2>{title}</h2>
@@ -38,7 +37,6 @@ const AboutSection = ({ type, image, title, text, alt }) => {
                         <div className={classes.textR}>
                             <h2>{title}</h2>
                             <div className="line" />
-
                             <p>{text}</p>
                         </div>
                         <div className={classes.phoneImgDiv}>

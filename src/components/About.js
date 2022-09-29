@@ -2,13 +2,15 @@ import classes from './About.module.scss'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+import backgroundImg from '../images/backgrounds/treeline.png'
+
 import AboutSection from './UI/AboutSection'
 import phones from '../images/phones.png'
 import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
 
-const About = ({ fadeUp, fadeDown }) => {
+const About = () => {
     const [danielRef, danielInView] = useInView({ threshold: 0.01 })
     const [danielClass, setDanielClass] = useState('zero')
 
@@ -62,11 +64,13 @@ const About = ({ fadeUp, fadeDown }) => {
         checkUiClass()
         checkBitcoinClass()
         checkFutureClass()
-        console.log('ui ' + uiClass)
     }, [danielInView, uiInView, bitcoinInView, futureInView])
 
     return (
         <div className={classes.about}>
+            <div className="backgroundImg">
+                <img src={backgroundImg} alt="tree background"></img>
+            </div>
             {/* SECTION 1 - DANIEL */}
             <div className={`${classes.container} ${danielClass}`} ref={danielRef}>
                 {/* LEFT SIDE */}

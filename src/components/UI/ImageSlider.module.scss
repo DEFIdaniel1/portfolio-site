@@ -19,7 +19,7 @@
     }
 
     @include responsiveMax500 {
-        padding: 0 20%;
+        padding: 0 5%;
     }
 
     .slideCount {
@@ -33,7 +33,7 @@
     .dotsContainer {
         position: absolute;
         bottom: 2%;
-        right: 45%;
+        right: 40%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -49,37 +49,30 @@
         }
     }
 
-    .rightArrow {
+    .rightArrow,
+    .leftArrow {
         position: absolute;
-        top: 40%;
-        right: 1.5rem;
+        top: 15%;
         font-size: 6rem;
         color: white;
         z-index: 1;
         cursor: pointer;
         transition: all 0.3s;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.53);
         &:hover {
             transform: scale(1.1);
             color: $green-primary;
         }
+    }
+    .rightArrow {
+        right: 1.5rem;
         @include responsiveMax700 {
             right: 0.5rem;
         }
     }
-    .leftArrow {
-        position: absolute;
-        top: 40%;
-        left: 1.5rem;
-        font-size: 6rem;
-        color: white;
-        z-index: 1;
-        cursor: pointer;
-        transition: all 0.3s;
-        &:hover {
-            transform: scale(1.1);
-            color: $green-primary;
-        }
 
+    .leftArrow {
+        left: 1.5rem;
         @include responsiveMax700 {
             left: 0.5rem;
         }
@@ -88,20 +81,33 @@
 
 .slide {
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 0.5rem 0.5rem 1rem 0.5rem;
     width: 100%;
 
     @include responsiveMax1000 {
         flex-direction: column;
-        padding-bottom: 2rem;
+        padding-bottom: 3rem;
+
+        .innerSlider {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
-    // @include responsiveMax500 {
-    //     flex-direction: column-reverse;
-    // }
+    .innerSlider {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    .title {
+        width: 100%;
+        @include responsiveMax1000 {
+            margin-bottom: 1rem;
+        }
+    }
 
     .text {
-        width: 100%;
         padding: 0 3rem 0 0;
         flex-grow: 1;
 
@@ -113,6 +119,7 @@
             font-size: 2rem;
         }
         h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
@@ -143,7 +150,7 @@
             }
         }
     }
-    .gif {
+    .media {
         flex-grow: 1;
         position: relative;
         height: 22rem;
@@ -154,6 +161,8 @@
             width: 128%;
             height: 24rem;
             padding-bottom: 0;
+            align-self: center;
+            justify-self: center;
         }
         @include responsiveMax500 {
             width: 170%;
@@ -184,7 +193,7 @@
             position: absolute;
             top: 20%;
             left: 0%;
-            height: 26rem;
+            height: 18rem;
             width: 100%;
             object-fit: contain;
             object-position: top;
@@ -193,7 +202,7 @@
             filter: opacity(100%);
 
             @include responsiveMax1000 {
-                height: 20rem;
+                height: 16rem;
             }
         }
 
@@ -203,7 +212,9 @@
     }
 }
 .description {
-    // font-size: 90%;
+    width: 100%;
     font-weight: 200;
-    // padding-bottom: 1rem;
+    @include responsiveMax1000 {
+        padding-top: 1rem;
+    }
 }

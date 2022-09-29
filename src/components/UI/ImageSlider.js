@@ -35,6 +35,9 @@ const ImageSlider = ({ slides }) => {
         setSlideIndex(idx)
     }
 
+    const windowWidth = window.innerWidth
+    console.log(windowWidth)
+
     return (
         <div className={classes.slider}>
             <div className={classes.leftArrow} onClick={goToPrevious}>
@@ -43,10 +46,10 @@ const ImageSlider = ({ slides }) => {
             <div className={classes.rightArrow} onClick={goToNext}>
                 &rsaquo;
             </div>
-            {/* video + text */}
+            {/* SLIDES*/}
             <motion.div
-                key={slideIndex}
                 className={classes.slide}
+                key={slideIndex}
                 initial={{ x: slideRight ? 200 : -200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{
@@ -54,30 +57,34 @@ const ImageSlider = ({ slides }) => {
                     ease: [0, 0.71, 0.8, 1.01],
                 }}
             >
-                <div className={classes.text}>
+                <div className={classes.title}>
                     <h2>{title}</h2>
                     <h3>{subtitle}</h3>
                     <div className="line" />
-                    <p className={classes.description}>{description}</p>
-                    <ul>{featureList}</ul>
-                    <div className={classes.links}>
-                        {github && <a href={github}>Github</a>}
-                        {link && <a href={link}>View Site</a>}
-                    </div>
                 </div>
-                <div className={classes.gif}>
-                    {video ? (
-                        <video
-                            key={`${slideIndex}-video`}
-                            src={video}
-                            alt={`${title} website preview`}
-                            typeof="video/mp4"
-                            muted
-                            autoPlay
-                        />
-                    ) : (
-                        <img src={image} alt={`${title} website preview`} />
-                    )}
+                <div className={classes.innerSlider}>
+                    <div className={classes.text}>
+                        <p className={classes.description}>{description}</p>
+                        {window.innerWidth > 1000 && <ul>{featureList}</ul>}
+                        <div className={classes.links}>
+                            {github && <a href={github}>Github</a>}
+                            {link && <a href={link}>View Site</a>}
+                        </div>
+                    </div>
+                    <div className={classes.media}>
+                        {video ? (
+                            <video
+                                key={`${slideIndex}-video`}
+                                src={video}
+                                alt={`${title} website preview`}
+                                typeof="video/mp4"
+                                muted
+                                autoPlay
+                            />
+                        ) : (
+                            <img src={image} alt={`${title} website preview`} />
+                        )}
+                    </div>
                 </div>
             </motion.div>
             <div className={classes.dotsContainer}>

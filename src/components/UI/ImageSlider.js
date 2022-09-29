@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import classes from './ImageSlider.module.scss'
 import { motion } from 'framer-motion'
+import LoadingSpinner from './LoadingSpinner'
 
 const ImageSlider = ({ slides }) => {
     const [slideIndex, setSlideIndex] = useState(0)
@@ -24,20 +25,27 @@ const ImageSlider = ({ slides }) => {
         const newIndex = isFirstSlide ? slides.length - 1 : slideIndex - 1
         setSlideIndex(newIndex)
         setSlideRight(false)
+        setLoaded(false)
     }
     const goToNext = () => {
         const isLastSlide = slideIndex === slides.length - 1
         const newIndex = isLastSlide ? 0 : slideIndex + 1
         setSlideIndex(newIndex)
         setSlideRight(true)
+        setLoaded(false)
     }
     const goToSlide = (idx) => {
         setSlideIndex(idx)
+        setLoaded(false)
     }
 
-    const windowWidth = window.innerWidth
-    console.log(windowWidth)
+    //Placeholder spinner
+    const [loaded, setLoaded] = useState(false)
+    const loadMedia = () => {
+        setLoaded(true)
+    }
 
+    console.log(loaded)
     return (
         <div className={classes.slider}>
             <div className={classes.leftArrow} onClick={goToPrevious}>
@@ -72,6 +80,12 @@ const ImageSlider = ({ slides }) => {
                         </div>
                     </div>
                     <div className={classes.media}>
+                        {!loaded && (
+                            <div className={classes.loadingSpinner}>
+                                <h3>Loading Preview...</h3>
+                                <LoadingSpinner />
+                            </div>
+                        )}
                         {video ? (
                             <video
                                 key={`${slideIndex}-video`}
@@ -80,9 +94,10 @@ const ImageSlider = ({ slides }) => {
                                 typeof="video/mp4"
                                 muted
                                 autoPlay
+                                onLoadedData={loadMedia}
                             />
                         ) : (
-                            <img src={image} alt={`${title} website preview`} />
+                            <img src={image} alt={`${title} website preview`} onLoad={loadMedia} />
                         )}
                     </div>
                 </div>

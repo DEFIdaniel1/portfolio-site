@@ -1,0 +1,31 @@
+@import '../../variables';
+
+#spinner {
+    width: 3rem;
+    height: 3rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid transparent;
+    border-top-color: $green-primary;
+    border-bottom-color: rgb(46, 114, 11);
+    border-radius: 50%;
+    animation: loading-spinner 1.2s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 1rem 0;
+}
+
+@keyframes loading-spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        border-top-color: rgb(154, 253, 104);
+        border-bottom-color: $green-primary;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

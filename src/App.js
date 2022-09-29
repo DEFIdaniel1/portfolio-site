@@ -40,10 +40,10 @@ function App() {
     const [portfolioClass, setPortfolioClass] = useState('zero')
 
     const [experienceRef, experienceInView] = useInView({ threshold: 0.1 })
-    const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.1 })
+    const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.8 })
     const [experienceClass, setExperienceClass] = useState('zero')
 
-    const [contactRef, contactInView] = useInView({ threshold: 0.2 })
+    const [contactRef, contactInView] = useInView({ threshold: 0.4 })
     const [contactClass, setContactClass] = useState('zero')
 
     const checkHeaderClasses = () => {

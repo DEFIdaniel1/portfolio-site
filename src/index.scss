@@ -127,8 +127,7 @@ p {
 .bottomRef {
     height: 20rem;
     position: absolute;
-    z-index: 5;
-    background-color: blue;
+    z-index: -105;
     transform: translateY(-30rem);
 }
 // .backgroundVideo {

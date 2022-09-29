@@ -84,6 +84,19 @@ p {
 .fadeInLeft {
     @include fadeInLeft(1s);
 }
+.fadeOutLeft {
+    @include fadeOutLeft(1s);
+}
+.fadeInRight {
+    @include fadeInRight(1s);
+}
+.fadeOutRight {
+    @include fadeOutRight(1s);
+}
+.zero {
+    opacity: 0;
+    visibility: hidden;
+}
 
 .titleSection {
     @include responsiveMax500 {

@@ -22,7 +22,7 @@ function App() {
     const [aboutRef, aboutInView] = useInView({ threshold: 0.2 })
     const [aboutClass, setAboutClass] = useState('fadeIn')
 
-    const [skillsRef, skillsInView] = useInView({ threshold: 0.4 })
+    const [skillsRef, skillsInView] = useInView({ threshold: 0.3 })
     const [skillsClass, setSkillsClass] = useState('fadeIn')
 
     const [portfolioRef, portfolioInView] = useInView({ threshold: 0.4 })
@@ -46,7 +46,7 @@ function App() {
         } else if (skillsInView) {
             return setAboutClass('fadeOutUp')
         }
-        return setAboutClass('fadeIn')
+        return setAboutClass('fadeInLeft')
     }
     const checkSkillsClasses = () => {
         if (aboutInView) {
@@ -87,10 +87,11 @@ function App() {
         checkPortfolioClasses()
         checkExperienceClass()
         checkContactClass()
+        // console.log('about class ' + aboutClass)
     }, [headerInView, aboutInView, portfolioInView, skillsInView, experienceInView, contactInView])
 
     return (
-        <motion.div className="app" animate={animation}>
+        <motion.div className="app">
             <Navbar />
             <div className={headerInView ? 'headerVideo fadeIn' : 'headerVideo fadeOut'}>
                 <video src={treeBackgroundLOW} type="video/mp4" autoPlay muted loop />
@@ -111,7 +112,7 @@ function App() {
                 <Header fadeIn={headerInView} />
             </div>
             <div id="about" className={aboutClass} ref={aboutRef}>
-                <About />
+                <About fadeDown={headerInView} fadeUp={skillsInView} />
             </div>
             <div id="skills" className={skillsClass} ref={skillsRef}>
                 <Skills fadeIn={skillsInView} />

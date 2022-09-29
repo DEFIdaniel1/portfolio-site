@@ -1,30 +1,5 @@
-$gray1: rgb(42, 42, 42);
-$gray-light: rgb(239, 239, 239);
-$gray-light2: rgb(210, 210, 210);
-$gray-search: rgb(93, 93, 93);
-
 $green-primary: #62af36;
-
 $purple: rgb(160, 38, 216);
-
-$gray-dark: rgb(60, 60, 60);
-$gray-dark5: darken($gray-dark, 5%);
-$gray-dark10: darken($gray-dark, 13%);
-
-$gray-light5: lighten($gray-dark, 5%);
-$gray-light10: lighten($gray-dark, 10%);
-
-$blue-dark: rgb(53, 53, 53);
-
-$blue: rgb(121, 79, 79);
-$blue2: rgb(107, 107, 107);
-
-$primaryBtn: $gray-dark;
-$secondaryBtn: $gray-light10;
-$tertiaryBtn: rgb(137, 210, 255);
-
-$sidebarColor: $gray-dark;
-$navbarColor: darken($gray-dark10, 5%);
 
 @mixin heading($size) {
     font-family: 'Exo 2', sans-serif;
@@ -78,6 +53,7 @@ $navbarColor: darken($gray-dark10, 5%);
     opacity: 0;
     z-index: -100;
     visibility: hidden;
+    animation-fill-mode: forwards;
     @keyframes fadeOut {
         0% {
             opacity: 1;
@@ -166,7 +142,68 @@ $navbarColor: darken($gray-dark10, 5%);
         }
     }
 }
-
+@mixin fadeOutLeft($time) {
+    animation: fadeOutLeft $time;
+    opacity: 0;
+    z-index: -100;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    @keyframes fadeOutLeft {
+        0% {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px);
+            visibility: visible;
+        }
+        99% {
+            opacity: 0;
+            visibility: visible;
+            transform: translate3d(-100px, 0px, 0px);
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+            transform: translate3d(-100px, 0px, 0px);
+        }
+    }
+}
+@mixin fadeInRight($time) {
+    animation: fadeInRight $time;
+    opacity: 1;
+    @keyframes fadeInRight {
+        0% {
+            opacity: 0;
+            transform: translate3d(100px, 0px, 0px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px);
+        }
+    }
+}
+@mixin fadeOutRight($time) {
+    animation: fadeOutRight $time;
+    opacity: 0;
+    z-index: -100;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    @keyframes fadeOutRight {
+        0% {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px);
+            visibility: visible;
+        }
+        99% {
+            opacity: 0;
+            visibility: visible;
+            transform: translate3d(100px, 0px, 0px);
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+            transform: translate3d(100px, 0px, 0px);
+        }
+    }
+}
 // TEXT ANIMATIONS
 @mixin pulsateTextAnimation($time) {
     animation: pulsate $time infinite;

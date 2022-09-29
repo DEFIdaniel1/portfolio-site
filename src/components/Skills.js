@@ -68,13 +68,7 @@ const Skills = ({ fadeIn }) => {
                 <Icon name={tailwindItem.name} image={tailwindItem.img} />
             </div>
             <h2>Applications</h2>
-            <div
-                className={classes.webApps}
-                initial={'offScreen'}
-                whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.6 }}
-                transition={{ staggerChildren: 0.2 }}
-            >
+            <div className={classes.webApps}>
                 <Icon name={gitHub.name} image={gitHub.img} />
                 <Icon name={visualStudio.name} image={visualStudio.img} />
                 <Icon name={firebase.name} image={firebase.img} />

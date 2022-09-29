@@ -1,5 +1,6 @@
 import classes from './About.module.scss'
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import AboutSection from './UI/AboutSection'
 import phones from '../images/phones.png'
@@ -7,55 +8,83 @@ import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
 
-const About = ({ fadeUp }) => {
-    const rightAnimate = {
-        offScreen: {
-            x: 500,
-            opacity: 0,
-            transition: { duration: 0.9, type: 'spring', bounce: 0.2 },
-        },
-        onScreen: { x: 0, opacity: 1, transition: { duration: 1.6, type: 'spring', bounce: 0.2 } },
+const About = ({ fadeUp, fadeDown }) => {
+    const [danielRef, danielInView] = useInView({ threshold: 0.01 })
+    const [danielClass, setDanielClass] = useState('zero')
+
+    const [uiRef, uiInView] = useInView({ threshold: 0.6 })
+    const [uiClass, setUiClass] = useState('zero')
+
+    const [bitcoinRef, bitcoinInView] = useInView({ threshold: 0.6 })
+    const [bitcoinClass, setBitcoinClass] = useState('zero')
+
+    const [futureRef, futureInView] = useInView({ threshold: 0.6 })
+    const [futureClass, setFutureClass] = useState('zero')
+
+    const checkDanielClass = () => {
+        if (!danielRef) {
+            return setDanielClass('fadeOutDown')
+        }
+        if (danielRef) {
+            return setDanielClass('fadeInLeft')
+        }
     }
-    const leftAnimate = {
-        offScreen: {
-            x: -500,
-            opacity: 0,
-            transition: { duration: 1.2, type: 'spring', bounce: 0.2 },
-        },
-        onScreen: { x: 0, opacity: 1, transition: { duration: 1.6, type: 'spring', bounce: 0.2 } },
+    const checkUiClass = () => {
+        if (uiInView) {
+            return setUiClass('fadeInRight')
+        }
+        if (!uiInView) {
+            return setUiClass('fadeOutLeft')
+        }
+        return setUiClass('fadeOutLeft')
+    }
+    const checkBitcoinClass = () => {
+        if (bitcoinInView) {
+            return setBitcoinClass('fadeInLeft')
+        }
+        if (!bitcoinInView) {
+            return setBitcoinClass('fadeOutLeft')
+        }
+        return setBitcoinClass('fadeOutLeft')
+    }
+    const checkFutureClass = () => {
+        if (futureInView) {
+            return setFutureClass('fadeInLeft')
+        }
+        if (!futureInView) {
+            return setFutureClass('fadeOutLeft')
+        }
+        return setFutureClass('fadeOutLeft')
     }
 
+    useEffect(() => {
+        checkDanielClass()
+        checkUiClass()
+        checkBitcoinClass()
+        checkFutureClass()
+        console.log('ui ' + uiClass)
+    }, [danielInView, uiInView, bitcoinInView, futureInView])
+
     return (
-        <motion.div className={classes.about}>
+        <div className={classes.about}>
             {/* SECTION 1 - DANIEL */}
-            <motion.div
-                className={classes.container}
-                initial={'offScreen'}
-                whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.6 }}
-                transition={{ staggerChildren: 0.2 }}
-            >
+            <div className={`${classes.container} ${danielClass}`} ref={danielRef}>
                 {/* LEFT SIDE */}
-                <motion.div className={classes.leftCol} variants={leftAnimate}>
+                <div className={classes.leftCol}>
                     <div className={classes.danielTitle}>
                         I love building intuitive, beautiful applications.
                     </div>
                     <div className="line" />
-                </motion.div>
+                </div>
                 {/* RIGHT SIDE */}
                 {
-                    <motion.div className={classes.rightCol} variants={rightAnimate}>
+                    <div className={classes.rightCol}>
                         <img src={daniel} alt="daniel pisterzi" />
-                    </motion.div>
+                    </div>
                 }
-            </motion.div>
+            </div>
             {/* SECTION 2 - UI */}
-            <motion.div
-                initial={'offScreen'}
-                whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.4 }}
-                variants={rightAnimate}
-            >
+            <div ref={uiRef} className={uiClass}>
                 <AboutSection
                     type="phone"
                     title="A Little UX/UI Obsessed"
@@ -63,14 +92,9 @@ const About = ({ fadeUp }) => {
                     image={phones}
                     alt={'phone'}
                 />
-            </motion.div>
+            </div>
             {/* SECTION 3 - Blockchain */}
-            <motion.div
-                initial={'offScreen'}
-                whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.5 }}
-                variants={leftAnimate}
-            >
+            <div ref={bitcoinRef} className={bitcoinClass}>
                 <AboutSection
                     type="bitcoin"
                     title="Immersed in Blockchain"
@@ -80,15 +104,9 @@ const About = ({ fadeUp }) => {
                     image={binaryBitcoin}
                     alt={'bitcoin from ones and zeroes'}
                 />
-            </motion.div>
+            </div>
             {/* SECTION 4 - Future */}
-            <motion.div
-                initial={'offScreen'}
-                whileInView={'onScreen'}
-                viewport={{ once: true, amount: 0.2 }}
-                variants={rightAnimate}
-                className={fadeUp && classes.aboutOut}
-            >
+            <div ref={futureRef} className={futureClass}>
                 <AboutSection
                     type="future"
                     title="Let's Build the Future"
@@ -98,8 +116,8 @@ const About = ({ fadeUp }) => {
                     image={robot}
                     alt={'space suit'}
                 />
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 }
 

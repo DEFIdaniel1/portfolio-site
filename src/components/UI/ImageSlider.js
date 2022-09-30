@@ -80,7 +80,9 @@ const ImageSlider = ({ slides }) => {
                     <div className={classes.media}>
                         {!loaded && (
                             <div className={classes.loadingSpinner}>
-                                <h3>Loading Preview...</h3>
+                                <div className={classes.loadingText}>
+                                    <em>Preview Loading...</em>
+                                </div>
                                 <LoadingSpinner />
                             </div>
                         )}

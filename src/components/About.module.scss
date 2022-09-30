@@ -37,10 +37,15 @@
             font-family: 'Noto Serif JP', serif;
 
             @include responsiveMax700 {
-                font-size: 1.8rem;
+                font-size: 2.1rem;
             }
             @include responsiveMax500 {
-                font-size: 1.6rem;
+                font-size: 2rem;
+                text-shadow: 1px 0px 2px black;
+                z-index: 11;
+            }
+            @include responsiveMax500 {
+                font-size: 1.8rem;
             }
         }
     }
@@ -67,12 +72,12 @@
                 height: 80%;
             }
             @include responsiveMax500 {
-                // height: 60%;
-                top: 15%;
+                height: 90%;
+                top: 5%;
             }
             @include responsiveMax400 {
-                height: 80%;
-                // top: 20%;
+                height: 90%;
+                top: 5%;
                 right: -5%;
             }
         }

@@ -26,24 +26,24 @@ function App() {
     const [headerTopRef, headerTopInView] = useInView({ threshold: 0.7 })
     const [headerClass, setHeaderClass] = useState('fadeIn')
 
-    const [aboutRef, aboutInView] = useInView({ threshold: 0.2 })
+    const [aboutRef, aboutInView] = useInView({ threshold: 0.1 })
     const [aboutBottomRef, aboutBottomInView] = useInView({ threshold: 0.2 })
 
     const [aboutClass, setAboutClass] = useState('zero')
 
-    const [skillsRef, skillsInView] = useInView({ threshold: 0.1 })
+    const [skillsRef, skillsInView] = useInView({ threshold: 0.2 })
     const [skillsBottomRef, skillsBottomInView] = useInView({ threshold: 0.4 })
     const [skillsClass, setSkillsClass] = useState('zero')
 
-    const [portfolioRef, portfolioInView] = useInView({ threshold: 0.3 })
+    const [portfolioRef, portfolioInView] = useInView({ threshold: 0.2 })
     const [portfolioBottomRef, portfolioBottomInView] = useInView({ threshold: 0.2 })
     const [portfolioClass, setPortfolioClass] = useState('zero')
 
-    const [experienceRef, experienceInView] = useInView({ threshold: 0.1 })
+    const [experienceRef, experienceInView] = useInView({ threshold: 0.2 })
     const [experienceBottomRef, experienceBottomInView] = useInView({ threshold: 0.9 })
     const [experienceClass, setExperienceClass] = useState('zero')
 
-    const [contactRef, contactInView] = useInView({ threshold: 0.3 })
+    const [contactRef, contactInView] = useInView({ threshold: 0.2 })
     const [contactClass, setContactClass] = useState('zero')
 
     const checkHeaderClasses = () => {

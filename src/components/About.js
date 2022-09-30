@@ -14,13 +14,13 @@ const About = ({ fadeDown, fadeIn }) => {
     const [danielRef, danielInView] = useInView({ threshold: 0.1 })
     const [danielClass, setDanielClass] = useState('zero')
 
-    const [uiRef, uiInView] = useInView({ threshold: 0.6 })
+    const [uiRef, uiInView] = useInView({ threshold: 0.1 })
     const [uiClass, setUiClass] = useState('zero')
 
-    const [bitcoinRef, bitcoinInView] = useInView({ threshold: 0.6 })
+    const [bitcoinRef, bitcoinInView] = useInView({ threshold: 0.1 })
     const [bitcoinClass, setBitcoinClass] = useState('zero')
 
-    const [futureRef, futureInView] = useInView({ threshold: 0.6 })
+    const [futureRef, futureInView] = useInView({ threshold: 0.1 })
     const [futureClass, setFutureClass] = useState('zero')
 
     const checkDanielClass = () => {

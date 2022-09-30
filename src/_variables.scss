@@ -35,11 +35,11 @@ $purple: rgb(160, 38, 216);
         }
     }
 }
-// TRANSITIONS
+
+// /////  TRANSITIONS ///// ///// ///// /////
 @mixin fadeIn($time) {
     animation: fadeIn $time;
-    // opacity: 0;
-    // animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
     @keyframes fadeIn {
         0% {
             opacity: 0;
@@ -53,20 +53,19 @@ $purple: rgb(160, 38, 216);
     animation: fadeOut $time;
     opacity: 0;
     z-index: -100;
-    visibility: hidden;
     animation-fill-mode: forwards;
     @keyframes fadeOut {
         0% {
             opacity: 1;
-            visibility: visible;
+            // visibility: visible;
         }
         99% {
             opacity: 0;
-            visibility: visible;
+            // visibility: visible;
         }
         100% {
             opacity: 0;
-            visibility: hidden;
+            // visibility: hidden;
         }
     }
 }
@@ -154,22 +153,22 @@ $purple: rgb(160, 38, 216);
     animation: fadeOutLeft $time;
     opacity: 0;
     z-index: -100;
-    visibility: hidden;
+
     animation-fill-mode: forwards;
     @keyframes fadeOutLeft {
         0% {
             opacity: 1;
             transform: translate3d(0px, 0px, 0px);
-            visibility: visible;
+            // visibility: visible;
         }
         99% {
             opacity: 0;
-            visibility: visible;
+            // visibility: visible;
             transform: translate3d(-100px, 0px, 0px);
         }
         100% {
             opacity: 0;
-            visibility: hidden;
+            // visibility: hidden;
             transform: translate3d(-100px, 0px, 0px);
         }
     }
@@ -177,6 +176,7 @@ $purple: rgb(160, 38, 216);
 @mixin fadeInRight($time) {
     animation: fadeInRight $time;
     opacity: 1;
+
     animation-fill-mode: forwards;
 
     @keyframes fadeInRight {
@@ -194,22 +194,21 @@ $purple: rgb(160, 38, 216);
     animation: fadeOutRight $time;
     opacity: 0;
     z-index: -100;
-    visibility: hidden;
     animation-fill-mode: forwards;
     @keyframes fadeOutRight {
         0% {
             opacity: 1;
             transform: translate3d(0px, 0px, 0px);
-            visibility: visible;
+            // visibility: visible;
         }
         99% {
             opacity: 0;
-            visibility: visible;
+            // visibility: visible;
             transform: translate3d(100px, 0px, 0px);
         }
         100% {
             opacity: 0;
-            visibility: hidden;
+            // visibility: hidden;
             transform: translate3d(100px, 0px, 0px);
         }
     }

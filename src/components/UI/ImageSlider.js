@@ -44,8 +44,6 @@ const ImageSlider = ({ slides }) => {
     const loadMedia = () => {
         setLoaded(true)
     }
-
-    console.log(loaded)
     return (
         <div className={classes.slider}>
             <div className={classes.leftArrow} onClick={goToPrevious}>
@@ -95,6 +93,7 @@ const ImageSlider = ({ slides }) => {
                                 muted
                                 autoPlay
                                 onLoadedData={loadMedia}
+                                playsInline
                             />
                         ) : (
                             <img src={image} alt={`${title} website preview`} onLoad={loadMedia} />

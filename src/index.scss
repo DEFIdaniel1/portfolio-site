@@ -140,6 +140,11 @@ li {
     z-index: -105;
     transform: translateY(-30rem);
 }
+.noAnimation {
+    visibility: visible;
+    opacity: 1;
+}
+
 // .backgroundVideo {
 //     video {
 //         opacity: 0.3;

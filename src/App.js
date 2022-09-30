@@ -5,15 +5,11 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 
 import tree from './images/tree.jpg'
-import tree2 from './images/tree2.jpg'
-import tree3 from './images/tree3.jpg'
 import tree5 from './images/tree5.jpg'
 import tree6 from './images/tree6.jpg'
 import tree7 from './images/tree7.jpg'
 import tree8 from './images/tree8.jpg'
-import tree9 from './images/tree9.jpg'
 import tree10 from './images/tree10.jpg'
-import tree11 from './images/tree11.jpg'
 
 const About = React.lazy(() => import('./components/About'))
 const Skills = React.lazy(() => import('./components/Skills'))
@@ -45,6 +41,20 @@ function App() {
 
     const [contactRef, contactInView] = useInView({ threshold: 0.2 })
     const [contactClass, setContactClass] = useState('zero')
+
+    // DETECT IOS CHROME/OPERA users -> broken CSS animations is a known chrome issue on IOS
+    let iPhoneChrome
+    useEffect(() => {
+        const iPhone = /iPhone/.test(navigator.userAgent)
+        const chrome = /Chrome/.test(navigator.userAgent)
+        if (iPhone && chrome) {
+            iPhoneChrome = true
+            return
+        } else {
+            iPhoneChrome = false
+            return
+        }
+    }, [])
 
     const checkHeaderClasses = () => {
         if (!headerInView) {
@@ -101,15 +111,32 @@ function App() {
     }
 
     useEffect(() => {
-        checkAboutClasses()
-        checkHeaderClasses()
-        checkSkillsClasses()
-        checkPortfolioClasses()
-        checkExperienceClass()
-        checkContactClass()
-        console.log('\n' + headerTopInView)
-        console.log(headerInView + '\n')
-    }, [headerInView, aboutInView, portfolioInView, skillsInView, experienceInView, contactInView])
+        //disable animation on iPhones using Chrome browsers
+        if (iPhoneChrome === true) {
+            setHeaderClass('noAnimation')
+            setAboutClass('noAnimation')
+            setSkillsClass('noAnimation')
+            setPortfolioClass('noAnimation')
+            setExperienceClass('noAnimation')
+            setContactClass('noAnimation')
+            return
+        } else {
+            checkAboutClasses()
+            checkHeaderClasses()
+            checkSkillsClasses()
+            checkPortfolioClasses()
+            checkExperienceClass()
+            checkContactClass()
+        }
+    }, [
+        iPhoneChrome,
+        headerInView,
+        aboutInView,
+        portfolioInView,
+        skillsInView,
+        experienceInView,
+        contactInView,
+    ])
 
     return (
         <div className="app">

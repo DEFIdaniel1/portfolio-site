@@ -10,7 +10,7 @@ import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
 
-const About = ({ fadeDown, fadeIn }) => {
+const About = ({ fadeDown }) => {
     const [danielRef, danielInView] = useInView({ threshold: 0.1 })
     const [danielClass, setDanielClass] = useState('zero')
 
@@ -22,6 +22,20 @@ const About = ({ fadeDown, fadeIn }) => {
 
     const [futureRef, futureInView] = useInView({ threshold: 0.1 })
     const [futureClass, setFutureClass] = useState('zero')
+
+    // DETECT IOS CHROME/OPERA users -> broken CSS animations is a known chrome issue on IOS
+    let iPhoneChrome
+    useEffect(() => {
+        const iPhone = /iPhone/.test(navigator.userAgent)
+        const chrome = /Chrome/.test(navigator.userAgent)
+        if (iPhone && chrome) {
+            iPhoneChrome = true
+            return
+        } else {
+            iPhoneChrome = false
+            return
+        }
+    }, [])
 
     const checkDanielClass = () => {
         if (fadeDown) {
@@ -62,12 +76,19 @@ const About = ({ fadeDown, fadeIn }) => {
     }
 
     useEffect(() => {
-        checkDanielClass()
-        checkUiClass()
-        checkBitcoinClass()
-        checkFutureClass()
-        console.log(danielClass)
-    }, [danielInView, uiInView, bitcoinInView, futureInView])
+        if (iPhoneChrome === true) {
+            setDanielClass('noAnimation')
+            setUiClass('noAnimation')
+            setBitcoinClass('noAnimation')
+            setFutureClass('noAnimation')
+            return
+        } else {
+            checkDanielClass()
+            checkUiClass()
+            checkBitcoinClass()
+            checkFutureClass()
+        }
+    }, [iPhoneChrome, danielInView, uiInView, bitcoinInView, futureInView])
 
     return (
         <div className={classes.about}>

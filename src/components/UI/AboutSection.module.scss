@@ -48,10 +48,6 @@
     align-items: center;
     position: relative;
 
-    &:hover {
-        cursor: pointer;
-    }
-
     img {
         position: absolute;
         margin-bottom: 3rem;
@@ -169,11 +165,6 @@
             width: 120%;
             height: 80%;
             margin-right: 3rem;
-        }
-
-        &:hover {
-            background-position-x: 100%;
-            cursor: pointer;
         }
     }
     :nth-child(2) {

@@ -18,6 +18,7 @@ import adobeCCImg from '../images/icons/adobeCC.png'
 import finalCutImg from '../images/icons/fcpLogo.png'
 import ethersImg from '../images/icons/etherslogo.png'
 
+// Name & images to pass through to <Icon/>
 const javaScriptItem = { name: 'JavaScript', img: javscriptImg }
 const cssHtmlItem = { name: 'HTML & CSS', img: cssHtmlImg }
 const reactItem = { name: 'React', img: reactImg }
@@ -28,7 +29,6 @@ const ethersItem = { name: 'ethers.js', img: ethersImg }
 const tailwindItem = { name: 'Tailwind', img: tailwindImg }
 const solidityItem = { name: 'Solidity', img: solidityImg }
 const typescriptItem = { name: 'Typescript', img: typescriptImg }
-
 const gitHub = { name: 'GitHub', img: gitImg }
 const visualStudio = { name: 'VS Code', img: visualStudioImg }
 const firebase = { name: 'Firebase', img: firebaseImg }

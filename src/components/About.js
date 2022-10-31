@@ -2,15 +2,14 @@ import classes from './About.module.scss'
 import { useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-// import backgroundImg from '../images/backgrounds/treeline.png'
-
 import AboutSection from './UI/AboutSection'
 import phones from '../images/phones.png'
 import daniel from '../images/danielCross.png'
 import binaryBitcoin from '../images/binaryBitcoin.png'
 import robot from '../images/robot.png'
 
-const About = ({ fadeDown }) => {
+const About = ({ fadeDown, iPhoneChrome }) => {
+    // Refs for detecting user view for animations
     const [danielRef, danielInView] = useInView({ threshold: 0.1 })
     const [danielClass, setDanielClass] = useState('zero')
 
@@ -23,20 +22,7 @@ const About = ({ fadeDown }) => {
     const [futureRef, futureInView] = useInView({ threshold: 0.1 })
     const [futureClass, setFutureClass] = useState('zero')
 
-    // DETECT IOS CHROME/OPERA users -> broken CSS animations is a known chrome issue on IOS
-    let iPhoneChrome
-    useEffect(() => {
-        const iPhone = /iPhone/.test(navigator.userAgent)
-        const chrome = /Chrome/.test(navigator.userAgent)
-        if (iPhone && chrome) {
-            iPhoneChrome = true
-            return
-        } else {
-            iPhoneChrome = false
-            return
-        }
-    }, [])
-
+    // Functions change animation classes based on in-view refs
     const checkDanielClass = () => {
         if (fadeDown) {
             return setDanielClass('fadeOutDown')
@@ -76,13 +62,14 @@ const About = ({ fadeDown }) => {
     }
 
     useEffect(() => {
+        // Remove animations if iOS Chrome browser is detected
         if (iPhoneChrome === true) {
             setDanielClass('noAnimation')
             setUiClass('noAnimation')
             setBitcoinClass('noAnimation')
             setFutureClass('noAnimation')
             return
-        } else {
+        } else if (!iPhoneChrome === true) {
             checkDanielClass()
             checkUiClass()
             checkBitcoinClass()
@@ -94,14 +81,14 @@ const About = ({ fadeDown }) => {
         <div className={classes.about}>
             {/* SECTION 1 - DANIEL */}
             <div className={`${classes.container} ${danielClass}`} ref={danielRef}>
-                {/* LEFT SIDE */}
+                {/* LEFT SIDE - description */}
                 <div className={classes.leftCol}>
                     <div className={classes.danielTitle}>
                         I love building intuitive, beautiful applications.
                     </div>
                     <div className="line" />
                 </div>
-                {/* RIGHT SIDE */}
+                {/* RIGHT SIDE - image */}
                 {
                     <div className={classes.rightCol}>
                         <img src={daniel} alt="daniel pisterzi" />

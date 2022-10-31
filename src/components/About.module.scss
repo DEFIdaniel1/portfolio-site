@@ -23,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 0;
-    // padding-bottom: 6%;
 
     .leftCol {
         width: 100%;
@@ -33,15 +32,15 @@
 
         .danielTitle {
             font-size: 2.6rem;
-            font-weight: 100;
-            font-family: 'Noto Serif JP', serif;
+            font-weight: 300;
+            font-family: 'Noto Sans Display', sans-serif;
+            padding-bottom: 0.5rem;
 
             @include responsiveMax700 {
                 font-size: 2.1rem;
             }
             @include responsiveMax500 {
                 font-size: 2rem;
-                text-shadow: 1px 0px 2px black;
                 z-index: 11;
             }
             @include responsiveMax500 {

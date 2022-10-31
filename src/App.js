@@ -11,6 +11,7 @@ import tree7 from './images/tree7.jpg'
 import tree8 from './images/tree8.jpg'
 import tree10 from './images/tree10.jpg'
 
+// Lazy loading
 const About = React.lazy(() => import('./components/About'))
 const Skills = React.lazy(() => import('./components/Skills'))
 const Experience = React.lazy(() => import('./components/Experience'))
@@ -18,6 +19,7 @@ const ContactForm = React.lazy(() => import('./components/ContactForm'))
 const Portfolio = React.lazy(() => import('./components/Portfolio'))
 
 function App() {
+    // Refs from react-intersection-observer used for fade animations
     const [headerRef, headerInView] = useInView({ threshold: 0.01 })
     const [headerTopRef, headerTopInView] = useInView({ threshold: 0.7 })
     const [headerClass, setHeaderClass] = useState('fadeIn')
@@ -42,20 +44,22 @@ function App() {
     const [contactRef, contactInView] = useInView({ threshold: 0.2 })
     const [contactClass, setContactClass] = useState('zero')
 
-    // DETECT IOS CHROME/OPERA users -> broken CSS animations is a known chrome issue on IOS
-    let iPhoneChrome
+    // Fix: DETECT IOS CHROME users -> broken CSS animations is a known chrome issue on IOS
+    // Turns off animations
+    const [iPhoneChrome, setiPhoneChrome] = useState(null)
     useEffect(() => {
         const iPhone = /iPhone/.test(navigator.userAgent)
-        const chrome = /Chrome/.test(navigator.userAgent)
+        const chrome = /CriOS/.test(navigator.userAgent)
         if (iPhone && chrome) {
-            iPhoneChrome = true
+            setiPhoneChrome(true)
             return
         } else {
-            iPhoneChrome = false
+            setiPhoneChrome(false)
             return
         }
     }, [])
 
+    // Functions change animation classes based on in-view refs
     const checkHeaderClasses = () => {
         if (!headerInView) {
             return setHeaderClass('fadeOut')
@@ -113,6 +117,7 @@ function App() {
     useEffect(() => {
         //disable animation on iPhones using Chrome browsers
         if (iPhoneChrome === true) {
+            console.log(iPhoneChrome)
             setHeaderClass('noAnimation')
             setAboutClass('noAnimation')
             setSkillsClass('noAnimation')
@@ -120,7 +125,7 @@ function App() {
             setExperienceClass('noAnimation')
             setContactClass('noAnimation')
             return
-        } else {
+        } else if (!iPhoneChrome === true) {
             checkAboutClasses()
             checkHeaderClasses()
             checkSkillsClasses()
@@ -140,6 +145,7 @@ function App() {
 
     return (
         <div className="app">
+            {/* Background images change based on the user's section */}
             <div className="backgroundImg">
                 {<img className={headerClass} src={tree7} alt="" />}
                 {<img className={aboutClass} src={tree6} alt="" />}
@@ -148,13 +154,19 @@ function App() {
                 {<img className={experienceClass} src={tree8} alt="" />}
                 {<img className={contactClass} src={tree10} alt="" />}
             </div>
+
             <Navbar />
             <div ref={headerTopRef}></div>
             <div id="header" className={headerClass} ref={headerRef}>
                 <Header fadeIn={headerInView} />
             </div>
             <div id="about" className={aboutClass} ref={aboutRef}>
-                <About fadeDown={headerTopInView} fadeIn={!headerInView} fadeUp={skillsInView} />
+                <About
+                    fadeDown={headerTopInView}
+                    fadeIn={!headerInView}
+                    fadeUp={skillsInView}
+                    iPhoneChrome={iPhoneChrome}
+                />
             </div>
             <div className="bottomRef" ref={aboutBottomRef}></div>
             <div id="skills" className={skillsClass} ref={skillsRef}>

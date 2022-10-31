@@ -11,6 +11,7 @@ import galXyImg from '../video/websites/galXy.png'
 import octagoImg from '../video/websites/myOctago.png'
 
 const Portfolio = () => {
+    // Content for the slides
     const slides = [
         {
             title: 'GAL-XY',

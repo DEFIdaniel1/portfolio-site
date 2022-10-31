@@ -9,6 +9,7 @@ function Navbar() {
 
     return (
         <div className={!openNav ? 'navbar navbar__closed' : 'navbar navbar__open'}>
+            {/* Navbar Burger Menu */}
             <div
                 className={!openNav ? 'navBurger navBurger__closed' : 'navBurger navBurger__open'}
                 onClick={openNavHandler}
@@ -17,6 +18,7 @@ function Navbar() {
                 <div></div>
                 <div></div>
             </div>
+            {/* Navbar links */}
             <nav className={!openNav ? 'navItems navItems__closed' : 'navItems navItems__open'}>
                 <div className="navItems__item" onClick={openNavHandler}>
                     <a href="#about">About Me</a>

@@ -3,6 +3,7 @@ import classes from './AboutSection.module.scss'
 const AboutSection = ({ type, image, title, text, alt }) => {
     return (
         <div>
+            {/* FUTURE SECTION */}
             {type === 'future' && (
                 <div className={classes.section}>
                     <div className={classes.textL}>
@@ -16,6 +17,8 @@ const AboutSection = ({ type, image, title, text, alt }) => {
                     </div>
                 </div>
             )}
+
+            {/* BITCOIN SECTION */}
             {type === 'bitcoin' && (
                 <div className={classes.section}>
                     <div className={classes.bitcoinDiv}>
@@ -31,6 +34,8 @@ const AboutSection = ({ type, image, title, text, alt }) => {
                     </div>
                 </div>
             )}
+
+            {/* UI SECTION */}
             {type === 'phone' && (
                 <div>
                     <div className={classes.section}>

@@ -12,7 +12,7 @@ const Header = ({ fadeIn }) => {
                 <div className="line" />
                 <div className={classes.textbox__inner}>
                     <h2>Web Developer.</h2>
-                    <h2>Blockhain Developer.</h2>
+                    <h2>Blockchain Developer.</h2>
                 </div>
             </div>
         </div>

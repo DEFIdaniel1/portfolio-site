@@ -39,7 +39,7 @@ const ImageSlider = ({ slides }) => {
         setLoaded(false)
     }
 
-    //Placeholder spinner
+    // Placeholder spinner while loading
     const [loaded, setLoaded] = useState(false)
     const loadMedia = () => {
         setLoaded(true)
@@ -54,6 +54,7 @@ const ImageSlider = ({ slides }) => {
             </div>
             {/* SLIDES*/}
             <motion.div
+                // animation logic for framer-motion
                 className={classes.slide}
                 key={slideIndex}
                 initial={{ x: slideRight ? 200 : -200, opacity: 0 }}
@@ -63,20 +64,26 @@ const ImageSlider = ({ slides }) => {
                     ease: [0, 0.71, 0.8, 1.01],
                 }}
             >
+                {/* Title/Subtitle area */}
                 <div className={classes.title}>
                     <h2>{title}</h2>
                     <h3>{subtitle}</h3>
                     <div className="line" />
                 </div>
+
+                {/* Description and bullet points */}
                 <div className={classes.innerSlider}>
                     <div className={classes.text}>
                         <p className={classes.description}>{description}</p>
+                        {/* Remove features for smaller screens */}
                         {window.innerWidth > 1000 && <ul>{featureList}</ul>}
                         <div className={classes.links}>
                             {github && <a href={github}>Github</a>}
                             {link && <a href={link}>View Site</a>}
                         </div>
                     </div>
+
+                    {/* Video and image previews */}
                     <div className={classes.media}>
                         {!loaded && (
                             <div className={classes.loadingSpinner}>
@@ -103,6 +110,8 @@ const ImageSlider = ({ slides }) => {
                     </div>
                 </div>
             </motion.div>
+
+            {/* Navigation dots */}
             <div className={classes.dotsContainer}>
                 {slides.map((slide, idx) =>
                     idx === slideIndex ? (

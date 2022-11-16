@@ -9,6 +9,8 @@ import noBankImg from '../video/websites/noBank.png'
 import galXyVideo from '../video/websites/galXy.mp4'
 import galXyImg from '../video/websites/galXy.png'
 import octagoImg from '../video/websites/myOctago.png'
+import backend from '../video/websites/backend.png'
+import smartContract from '../video/websites/smartContract.png'
 
 const Portfolio = () => {
     // Content for the slides
@@ -63,7 +65,35 @@ const Portfolio = () => {
             video: fractionalPropertiesVideo,
             image: fractionalPropertiesImg,
         },
-
+        {
+            title: 'Back End Projects',
+            subtitle: 'Powered by Node.js',
+            description:
+                'Several github repositories where I focused on back-end builds. These projects produced API endpoints to connect with server-side databases.',
+            features: [
+                'https://github.com/DEFIdaniel1/node-graphql-TS',
+                'https://github.com/DEFIdaniel1/node-REST-socialFeed',
+                'https://github.com/DEFIdaniel1/node-nosql-store',
+                'https://github.com/DEFIdaniel1/node-sql-store',
+                'Typescript | Node.js | GraphQL | REST | NoSQL | SQL',
+            ],
+            github: 'https://github.com/stars/DEFIdaniel1/lists/backend-projects',
+            image: backend,
+        },
+        {
+            title: 'Smart Contracts',
+            subtitle: 'Built with Solidity',
+            description:
+                'Smart contracts written using different token standards, including ERC20, ERC721, ERC1155. Include deployment scripts and test. Leverage IPFS and on-chain storage.',
+            features: [
+                'https://github.com/DEFIdaniel1/metaverse-solidity',
+                'https://github.com/DEFIdaniel1/erc721-NFTs',
+                'https://github.com/DEFIdaniel1/nft-marketplace-hardhat',
+                'Solidity | Node.js | Hardhat | Chai | Mocha',
+            ],
+            github: 'https://github.com/stars/DEFIdaniel1/lists/smart-contracts',
+            image: smartContract,
+        },
         {
             title: 'Octago Products',
             subtitle: 'eCommerce Store',

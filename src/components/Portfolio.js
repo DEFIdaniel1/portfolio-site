@@ -69,7 +69,7 @@ const Portfolio = () => {
             title: 'Back End Projects',
             subtitle: 'Powered by Node.js',
             description:
-                'Several github repositories where I focused on back-end builds. These projects produced API endpoints to connect with server-side databases.',
+                'Server-side projects that produce API endpoints to connect server-side databases, leveraging various methods.',
             features: [
                 'https://github.com/DEFIdaniel1/node-graphql-TS',
                 'https://github.com/DEFIdaniel1/node-REST-socialFeed',
@@ -84,7 +84,7 @@ const Portfolio = () => {
             title: 'Smart Contracts',
             subtitle: 'Built with Solidity',
             description:
-                'Smart contracts written using different token standards, including ERC20, ERC721, ERC1155. Include deployment scripts and test. Leverage IPFS and on-chain storage.',
+                'Smart contracts written using different token standards, including ERC20, ERC721, ERC1155. Include deployment scripts and tests. Leverage IPFS and on-chain storage.',
             features: [
                 'https://github.com/DEFIdaniel1/metaverse-solidity',
                 'https://github.com/DEFIdaniel1/erc721-NFTs',

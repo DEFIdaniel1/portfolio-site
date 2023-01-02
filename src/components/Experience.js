@@ -17,29 +17,28 @@ const Experience = () => {
                     <h3>5 Yrs</h3>
                     <div className="line"></div>
                     <ul>
-                        <li>Designed, built, and managed eCommerce websites</li>
-                        <li>Utilized Shopify, WooCommerce with third-party integrations</li>
-                        <li>Connected multiple sales channels and 3PL solutions via APIs</li>
+                        <li> Designing, building, & managing business websites. </li>
+                        <li> Optimizing user flows to maximize conversion rates. </li>
+                        <li> Soliciting & evaluating user feedback to improve designs. </li>
+                        <li> Building site wireframes with Figma for development. </li>
+                        <li> Conducting A/B tests to increase engagement & retention. </li>
                     </ul>
                 </div>
 
                 {/* WEB DEVELOPMENT */}
                 <div className={classes.section}>
                     <h2>Web Development</h2>
-                    <h3>1 Year</h3>
+                    <h3>2 Yrs</h3>
                     <div className="line"></div>
                     <ul>
-                        <li>
-                            Built, deployed, and debugged multiple websites using React, JQuery,
-                            Redux, NodeJS
-                        </li>
-                        <li>
-                            Customized components and responsive layouts using advanced CSS/SCSS
-                        </li>
-                        <li>
-                            Creating dynamic web applications that captivate while being simple and
-                            intuitive
-                        </li>
+                        <li> Front-end focused development with advanced CSS/SASS. </li>
+                        <li> Designing, building, & deploying web using React.js. </li>
+                        <li> Building customized, reusable, & responsive components. </li>
+                        <li> Optimizing sites for cross-browser & device support. </li>
+                        <li> Back-end development using Node.js, Express.js, & Next.js. </li>
+                        <li> Manage data connections via WebSockets, REST, & GraphQL APIs. </li>
+                        <li> Creating & connecting databases (SQL/NoSQL) to servers. </li>
+                        <li> Testing, troubleshooting, & debugging applications. </li>
                     </ul>
                 </div>
             </div>
@@ -49,46 +48,28 @@ const Experience = () => {
                 {/* BLOCKCHAIN */}
                 <div className={classes.section}>
                     <h2>Blockchain</h2>
-                    <h3>6 Mon</h3>
+                    <h3>1 Yr</h3>
                     <div className="line"></div>
                     <ul>
-                        <li>
-                            Built and deployed smart contracts, ERC-20s (Tokens), ERC-721s (NFTs)
-                            using Solidity
-                        </li>
-                        <li>
-                            Debugging, and constructing in-depth unit tests with Hardhat, Waffle,
-                            and Chai
-                        </li>
-                        <li>
-                            Interact with external smart contracts, interact with mainnet, testnets,
-                            forked mainnets
-                        </li>
-                        <li>
-                            Leverage openzeppelin interfaces and contracts to optimize safety and
-                            speed
-                        </li>
-                        <li>
-                            Upload NFT data to IPFS for blockchain and decentralized off-chain
-                            storage solutions
-                        </li>
-                        <li>Utilize EthersJS to easily connect websites with smart contracts</li>
+                        <li> Writing and deploying Solidity smart contracts to Ethereum. </li>
+                        <li> Integrating smart contracts with front-ends via ethers.js. </li>
+                        <li> Using best security practices & achieving full test coverage. </li>
+                        <li> Leveraging smart contract development tools & frameworks. </li>
+                        <li> Deployed contracts for tokens, NFTs, & marketplaces. </li>
                     </ul>
                 </div>
                 {/* PROJECT MANAGEMENT */}
                 <div className={classes.section}>
-                    <h2>Project Management</h2>
-                    <h3>10 Years</h3>
+                    <h2>Management</h2>
+                    <h3>10 Yrs</h3>
                     <div className="line"></div>
                     <ul>
-                        <li>Managed projects for Fortune 500 companies </li>
-                        <li>
-                            Consulted executive & management teams to build corporate strategies
-                        </li>
-                        <li>Led teams up to 11 people to meet project objectives </li>
-                        <li>Facilitated training for hundreds of clients and employees</li>
-                        <li>Managed multi-million-dollar programs to exceed deliverables </li>
-                        <li>Created and trained staff on new operating proceedures</li>
+                        <li> Co-founded, built, & sold an eCommerce business within 3 years. </li>
+                        <li> Leading teams up to 11 people to ensure successful projects. </li>
+                        <li> Managing multi-million-dollar programs to exceed deliverables. </li>
+                        <li> Establishing successful SOPs for business operations. </li>
+                        <li> Set up and managed supply chain operations during COVID. </li>
+                        <li> Coaching teams to build strengths & improve team dynamics. </li>
                     </ul>
                 </div>
             </div>

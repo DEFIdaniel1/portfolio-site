@@ -21,12 +21,11 @@ const Portfolio = () => {
             description:
                 'A full-stack website built from the ground-up. A random NFT mint feature that incorporates user inputs for dynamic ouput.',
             features: [
-                'Custom Solidity smart contracts',
+                'Fully customized front-end design',
+                'Solidity-built smart contracts',
                 'Random NFT minting, listing, and selling',
-                'Fully customized UI',
                 'Live on Ethereum testnet',
-                'Extensive unit testing',
-                'React | ethers.js | Hardhat | nodeJS',
+                'React | ethers.js | Hardhat | Node | Next.js',
             ],
             github: 'https://github.com/DEFIdaniel1/nftMarketplace-v2',
             link: 'https://gal-xy.web.app/',
@@ -40,6 +39,7 @@ const Portfolio = () => {
                 'Custom ground-up build. Take your crypto holdings to a decentralized staking solution - all on-chain.',
             features: [
                 'Typescript project',
+                'Fully customized front-end design',
                 'APIs fetch real-time crypto price feeds',
                 'Dynamic rates built-in for instant feedback',
                 'Typescript | React | JavaScript | CSS',
@@ -55,8 +55,8 @@ const Portfolio = () => {
             description:
                 'Front-end build-out for a conceptual project. Designed to be the airbnb for real estate - own, rent, and travel.',
             features: [
-                'Fully customized design and UI build',
-                'Custom menu animations',
+                'Fully customized front-end design',
+                'Custom animations',
                 'Responsive design',
                 'React | JavaScript | CSS',
             ],
